@@ -1,8 +1,8 @@
-import s from './navbar.module.css'
+import s from './navbar.module.scss'
 
 const Navbar = () => {
   return (
-    <nav className={s.nav}>
+    <div className={s.nav}>
       <div>
         nav 1
       </div>
@@ -12,7 +12,7 @@ const Navbar = () => {
       <div>
         nav 3
       </div>
-    </nav>
+    </div>
   )
 }
 
