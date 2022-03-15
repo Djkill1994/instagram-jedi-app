@@ -1,0 +1,74 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerBar {
+  display: flex;
+  border-bottom: 1px solid #dbdbdb;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapperContain {
+  width: 100%;
+}
+
+.logo {
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+    margin-left: 20px;
+  }
+}
+
+.moreFunc {
+  margin-right: 20px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  max-width: 800px;
+  max-height: 500px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.socialSectionWrapper {
+  padding: 0 20px;
+}
+
+.socialSection {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.infoBlock {
+  display: flex;
+  gap: 10px
+}
+
+.socialBar {
+  display: flex;
+  gap: 10px
+}
+
+.views {
+  padding: 10px 0px;
+}
+
+.author, .views {
+  font-weight: bold;
+
+}

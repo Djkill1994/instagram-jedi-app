@@ -1,4 +1,4 @@
-import s from './navbar.module.scss'
+import s from './Navbar.module.scss'
 
 const Navbar = () => {
   return (
@@ -12,6 +12,7 @@ const Navbar = () => {
       <div>
         nav 3
       </div>
+        <input placeholder={'Поиск'}/>
     </div>
   )
 }
