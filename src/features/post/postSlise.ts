@@ -5,7 +5,7 @@ type contentType = {
     video: string | null
 }
 
-type PostType = {
+export type PostType = {
     id: number | null
     userName: string | null
     userAvatar: string | null
@@ -32,17 +32,16 @@ export const initialState = {
         {
             id: 2,
             userName: 'AdamSendler',
-            userAvatar: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/54013f3e-5c72-4120-b806-55baec0d5609/220x330' as string,
+            userAvatar: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/54013f3e-5c72-4120-b806-55baec0d5609/220x330',
             content: {
-                images: 'https://irecommend.ru/sites/default/files/imagecache/copyright1/user-images/1018454/Ls5ey3oN1wMLKwZh5Dhlg.jpg' as string,
+                images: 'https://irecommend.ru/sites/default/files/imagecache/copyright1/user-images/1018454/Ls5ey3oN1wMLKwZh5Dhlg.jpg',
                 video: ''
             },
             views: 134,
             description: 'Disco Disco !!!!',
             datePublication: '17 hours later',
         },
-
-    ] as Array<PostType>,
+    ] as Array<PostType>
 }
 
 export type InitialStateType = typeof initialState;

@@ -4,7 +4,7 @@ import Navbar from './component/Navbar/Navbar';
 import Header from './component/Header/Header';
 import AppContent from './component/AppContent/AppContent';
 
-function App() {
+const App = () => {
     return (
     <div className={ 'app-wrapper' }>
       <Header/>

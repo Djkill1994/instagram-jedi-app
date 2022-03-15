@@ -1,15 +1,12 @@
-import s from './AppContent.module.scss';
+import s from './AppContainer.module.scss';
 import React from 'react';
 import Post from "./Post/Post";
-import {initialState, InitialStateType} from "../../features/post/postSlise";
+import {initialState} from "../../features/post/postSlise";
 
 
-const AppContent: React.FC<InitialStateType> = () => {
 
-    let postsElements = initialState.data.map(p => <Post key={p.id} userName={p.userName}
-                                                 userAvatar={p.userAvatar} content={p.content.images}
-                                                 views={p.views} description={p.description}
-                                                 datePublication={p.datePublication}/>);
+const AppContent: React.FC = () => {
+
 
     // const [chosenEmoji, setChosenEmoji] = useState(null);
     //
@@ -31,7 +28,10 @@ const AppContent: React.FC<InitialStateType> = () => {
 
     return (
         <div className={s.wrapperContain}>
-            {postsElements}
+            {initialState.data.map(p => <Post key={p.id} userName={p.userName}
+                                              userAvatar={p.userAvatar} content={p.content.images}
+                                              views={p.views} description={p.description}
+                                              datePublication={p.datePublication}/>)}
         </div>
     );
 };

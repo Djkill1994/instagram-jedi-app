@@ -1,9 +1,8 @@
-import s from '../AppContent.module.scss';
+import s from './Post.module.scss';
 import React from "react";
-import {initialState, InitialStateType} from "../../../features/post/postSlise";
 
 
-const Post: React.FC<InitialStateType> = () => {
+const Post: React.FC<any> = ({userAvatar, userName, content, views, description, datePublication}) => {
 
     // const [chosenEmoji, setChosenEmoji] = useState(null);
     //
@@ -21,16 +20,15 @@ const Post: React.FC<InitialStateType> = () => {
     //         <Picker onEmojiClick={onEmojiClick}/>
     //     </div>)
     // }
-
     return (
         <div className={s.wrapperContain}>
             <div className={s.headerBar}>
                 <header className={s.header}>
                     <div className={s.logo}>
-                        <img src={initialState.data.userAvatar}/>
+                        <img alt={'Avatar'} src={userAvatar}/>
                     </div>
                     <span className={s.nameAccount}>
-    {initialState.data.userName}
+    {userName}
   </span>
                 </header>
                 <div className={s.moreFunc}>
@@ -43,7 +41,7 @@ const Post: React.FC<InitialStateType> = () => {
                 </div>
             </div>
             <div className={s.content}>
-                <img src={initialState.data.content.images}/>
+                <img alt={'Content'} src={content}/>
             </div>
             <div className={s.socialSectionWrapper}>
                 <div className={s.socialSection}>
@@ -83,15 +81,15 @@ const Post: React.FC<InitialStateType> = () => {
                 </div>
                 <div className={s.views}>
         <span>
-          {initialState.data.views}: Views
+          {views}: Views
         </span>
                 </div>
                 <div className={s.infoBlock}>
           <span className={s.author}>
-            {initialState.data.userName}
+            {userName}
           </span>
                     <span className={s.description}>
-            {initialState.data.description}
+            {description}
           </span>
                     {/*          <span className={s.moore}>*/}
                     {/*  moore*/}
@@ -101,7 +99,7 @@ const Post: React.FC<InitialStateType> = () => {
                     View all comments
                 </div>
                 <div className={s.publicationDate}>
-                    {initialState.data.datePublication}
+                    {datePublication}
                 </div>
             </div>
             <div className={s.addCommentWrapper}>
@@ -124,8 +122,8 @@ const Post: React.FC<InitialStateType> = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Post;
 
