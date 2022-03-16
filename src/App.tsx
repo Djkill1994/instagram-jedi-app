@@ -5,12 +5,12 @@ import Header from './component/Header/Header';
 import AppContent from './component/AppContent/AppContent';
 
 function App() {
-  return (
+    return (
     <div className={ 'app-wrapper' }>
       <Header/>
       <Navbar/>
       <div className={ 'app-wrapper-content' }>
-       <AppContent/>
+       <AppContent />
       </div>
     </div>
   );

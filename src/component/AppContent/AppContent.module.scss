@@ -15,6 +15,8 @@
 
 .wrapperContain {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -34,8 +36,8 @@
   width: 100%;
   height: 100%;
   position: relative;
-  max-width: 800px;
-  max-height: 500px;
+  max-width: 100%;
+  max-height: 100%;
 
   img {
     width: 100%;
@@ -65,10 +67,36 @@
 }
 
 .views {
-  padding: 10px 0px;
+  padding: 10px 0;
 }
 
 .author, .views {
   font-weight: bold;
+}
 
+.comments {
+  width: 100%;
+}
+
+.addCommentWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid #dbdbdb;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+  box-sizing:border-box;
+}
+
+.wrapperContainComment {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  input {
+    width: 100%;
+    height: 50px;
+    border: none;
+  }
 }
