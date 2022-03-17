@@ -1,0 +1,56 @@
+.header {
+  border-bottom: 1px solid #dbdbdb;
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 1;
+}
+
+img {
+  height: 30px;
+  width: 103px;
+  margin-left: 70px;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(var(--bb2, 239, 239, 239), 1);
+  position: relative;
+  border-radius: 8px;
+  width: 268px;
+  height: 36px;
+}
+
+.searchInput {
+  background: rgba(var(--bb2, 239, 239, 239), 1);
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  height: 36px;
+  width: 268px;
+  font-size: 16px;
+}
+
+.divBtn {
+  position: absolute;
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.navigationBar {
+  display: flex;
+  gap: 20px;
+  margin-right: 70px;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

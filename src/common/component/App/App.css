@@ -1,0 +1,14 @@
+.app-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.app-wrapper-content {
+  width: 75%;
+  margin: 1%;
+  display: flex;
+  position: relative;
+}
+
+/*# sourceMappingURL=App.css.map */
