@@ -24,9 +24,6 @@ export const SocialSectionPost: React.FC<SocialSectionPostProps> = ({
       <div className={s.infoBlock}>
         <span className={s.author}>{userName}</span>
         <span className={s.description}>{description}</span>
-        {/*          <span className={s.moore}> */}
-        {/*  moore */}
-        {/* </span> */}
       </div>
       <div className={s.comments}>View all comments</div>
       <div className={s.publicationDate}>

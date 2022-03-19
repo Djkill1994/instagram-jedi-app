@@ -1,1 +1,1 @@
-export {CommentsPost} from "./CommentsPost"
+export { CommentsPost } from "./CommentsPost";

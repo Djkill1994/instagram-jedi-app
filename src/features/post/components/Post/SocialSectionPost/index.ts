@@ -1,1 +1,1 @@
-export {SocialSectionPost} from "./SocialSectionPost"
+export { SocialSectionPost } from "./SocialSectionPost";

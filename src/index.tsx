@@ -4,7 +4,7 @@ import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { App } from "./common/component/App";
+import { App } from "./common/components/App";
 
 const prepare = async (): Promise<void> => {
   const { worker } = await import("./mocks/browser");

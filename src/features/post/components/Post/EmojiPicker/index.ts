@@ -1,1 +1,1 @@
-export {EmojiPicker} from "./EmojiPicker"
+export { EmojiPicker } from "./EmojiPicker";

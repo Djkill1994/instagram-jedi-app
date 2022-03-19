@@ -1,1 +1,1 @@
-export {HeaderPost} from "./HeaderPost"
+export { HeaderPost } from "./HeaderPost";

@@ -1,1 +1,1 @@
-export {SocialSectionBar} from "./SocialSectionBar"
+export { SocialSectionBar } from "./SocialSectionBar";
