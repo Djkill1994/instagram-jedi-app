@@ -1,0 +1,31 @@
+.socialSectionWrapper {
+  padding: 0 20px;
+}
+
+.socialSection {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.infoBlock {
+  display: flex;
+  gap: 10px
+}
+
+.socialBar {
+  display: flex;
+  gap: 10px
+}
+
+.views {
+  padding: 10px 0;
+}
+
+.author, .views {
+  font-weight: bold;
+}
+
+.comments {
+  width: 100%;
+}

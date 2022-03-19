@@ -1,11 +1,11 @@
-import s from "./Header.module.scss"
-import logo from "../../../assets/icon/1b47f9d0e595.png"
+import s from "./Header.module.scss";
+import logo from "../../../assets/icon/1b47f9d0e595.png";
 
 export function Header() {
   return (
     <header className={s.header}>
       <div className={s.logo}>
-        <img src={logo} />
+        <img alt={"Logo"} src={logo} />
       </div>
       <div className={s.searchWrapper}>
         <input
@@ -194,5 +194,5 @@ export function Header() {
         <div className={s.userOptions}>avatar</div>
       </div>
     </header>
-  )
+  );
 }

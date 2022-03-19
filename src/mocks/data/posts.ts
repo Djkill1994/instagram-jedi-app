@@ -1,36 +1,27 @@
+import { faker } from "@faker-js/faker";
+
 export interface IPost {
-    id: number;
-    userName: string;
-    userAvatar: string;
-    images: string;
-    views: number;
-    description: string;
-    datePublication: string;
+  id: string;
+  userName: string;
+  userAvatar: string;
+  images: string;
+  views: number;
+  description: string;
+  datePublication: Date;
 }
 
 export type IPostApi = IPost[];
 
-function getRandomInt(max: number) {
-    return Math.floor(Math.random() * max);
-}
+const createPost = () => ({
+  id: faker.datatype.uuid(),
+  userName: faker.name.findName(),
+  userAvatar: `https://picsum.photos/800/800?random=${faker.datatype.number(
+    50
+  )}`,
+  images: `https://picsum.photos/800/800?random=${faker.datatype.number(50)}`,
+  views: faker.datatype.number(10000),
+  description: faker.lorem.sentence(5),
+  datePublication: faker.date.between("2018", "2022"),
+});
 
-export const postsResult: IPostApi = [
-    {
-        id: 1,
-        userName: 'Vlad',
-        userAvatar: `https://picsum.photos/800/800?random=${getRandomInt(50)}`,
-        images: `https://picsum.photos/800/800?random=${getRandomInt(50)}` ,
-        views: getRandomInt(10000),
-        description: '',
-        datePublication: '1 hours later',
-    },
-    {
-        id: 2,
-        userName: 'AdamSendler',
-        userAvatar: `https://picsum.photos/800/800?random=${getRandomInt(50)}`,
-        images: `https://picsum.photos/800/800?random=${getRandomInt(50)}`,
-        views: getRandomInt(10000),
-        description: 'Disco Disco !!!!',
-        datePublication: '17 hours later',
-    },
-]
+export const postsResult: IPostApi = Array.from({ length: 50 }, createPost);

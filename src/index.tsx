@@ -4,17 +4,23 @@ import './index.scss';
 
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from "react-redux";
-import {store} from "./redux/redux-store";
+import {store} from "./store";
+import App from "./common/component/App/App";
 
-ReactDOM.render(
-  <React.StrictMode>
-      <Provider store={store}>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-      </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const prepare = async (): Promise<void> => {
+    const {worker} = await import("./mocks/browser");
+    await worker.start({onUnhandledRequest: "bypass"});
+};
 
-reportWebVitals();
+prepare().then(() => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <App/>
+                </BrowserRouter>
+            </Provider>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+});
