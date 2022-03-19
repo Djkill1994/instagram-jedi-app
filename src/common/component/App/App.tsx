@@ -1,10 +1,10 @@
 import React from "react";
 import s from "./App.module.scss";
-import { Navbar } from "../Navbar/Navbar";
-import { Header } from "../Header/Header";
-import { PostsContainer } from "../../../features/post/components/PostsContainer/PostsContainer";
+import { Navbar } from "../Navbar";
+import { Header } from "../Header";
+import { PostsContainer } from "../../../features/post/components/PostsContainer";
 
-function App() {
+export const App: React.FC = () => {
   return (
     <div className={s.appWrapper}>
       <Header />
@@ -14,6 +14,4 @@ function App() {
       </div>
     </div>
   );
-}
-
-export default App;
+};

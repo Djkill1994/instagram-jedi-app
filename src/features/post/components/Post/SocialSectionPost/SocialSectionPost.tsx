@@ -1,6 +1,6 @@
 import s from "./SocialSectionPost.module.scss";
 import React from "react";
-import { SocialSectionBar } from "../SocialSectionBar/SocialSectionBar";
+import { SocialSectionBar } from "../SocialSectionBar";
 
 interface SocialSectionPostProps {
   userName: string;

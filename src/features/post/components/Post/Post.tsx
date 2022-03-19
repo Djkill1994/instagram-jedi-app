@@ -1,10 +1,10 @@
 import React from "react";
 import s from "./Post.module.scss";
 import { IPost } from "../../../../mocks/data/posts";
-import { HeaderPost } from "./HeaderPost/HeaderPost";
-import { ContentPost } from "./ContentPost/ContentPost";
-import { SocialSectionPost } from "./SocialSectionPost/SocialSectionPost";
-import { CommentsPost } from "./CommentsPost/CommentsPost";
+import { HeaderPost } from "./HeaderPost";
+import { ContentPost } from "./ContentPost";
+import { SocialSectionPost } from "./SocialSectionPost";
+import { CommentsPost } from "./CommentsPost";
 
 export interface PostItemProps {
   post: IPost;

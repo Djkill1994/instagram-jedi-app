@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert, CircularProgress } from "@mui/material";
 import s from "./PostsContainer.module.scss";
-import { Post } from "../Post/Post";
+import { Post } from "../Post";
 import { useGetPostsQuery } from "../../api/post.api";
 
 export const PostsContainer: React.FC = () => {
