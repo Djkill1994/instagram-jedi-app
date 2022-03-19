@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import Picker from "emoji-picker-react";
 
 export const EmojiPicker = () => {
-  const onEmojiClick = (event: any, emojiObject: any) => {
-    setChosenEmoji(emojiObject);
-  };
   const [chosenEmoji, setChosenEmoji] = useState(null);
 
   return (
@@ -14,7 +11,9 @@ export const EmojiPicker = () => {
       ) : (
         <span>No emoji Chosen</span>
       )}
-      <Picker onEmojiClick={onEmojiClick} />
+      <Picker
+        onEmojiClick={(_, emojiObject: any) => setChosenEmoji(emojiObject)}
+      />
     </div>
   );
 };

@@ -1,19 +1,19 @@
-import React from "react"
-import "./App.scss"
-import { Navbar } from "../Navbar/Navbar"
-import { Header } from "../Header/Header"
-import { PostsContainer } from "../../../features/post/components/PostsContainer/PostsContainer"
+import React from "react";
+import s from "./App.module.scss";
+import { Navbar } from "../Navbar/Navbar";
+import { Header } from "../Header/Header";
+import { PostsContainer } from "../../../features/post/components/PostsContainer/PostsContainer";
 
 function App() {
   return (
-    <div className="app-wrapper">
+    <div className={s.appWrapper}>
       <Header />
       <Navbar />
-      <div className="app-wrapper-content">
+      <div className={s.appWrapperContent}>
         <PostsContainer />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
