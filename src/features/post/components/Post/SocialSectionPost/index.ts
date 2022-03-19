@@ -1,0 +1,1 @@
+export { SocialSectionPost } from "./SocialSectionPost";

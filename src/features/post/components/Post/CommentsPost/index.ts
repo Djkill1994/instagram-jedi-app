@@ -1,0 +1,1 @@
+export { CommentsPost } from "./CommentsPost";

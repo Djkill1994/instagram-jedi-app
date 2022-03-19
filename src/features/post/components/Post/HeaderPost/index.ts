@@ -1,0 +1,1 @@
+export { HeaderPost } from "./HeaderPost";
