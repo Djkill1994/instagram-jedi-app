@@ -17,4 +17,10 @@ img {
   margin-left: 70px;
 }
 
+@media (max-width: 850px) {
+  img {
+    margin-left: 2px;
+  }
+}
+
 /*# sourceMappingURL=Header.module.css.map */

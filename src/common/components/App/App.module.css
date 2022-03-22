@@ -1,7 +1,18 @@
-.appWrapper {
+.allPageWrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow: auto;
+}
+
+.appBody {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
+  margin: 0 auto;
 }
 
 .appWrapperContent {
@@ -9,6 +20,13 @@
   margin: 1%;
   display: flex;
   position: relative;
+}
+
+@media (max-width: 850px) {
+  .appWrapperContent {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 /*# sourceMappingURL=App.module.css.map */

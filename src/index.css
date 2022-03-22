@@ -13,4 +13,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+@media (max-width: 850px) {
+  body {
+    min-width: 400px;
+    max-width: 400px;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

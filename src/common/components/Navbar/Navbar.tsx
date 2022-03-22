@@ -1,5 +1,5 @@
-import React from "react"
-import s from "./Navbar.module.scss"
+import React from "react";
+import s from "./Navbar.module.scss";
 
 export const Navbar: React.FC = () => (
   <div className={s.nav}>
@@ -8,4 +8,4 @@ export const Navbar: React.FC = () => (
     <div>nav 3</div>
     <input placeholder="Search" />
   </div>
-)
+);

@@ -1,0 +1,206 @@
+.wrapperPage {
+  margin: auto;
+}
+
+.wrapperWindow {
+  display: flex;
+  margin-top: 30px;
+}
+
+.phoneImages {
+  display: flex;
+}
+.phoneImages .images {
+  width: 95%;
+}
+
+.dynamicImg {
+  position: absolute;
+  margin-left: 144px;
+  margin-top: 23px;
+}
+
+@media (max-width: 855px) {
+  .phoneImages {
+    display: none;
+  }
+}
+@media (min-width: 350px) {
+  .wrapperPage {
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+  }
+
+  .loginFormWrapper {
+    margin: auto;
+    padding: 0;
+    width: 312px;
+  }
+
+  .windowLogin {
+    border: none;
+  }
+}
+.loginFormWrapper {
+  margin-left: -35px;
+}
+
+.windowLogin {
+  margin-top: 20px;
+  border: 1px solid #dbdbdb;
+  width: 348px;
+  background-color: white;
+}
+
+.logoWrapper {
+  margin: 22px auto 12px;
+  display: flex;
+  justify-content: center;
+}
+.logoWrapper img {
+  width: 50%;
+}
+
+.wrapperLoginForm {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  font-size: 10px;
+  width: 248px;
+  height: 28px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  transition: 0.5s;
+  outline: none;
+  background-color: #FAFAFA;
+}
+
+input:focus {
+  border: 1px solid #828384C4;
+}
+
+.emailInputWrapper {
+  margin-top: 10px;
+}
+
+.passwordInputWrapper {
+  margin-top: 10px;
+}
+
+.sendBtnWrapper {
+  margin-top: 15px;
+}
+
+.decorationBorderWrapper {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #828384C4;
+  font-size: 14px;
+}
+.decorationBorderWrapper .one, .decorationBorderWrapper .two {
+  width: 101px;
+  height: 1px;
+  background-color: #828384C4;
+}
+
+.loginOnFacebookWrapper {
+  margin-top: 30px;
+  width: 254px;
+  height: 32px;
+}
+.loginOnFacebookWrapper :hover {
+  cursor: pointer;
+}
+.loginOnFacebookWrapper :active {
+  color: #7187af;
+}
+
+.loginFbButton {
+  font-size: 14px;
+  display: flex;
+  color: #4267b1;
+  border: none;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+.loginFbButton img {
+  width: 6%;
+}
+
+.forgotYourPasswordWrapper {
+  padding: 15px 0;
+  width: 254px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forgotYourPasswordWrapper button {
+  border: none;
+  background-color: white;
+  color: #2f4e8f;
+  font-size: 10px;
+}
+.forgotYourPasswordWrapper button:hover {
+  cursor: pointer;
+}
+.forgotYourPasswordWrapper button:active {
+  color: #7695d5;
+}
+
+.registrationBarWrapper {
+  border: 1px solid #dbdbdb;
+  background-color: white;
+  width: 348px;
+  height: 63px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.registrationBarWrapper button {
+  background-color: white;
+  color: #0095f6;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.registrationBarWrapper button:hover {
+  cursor: pointer;
+}
+.registrationBarWrapper button:active {
+  color: #6cc1ff;
+}
+
+.installAppsWrapper {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+
+.barInstallApps {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.barInstallApps :hover {
+  cursor: pointer;
+}
+.barInstallApps img {
+  width: 130px;
+}
+
+/*# sourceMappingURL=Login.module.css.map */
