@@ -1,0 +1,174 @@
+.loginFormWrapper {
+  width: 348px;
+}
+
+.barInstallApps, .installAppsWrapper, .registrationBarWrapper,
+.forgotYourPasswordWrapper, .loginFbButton, .decorationBorderWrapper,
+.wrapperLoginForm, .logoWrapper {
+  display: flex;
+}
+
+.loginFormWrapper {
+  margin-left: -35px;
+}
+
+input, .registrationBarWrapper, .windowLogin {
+  border: 1px solid #dbdbdb;
+}
+
+.windowLogin, .loginFbButton, .registrationBarWrapper {
+  background-color: white;
+}
+
+.windowLogin {
+  margin-top: 20px;
+}
+
+.logoWrapper {
+  margin: 22px auto 12px;
+  justify-content: center;
+
+  img {
+    width: 50%;
+  }
+}
+
+.wrapperLoginForm {
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  font-size: 10px;
+  width: 248px;
+  height: 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  outline: none;
+  background-color: #FAFAFA;
+}
+
+input:focus {
+  border: 1px solid #828384C4;
+}
+
+.emailInputWrapper, .passwordInputWrapper, .registrationBarWrapper {
+  margin-top: 10px;
+}
+
+.sendBtnWrapper, .decorationBorderWrapper, .installAppsWrapper {
+  margin-top: 15px;
+}
+
+.decorationBorderWrapper {
+  align-items: center;
+  gap: 15px;
+  color: #828384C4;
+  font-size: 14px;
+
+  .one, .two {
+    width: 101px;
+    height: 1px;
+    background-color: #828384C4;
+  }
+}
+
+.loginOnFacebookWrapper {
+  margin-top: 30px;
+  width: 254px;
+  height: 32px;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  :active {
+    color: #7187af;;
+  }
+}
+
+.loginFbButton {
+  font-size: 14px;
+  color: #4267b1;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+
+  img {
+    width: 6%;
+  }
+}
+
+.errorWindow {
+  display: none;
+}
+
+.forgotYourPasswordWrapper {
+  padding: 15px 0;
+  width: 254px;
+  height: 15px;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    border: none;
+    background-color: white;
+    color: #2f4e8f;
+    font-size: 10px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  button:active {
+    color: #7695d5;
+  }
+
+}
+
+.registrationBarWrapper {
+  height: 63px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  gap: 5px;
+
+  button {
+    background-color: white;
+    color: #0095f6;
+    border: none;
+    font-weight: 600;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  button:active {
+    color: #6cc1ff;
+  }
+
+}
+
+.installAppsWrapper {
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+
+.barInstallApps {
+  gap: 10px;
+  margin-top: 15px;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 130px;
+  }
+}

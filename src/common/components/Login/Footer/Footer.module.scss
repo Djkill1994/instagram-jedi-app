@@ -1,0 +1,42 @@
+.wrapperWindow {
+  font-size: 12px;
+  height: 150px;
+  color: #8e8e8e;
+}
+
+.barOne, .barTwo, .sectionOne, .sectionTwo {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  color: #8e8e8e;
+  background-color: #fafafa;
+  border: none;
+  font-size: 12px;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 0.3;
+}
+
+.barOne {
+  padding: 20px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionTwo {
+  margin-top: -10px;
+}
+
+.barTwo {
+  justify-content: center;
+}

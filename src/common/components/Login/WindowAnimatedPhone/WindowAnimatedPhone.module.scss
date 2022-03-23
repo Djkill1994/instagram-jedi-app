@@ -1,0 +1,19 @@
+.phoneImages {
+  display: flex;
+
+  .images {
+    width: 95%;
+  }
+}
+
+.dynamicImg {
+  position: absolute;
+  margin-left: 144px;
+  margin-top: 23px;
+}
+
+@media (max-width: 855px) {
+  .phoneImages {
+    display: none;
+  }
+}
