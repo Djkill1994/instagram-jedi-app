@@ -4,12 +4,14 @@ import { Navbar } from "../Navbar";
 import { Header } from "../Header";
 import { PostsContainer } from "../../../features/post/components/PostsContainer";
 import { Login } from "../Login";
+import { Registration } from "../Registration";
 
 export const App: React.FC = () => {
   return (
     <div className={s.appWrapper}>
       <div className={s.allPageWrapper}>
-        <Login />
+        {/*<Login />*/}
+        <Registration />
       </div>
       {/*<div className={s.appBody}>*/}
       {/*  <Header />*/}

@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Login.module.scss";
 import { WindowAnimatedPhone } from "./WindowAnimatedPhone";
 import { WindowLoginForm } from "./WindowLoginForm";
-import { Footer } from "./Footer";
+import { Footer } from "../Footer";
 
 export const Login: React.FC = () => {
   return (

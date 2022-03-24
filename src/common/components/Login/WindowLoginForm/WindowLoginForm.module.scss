@@ -2,7 +2,7 @@
   width: 348px;
 }
 
-.barInstallApps, .installAppsWrapper, .registrationBarWrapper,
+.barInstallApps, .registrationBarWrapper,
 .forgotYourPasswordWrapper, .loginFbButton, .decorationBorderWrapper,
 .wrapperLoginForm, .logoWrapper {
   display: flex;
@@ -57,7 +57,7 @@ input:focus {
   margin-top: 10px;
 }
 
-.sendBtnWrapper, .decorationBorderWrapper, .installAppsWrapper {
+.sendBtnWrapper, .decorationBorderWrapper {
   margin-top: 15px;
 }
 
@@ -142,6 +142,7 @@ input:focus {
     color: #0095f6;
     border: none;
     font-weight: 600;
+    font-size: 14px;
   }
 
   button:hover {
@@ -152,23 +153,4 @@ input:focus {
     color: #6cc1ff;
   }
 
-}
-
-.installAppsWrapper {
-  flex-direction: column;
-  align-items: center;
-  width: 350px;
-}
-
-.barInstallApps {
-  gap: 10px;
-  margin-top: 15px;
-
-  :hover {
-    cursor: pointer;
-  }
-
-  img {
-    width: 130px;
-  }
 }

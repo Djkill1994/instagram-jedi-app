@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./WindowLoginForm.module.scss";
 import logo from "../../../../assets/icon/1b47f9d0e595.png";
 import { LoadingButton } from "@mui/lab";
+import { BarInstallApps } from "../../BarInstallApps";
 
 export const WindowLoginForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -66,27 +67,7 @@ export const WindowLoginForm: React.FC = () => {
         <span>Don't have an account yet?</span>
         <button>Sign up</button>
       </div>
-      <div className={s.installAppsWrapper}>
-        <span>Get the app.</span>
-        <div className={s.barInstallApps}>
-          <div className={s.installAppStore}>
-            <img
-              alt={"AppStore"}
-              src={
-                "https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png"
-              }
-            />
-          </div>
-          <div className={s.installGooglePlay}>
-            <img
-              alt={"GooglePlay"}
-              src={
-                "https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png"
-              }
-            />
-          </div>
-        </div>
-      </div>
+      <BarInstallApps />
     </div>
   );
 };
