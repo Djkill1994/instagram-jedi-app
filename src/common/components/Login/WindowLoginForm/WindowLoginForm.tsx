@@ -28,11 +28,8 @@ export const WindowLoginForm: React.FC = () => {
           </div>
           <div className={s.sendBtnWrapper}>
             <LoadingButton
-              style={{
-                width: "254px",
-                height: "28px",
-              }}
-              className={s.LoadingButton}
+              className={s.loadingButton}
+              disabled={true}
               onClick={handleClick}
               loading={loading}
               loadingPosition="center"

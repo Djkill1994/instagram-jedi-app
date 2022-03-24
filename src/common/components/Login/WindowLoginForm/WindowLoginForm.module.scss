@@ -8,10 +8,6 @@
   display: flex;
 }
 
-.loginFormWrapper {
-  margin-left: -35px;
-}
-
 input, .registrationBarWrapper, .windowLogin {
   border: 1px solid #dbdbdb;
 }
@@ -154,3 +150,22 @@ input:focus {
   }
 
 }
+
+.sendBtnWrapper {
+  .loadingButton {
+    width: 254px;
+    height: 32px;
+    background-color: #0095f6;
+    text-transform: none;
+    color: white;
+
+  }
+
+  .loadingButton:disabled {
+    background-color: #0095f6;
+    opacity: 0.3;
+    color: white;
+  }
+
+}
+
