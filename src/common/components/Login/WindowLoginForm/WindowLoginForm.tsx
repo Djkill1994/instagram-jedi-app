@@ -3,6 +3,7 @@ import s from "./WindowLoginForm.module.scss";
 import logo from "../../../../assets/icon/1b47f9d0e595.png";
 import { LoadingButton } from "@mui/lab";
 import { BarInstallApps } from "../../BarInstallApps";
+import { DecorationBorder } from "../../DecorationBorder";
 
 export const WindowLoginForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -39,9 +40,7 @@ export const WindowLoginForm: React.FC = () => {
             </LoadingButton>
           </div>
           <div className={s.decorationBorderWrapper}>
-            <div className={s.one} />
-            <div className={s.text}>OR</div>
-            <div className={s.two} />
+            <DecorationBorder />
           </div>
           <div className={s.loginOnFacebookWrapper}>
             <button className={s.loginFbButton}>

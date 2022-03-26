@@ -1,13 +1,15 @@
 import React from "react";
 import s from "./App.module.scss";
-import { Login } from "../Login";
+
+import { Registration } from "../Registration";
 
 export const App: React.FC = () => {
   return (
     <div className={s.appWrapper}>
       <div className={s.allPageWrapper}>
-        <Login />
+        <Registration />
       </div>
+
     </div>
   );
 };

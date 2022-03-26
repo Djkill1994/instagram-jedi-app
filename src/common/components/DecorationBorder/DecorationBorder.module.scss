@@ -1,0 +1,13 @@
+.decorationBorderWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #828384C4;
+  font-size: 14px;
+
+  .one, .two {
+    width: 108px;
+    height: 1px;
+    background-color: #828384C4;
+  }
+}

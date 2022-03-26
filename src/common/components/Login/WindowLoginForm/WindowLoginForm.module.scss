@@ -3,7 +3,7 @@
 }
 
 .barInstallApps, .registrationBarWrapper,
-.forgotYourPasswordWrapper, .loginFbButton, .decorationBorderWrapper,
+.forgotYourPasswordWrapper, .loginFbButton,
 .wrapperLoginForm, .logoWrapper {
   display: flex;
 }
@@ -53,21 +53,13 @@ input:focus {
   margin-top: 10px;
 }
 
-.sendBtnWrapper, .decorationBorderWrapper {
+.sendBtnWrapper {
   margin-top: 15px;
 }
 
 .decorationBorderWrapper {
-  align-items: center;
-  gap: 15px;
-  color: #828384C4;
-  font-size: 14px;
-
-  .one, .two {
-    width: 101px;
-    height: 1px;
-    background-color: #828384C4;
-  }
+  margin-top: 15px;
+  max-width: 254px;
 }
 
 .loginOnFacebookWrapper {
