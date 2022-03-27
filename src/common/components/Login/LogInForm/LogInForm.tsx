@@ -2,13 +2,7 @@ import React, { useState } from "react";
 import s from "./LogInForm.module.scss";
 import { LoadingButton } from "@mui/lab";
 import { DecorationBorder } from "../../DecorationBorder";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Container from "@mui/material/Container";
-import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
-import logo from "../../../../assets/icon/1b47f9d0e595.png";
-import Button from "@mui/material/Button";
-import iconFb from "../../../../assets/icon/facebook-icon.png";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import {
@@ -19,16 +13,10 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { AgreementPolicy } from "../../Registration/AgreementPolicy";
 import { Link } from "react-router-dom";
-import { BarInstallApps } from "../../BarInstallApps";
-import { Footer } from "../../Footer";
 
 interface StateProps {
-  amount: string;
   password: string;
-  weight: string;
-  weightRange: string;
   showPassword: boolean;
   email: string;
 }
@@ -36,21 +24,10 @@ interface StateProps {
 export const LogInForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [values, setValues] = React.useState<StateProps>({
-    amount: "",
     password: "",
-    weight: "",
-    weightRange: "",
     showPassword: false,
     email: "",
   });
-
-  // const disabledButton = (disabled: boolean) => {
-  //   if (values === null) {
-  //     disabled = true;
-  //   } else {
-  //     disabled = false;
-  //   }
-  // };
 
   const handleClick = () => {
     setLoading(true);
@@ -66,12 +43,6 @@ export const LogInForm: React.FC = () => {
     handleClick();
   };
 
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    event.preventDefault();
-  };
-
   const handleChange =
     (prop: keyof StateProps) =>
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,7 +55,7 @@ export const LogInForm: React.FC = () => {
       showPassword: !values.showPassword,
     });
   };
-  console.log(values);
+
   return (
     <div>
       <Box
@@ -115,7 +86,6 @@ export const LogInForm: React.FC = () => {
                 className={s.passwordWrapper}
                 id="outlined-adornment-password"
                 type={values.showPassword ? "text" : "password"}
-                value={values.password}
                 name="password"
                 onChange={handleChange("password")}
                 endAdornment={
@@ -123,7 +93,6 @@ export const LogInForm: React.FC = () => {
                     <IconButton
                       aria-label="toggle password visibility"
                       onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
                       {values.showPassword ? <VisibilityOff /> : <Visibility />}
@@ -150,22 +119,23 @@ export const LogInForm: React.FC = () => {
           </LoadingButton>
         </div>
       </Box>
-
       <div className={s.decorationBorderWrapper}>
         <DecorationBorder />
       </div>
       <div className={s.loginOnFacebookWrapper}>
-        <button className={s.loginFbButton}>
+        <Link to="#" className={s.loginFbButton}>
           <img
             alt={"FB"}
             src={"https://www.facebook.com/images/fb_icon_325x325.png"}
           />
           Log in with facebook
-        </button>
+        </Link>
       </div>
       <div className={s.errorWindow}>ERROR</div>
       <div className={s.forgotYourPasswordWrapper}>
-        <button className={s.forgotPasswordBtn}>Forgot your password?</button>
+        <Link to="#" className={s.forgotPasswordBtn}>
+          Forgot password?
+        </Link>
       </div>
     </div>
   );

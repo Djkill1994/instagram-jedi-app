@@ -5,7 +5,6 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logo from "../../../assets/icon/1b47f9d0e595.png";
 import s from "./Registration.module.scss";
 import iconFb from "../../../assets/icon/facebook-icon.png";
@@ -24,17 +23,14 @@ import { Link } from "react-router-dom";
 import { AgreementPolicy } from "./AgreementPolicy";
 
 interface StateProps {
-  amount: string;
   password: string;
-  weight: string;
-  weightRange: string;
   showPassword: boolean;
+  email: string;
+  fullName: string;
+  userName: string;
 }
 
-const theme = createTheme();
-
 export const Registration: React.FC = () => {
-  //object Form
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -47,18 +43,12 @@ export const Registration: React.FC = () => {
   };
 
   const [values, setValues] = React.useState<StateProps>({
-    amount: "",
     password: "",
-    weight: "",
-    weightRange: "",
     showPassword: false,
+    email: "",
+    fullName: "",
+    userName: "",
   });
-
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    event.preventDefault();
-  };
 
   const handleChange =
     (prop: keyof StateProps) =>
@@ -74,7 +64,7 @@ export const Registration: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <div>
       <Container component="main">
         <CssBaseline />
         <Box className={s.wrapperBox}>
@@ -84,7 +74,7 @@ export const Registration: React.FC = () => {
           </h2>
           <div className={s.buttonSignInFbWrapper}>
             <Button href={"#"} className={s.buttonSignInFb}>
-              <img alt={"gds"} src={iconFb} />
+              <img alt={"iconFacebook"} src={iconFb} />
               Log in with Facebook
             </Button>
             <div className={s.decorationBorder}>
@@ -100,6 +90,7 @@ export const Registration: React.FC = () => {
             <Grid container spacing={2}>
               <Grid item sm={12}>
                 <TextField
+                  onChange={handleChange("email")}
                   size="small"
                   autoComplete="email"
                   name="email"
@@ -110,6 +101,7 @@ export const Registration: React.FC = () => {
               </Grid>
               <Grid item xs={12} sm={12}>
                 <TextField
+                  onChange={handleChange("fullName")}
                   size="small"
                   fullWidth
                   id="fullName"
@@ -120,6 +112,7 @@ export const Registration: React.FC = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  onChange={handleChange("userName")}
                   size="small"
                   fullWidth
                   id="userName"
@@ -137,7 +130,6 @@ export const Registration: React.FC = () => {
                     className={s.passwordWrapper}
                     id="outlined-adornment-password"
                     type={values.showPassword ? "text" : "password"}
-                    value={values.password}
                     name="password"
                     onChange={handleChange("password")}
                     endAdornment={
@@ -145,7 +137,6 @@ export const Registration: React.FC = () => {
                         <IconButton
                           aria-label="toggle password visibility"
                           onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
                           edge="end"
                         >
                           {values.showPassword ? (
@@ -162,6 +153,12 @@ export const Registration: React.FC = () => {
               </Grid>
             </Grid>
             <Button
+              disabled={
+                !values.password ||
+                !values.email ||
+                !values.userName ||
+                !values.fullName
+              }
               type="submit"
               fullWidth
               variant="contained"
@@ -182,6 +179,6 @@ export const Registration: React.FC = () => {
         <BarInstallApps />
         <Footer />
       </div>
-    </ThemeProvider>
+    </div>
   );
 };

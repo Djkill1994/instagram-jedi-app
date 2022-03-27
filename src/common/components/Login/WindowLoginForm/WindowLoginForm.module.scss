@@ -3,12 +3,11 @@
 }
 
 .barInstallApps, .registrationBarWrapper,
-.forgotYourPasswordWrapper, .loginFbButton,
-.wrapperLoginForm, .logoWrapper {
+.logoWrapper {
   display: flex;
 }
 
-input, .registrationBarWrapper, .windowLogin {
+.registrationBarWrapper, .windowLogin {
   border: 1px solid #dbdbdb;
 }
 
@@ -27,74 +26,10 @@ input, .registrationBarWrapper, .windowLogin {
   }
 }
 
-.emailInputWrapper, .passwordInputWrapper, .registrationBarWrapper {
+.registrationBarWrapper {
   margin-top: 10px;
 }
 
-.sendBtnWrapper {
-  margin-top: 15px;
-}
-
-.decorationBorderWrapper {
-  margin-top: 15px;
-  max-width: 254px;
-}
-
-.loginOnFacebookWrapper {
-  margin-top: 30px;
-  width: 254px;
-  height: 32px;
-
-  :hover {
-    cursor: pointer;
-  }
-
-  :active {
-    opacity: 0.3;
-  }
-}
-
-.loginFbButton {
-  font-size: 14px;
-  color: #4267b1;
-  border: none;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-
-  img {
-    width: 6%;
-  }
-}
-
-.errorWindow {
-  display: none;
-}
-
-.forgotYourPasswordWrapper {
-  padding: 15px 0;
-  width: 254px;
-  height: 15px;
-  align-items: center;
-  justify-content: center;
-
-  button {
-    border: none;
-    background-color: white;
-    color: #2f4e8f;
-    font-size: 10px;
-  }
-
-  button:hover {
-    cursor: pointer;
-  }
-
-  button:active {
-    color: #7695d5;
-  }
-
-}
 
 .registrationBarWrapper {
   height: 63px;
@@ -111,26 +46,9 @@ input, .registrationBarWrapper, .windowLogin {
     font-size: 14px;
     text-decoration: none;
   }
-  a:active{
+
+  a:active {
     opacity: 0.3;
-  }
-
-}
-
-.sendBtnWrapper {
-  .loadingButton {
-    width: 254px;
-    height: 32px;
-    background-color: #0095f6;
-    text-transform: none;
-    color: white;
-
-  }
-
-  .loadingButton:disabled {
-    background-color: #0095f6;
-    opacity: 0.3;
-    color: white;
   }
 
 }

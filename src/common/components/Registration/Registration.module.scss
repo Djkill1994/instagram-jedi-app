@@ -32,6 +32,13 @@
     font-size: 14px;
     text-transform: none;
   }
+
+  .signUpBtn:disabled {
+    background-color: #0095f6;
+    color: white;
+    opacity: 0.3;
+  }
+
 }
 
 .titleSignUp {
