@@ -15,24 +15,4 @@
   align-items: center;
 }
 
-.appBody {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-}
-
-.appWrapperContent {
-  width: 75%;
-  margin: 1%;
-  display: flex;
-  position: relative;
-}
-
-@media (max-width: 850px) {
-  .appWrapperContent {
-    width: 100%;
-    margin: 10px 0;
-  }
-}
-
 /*# sourceMappingURL=App.module.css.map */
