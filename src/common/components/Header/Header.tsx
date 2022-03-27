@@ -4,6 +4,7 @@ import { SearchHeader } from "./SearchHeader";
 import { NavigationBarHeader } from "./NavigationBarHeader";
 
 export const Header = () => {
+  console.log("Header Load");
   return (
     <header className={s.header}>
       <div className={s.logo}>

@@ -1,28 +1,7 @@
-// import React from "react";
-// import s from "./Registration.module.scss";
-// import { FormControl, FormHelperText, Input, InputLabel } from "@mui/material";
-//
-// export const Registration: React.FC = () => {
-//   return (
-//     <div className={s.registrationWrapper}>
-//       <div className={s.registrationWindow}>
-//         <FormControl>
-//           <InputLabel htmlFor="my-input">Email address</InputLabel>
-//           <Input id="my-input" aria-describedby="my-helper-text" />
-//           <FormHelperText id="my-helper-text">
-//             We'll never share your email.
-//           </FormHelperText>
-//         </FormControl>
-//       </div>
-//     </div>
-//   );
-// };
-
 import * as React from "react";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -41,8 +20,10 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { BarInstallApps } from "../BarInstallApps";
 import { Footer } from "../Footer";
+import { Link } from "react-router-dom";
+import { AgreementPolicy } from "./AgreementPolicy";
 
-interface State {
+interface StateProps {
   amount: string;
   password: string;
   weight: string;
@@ -52,7 +33,7 @@ interface State {
 
 const theme = createTheme();
 
-export const Registration = () => {
+export const Registration: React.FC = () => {
   //object Form
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -65,7 +46,7 @@ export const Registration = () => {
     });
   };
 
-  const [values, setValues] = React.useState<State>({
+  const [values, setValues] = React.useState<StateProps>({
     amount: "",
     password: "",
     weight: "",
@@ -80,7 +61,8 @@ export const Registration = () => {
   };
 
   const handleChange =
-    (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    (prop: keyof StateProps) =>
+    (event: React.ChangeEvent<HTMLInputElement>) => {
       setValues({ ...values, [prop]: event.target.value });
     };
 
@@ -189,41 +171,13 @@ export const Registration = () => {
               Sign Up
             </Button>
           </Box>
-          <div className={s.titleDocumentation}>
-            <p>
-              By signing up, you agree to our
-              <Link href={"https://help.instagram.com/581066165581870"}>
-                Terms
-              </Link>
-              ,
-              <Link
-                href={
-                  "https://help.instagram.com/519522125107875/?maybe_redirect_pol=0"
-                }
-              >
-                Data
-              </Link>
-              ,
-              <Link
-                href={
-                  "https://help.instagram.com/519522125107875/?maybe_redirect_pol=0"
-                }
-              >
-                Policy
-              </Link>
-              and
-              <Link href={"https://help.instagram.com/1896641480634370?ref=ig"}>
-                Cookies Policy
-              </Link>
-              .
-            </p>
-          </div>
+          <AgreementPolicy />
         </Box>
       </Container>
       <div className={s.bottomContent}>
-        <div className={s.signInBtn}>
+        <div className={s.signInWrapper}>
           <span>Have an account?</span>
-          <Link>Log in</Link>
+          <Link to="/">Log in</Link>
         </div>
         <BarInstallApps />
         <Footer />

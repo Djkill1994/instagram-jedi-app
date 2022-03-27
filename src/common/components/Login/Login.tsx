@@ -5,6 +5,7 @@ import { WindowLoginForm } from "./WindowLoginForm";
 import { Footer } from "../Footer";
 
 export const Login: React.FC = () => {
+  console.log("Login Load");
   return (
     <div className={s.wrapperPage}>
       <div className={s.wrapperWindow}>

@@ -10,8 +10,7 @@
   background-color: white;
   z-index: 1;
 }
-
-img {
+.header img {
   height: 30px;
   width: 103px;
   margin-left: 70px;

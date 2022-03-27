@@ -9,13 +9,14 @@
   justify-content: space-between;
   background-color: white;
   z-index: 1;
+
+  img {
+    height: 30px;
+    width: 103px;
+    margin-left: 70px;
+  }
 }
 
-img {
-  height: 30px;
-  width: 103px;
-  margin-left: 70px;
-}
 
 @media (max-width: 850px) {
   img {

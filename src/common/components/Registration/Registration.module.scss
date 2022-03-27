@@ -67,26 +67,7 @@
   margin-top: 15px;
 }
 
-.titleDocumentation {
-  margin-top: 15px;
-
-  p {
-    display: flex;
-    font-size: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 210px;
-    gap: 2px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #8e8e8e;
-    font-weight: bold;
-  }
-}
-
-.signInBtn {
+.signInWrapper {
   width: 350px;
   height: 70px;
   background-color: white;
@@ -99,6 +80,9 @@
 
   a {
     text-decoration: none;
+    color: #0095f6;
+    font-weight: 600;
+    font-size: 14px;
   }
 
   a:hover {

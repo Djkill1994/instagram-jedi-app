@@ -9,7 +9,7 @@ interface ComponentLinkPropsType {
 
 const ComponentLink: React.FC<ComponentLinkPropsType> = ({ url, title }) => {
   return (
-    <Link href={url} underline="none" className={s.Link}>
+    <Link href={url} underline="none" className={s.Link} target="_blank">
       {title}
     </Link>
   );
