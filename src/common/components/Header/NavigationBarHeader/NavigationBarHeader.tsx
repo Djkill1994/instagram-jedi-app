@@ -6,6 +6,7 @@ import { ReactComponent as FindPeople } from "../../../../assets/svg/findPeople.
 import { ReactComponent as WatsNews } from "../../../../assets/svg/watsNews.svg";
 import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
+import { ROUTE_PATHS } from "../../App/App";
 
 export const NavigationBarHeader = () => {
   return (
@@ -26,7 +27,7 @@ export const NavigationBarHeader = () => {
         <WatsNews />
       </div>
       <div className={s.userOptions}>
-        <Link to="/">
+        <Link to={ROUTE_PATHS.Login}>
           <Avatar sx={{ width: 26, height: 26 }} />
         </Link>
       </div>

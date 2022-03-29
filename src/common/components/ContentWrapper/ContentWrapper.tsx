@@ -4,14 +4,12 @@ import { Navbar } from "../Navbar";
 import { PostsContainer } from "../../../features/post/components/PostsContainer";
 import React from "react";
 
-export const ContentWrapper: React.FC = () => {
+export const ContentWrapper: React.FC = ({ children }) => {
   return (
     <div className={s.appBody}>
       <Header />
       <Navbar />
-      <div className={s.appWrapperContent}>
-        <PostsContainer />
-      </div>
+      <div className={s.appWrapperContent}>{children}</div>
     </div>
   );
 };

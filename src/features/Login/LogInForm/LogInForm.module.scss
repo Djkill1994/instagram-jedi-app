@@ -1,0 +1,36 @@
+.loginFbButton {
+  font-size: 14px;
+  color: #4267b1;
+  gap: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 6%;
+  }
+}
+
+.stack {
+  margin-top: 10px;
+}
+
+.loginFbButton:active {
+  opacity: 0.3;
+}
+
+.errorWindow {
+  display: none;
+}
+
+.forgotPasswordBtn {
+  color: #2f4e8f;
+  font-size: 11px;
+  text-decoration: none;
+  padding-bottom: 25px;
+}
+
+.forgotPasswordBtn:active {
+  opacity: 0.3;
+}

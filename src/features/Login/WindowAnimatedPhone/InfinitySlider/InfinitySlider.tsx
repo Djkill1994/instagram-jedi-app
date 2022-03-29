@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import s from "./InfinitySlider.module.scss";
-import img1 from "../../../../../assets/image/dynamicImages/img1.png";
-import img2 from "../../../../../assets/image/dynamicImages/img2.png";
-import img3 from "../../../../../assets/image/dynamicImages/img3.png";
-import img4 from "../../../../../assets/image/dynamicImages/img4.png";
+import img1 from "../../../../assets/image/dynamicImages/img1.png";
+import img2 from "../../../../assets/image/dynamicImages/img2.png";
+import img3 from "../../../../assets/image/dynamicImages/img3.png";
+import img4 from "../../../../assets/image/dynamicImages/img4.png";
 import clsx from "clsx";
 
 const images = [img1, img2, img3, img4];

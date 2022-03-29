@@ -1,0 +1,22 @@
+.passwordWrapper {
+  display: flex !important;
+}
+
+.wrapperLoginForm {
+  input {
+    height: 15px;
+    background-color: #FAFAFA;
+  }
+
+  label, input {
+    font-size: 12px;
+  }
+
+  .loadingButton {
+    margin-top: 7px;
+    height: 30px;
+    background-color: #0095f6;
+    text-transform: none;
+    color: white;
+  }
+}

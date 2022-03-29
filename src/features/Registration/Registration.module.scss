@@ -1,0 +1,68 @@
+.wrapperBox {
+  margin: 35px auto 15px;
+}
+
+.loginWindowForm {
+  width: 350px;
+  border: 1px solid #dbdbdb;
+  background-color: white;
+  color: #8e8e8e;
+  padding: 30px 0;
+
+  img {
+    width: 48%;
+  }
+}
+
+.titleSignUp {
+  width: 266px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.buttonSignInFb {
+  a {
+    background-color: #0095f6;
+    color: white;
+    font-size: 14px;
+    text-transform: none;
+    width: 268px;
+    height: 33px;
+    gap: 6px;
+  }
+
+  a:hover {
+    background-color: #0095f6;
+  }
+
+  a:active {
+    opacity: 0.5;
+  }
+
+  img {
+    width: 10%;
+  }
+}
+
+.signInWrapper {
+  width: 350px;
+  height: 70px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+
+  a {
+    text-decoration: none;
+    color: #0095f6;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  a:active {
+    opacity: 0.3;
+  }
+}
