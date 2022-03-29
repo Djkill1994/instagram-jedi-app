@@ -4,7 +4,7 @@ import logo from "../../../assets/icon/1b47f9d0e595.png";
 import s from "./Registration.module.scss";
 import iconFb from "../../../assets/icon/facebook-icon.png";
 import { DecorationBorder } from "../../../common/components/DecorationBorder";
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { BarInstallApps } from "../../../common/components/BarInstallApps";
 import { Footer } from "../../../common/components/Footer";
 import { Link } from "react-router-dom";
@@ -24,13 +24,18 @@ export const Registration: React.FC = () => {
         className={s.loginWindowForm}
       >
         <img alt={"Logo"} src={logo} />
-        <h2 className={s.titleSignUp}>
+        <Typography
+          textAlign="center"
+          width={266}
+          fontSize={16}
+          fontWeight="bold"
+        >
           Sign up to see photos and videos from your friends.
-        </h2>
+        </Typography>
         <div className={s.buttonSignInFb}>
           <Button href={"#"}>
             <img alt={"iconFacebook"} src={iconFb} />
-            Log in with Facebook
+            <Typography fontSize={14}>Log in with Facebook</Typography>
           </Button>
         </div>
         <DecorationBorder />
@@ -44,7 +49,7 @@ export const Registration: React.FC = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <span>Have an account?</span>
+        <Typography fontSize={14}>Have an account?</Typography>
         <Link to={ROUTE_PATHS.Login}>Log in</Link>
       </Stack>
       <BarInstallApps />

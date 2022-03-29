@@ -1,15 +1,12 @@
 import React from "react";
 import { Link } from "@mui/material";
 
-interface ComponentLinkPropsType {
+interface ComponentLinkProps {
   url: string;
   title: string;
 }
 
-export const ComponentLink: React.FC<ComponentLinkPropsType> = ({
-  url,
-  title,
-}) => {
+export const ComponentLink: React.FC<ComponentLinkProps> = ({ url, title }) => {
   return (
     <Link href={url} underline="none" target="_blank">
       {title}

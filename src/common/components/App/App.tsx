@@ -5,6 +5,7 @@ import { Registration } from "../../../features/Registration/components";
 import { Routes, Route } from "react-router-dom";
 import { ContentWrapper } from "../ContentWrapper";
 import { PostsContainer } from "../../../features/Post/components/PostsContainer";
+import { Stack } from "@mui/material";
 
 export const ROUTE_PATHS = {
   Login: "/",
@@ -16,7 +17,7 @@ export const ROUTE_PATHS = {
 
 export const App: React.FC = () => {
   return (
-    <div className={s.appWrapper}>
+    <Stack flexDirection="column">
       <Routes>
         <Route path={ROUTE_PATHS.Login} element={<Login />} />
         <Route path={ROUTE_PATHS.SignUp} element={<Registration />} />
@@ -25,6 +26,6 @@ export const App: React.FC = () => {
           element={<ContentWrapper children={<PostsContainer />} />}
         />
       </Routes>
-    </div>
+    </Stack>
   );
 };

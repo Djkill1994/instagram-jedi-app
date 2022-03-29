@@ -8,14 +8,13 @@ import { ROUTE_PATHS } from "../../../../common/components/App/App";
 
 export const LogInForm: React.FC = () => {
   return (
-    <>
+    <Stack spacing={2}>
       <CustomForm />
       <Stack
         spacing={3}
         justifyContent="center"
         alignItems="center"
         direction="column"
-        className={s.stack}
       >
         <DecorationBorder />
         <Stack
@@ -36,6 +35,6 @@ export const LogInForm: React.FC = () => {
           Forgot password?
         </Link>
       </Stack>
-    </>
+    </Stack>
   );
 };

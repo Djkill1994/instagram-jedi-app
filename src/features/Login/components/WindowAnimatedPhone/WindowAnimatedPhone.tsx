@@ -1,10 +1,11 @@
 import React from "react";
 import s from "./WindowAnimatedPhone.module.scss";
 import { InfinitySlider } from "./InfinitySlider";
+import { Stack } from "@mui/material";
 
 export const WindowAnimatedPhone: React.FC = () => {
   return (
-    <div className={s.phoneImages}>
+    <Stack className={s.phoneImages}>
       <img
         alt={"Phone"}
         src={
@@ -15,6 +16,6 @@ export const WindowAnimatedPhone: React.FC = () => {
       <div className={s.dynamicImg}>
         <InfinitySlider />
       </div>
-    </div>
+    </Stack>
   );
 };
