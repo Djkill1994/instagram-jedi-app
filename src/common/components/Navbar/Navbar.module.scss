@@ -1,9 +1,14 @@
 .nav {
-    margin: 1%;
-    border: solid 1px;
-    top: 75px;
-    position: sticky;
-    width: 20%;
-    height: 10%;
+  margin: 1%;
+  border: solid 1px;
+  top: 75px;
+  position: sticky;
+  width: 20%;
+  height: 10%;
+}
 
+@media (max-width: 850px) {
+  .nav {
+    display: none;
+  }
 }

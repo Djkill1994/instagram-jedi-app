@@ -1,0 +1,34 @@
+.formWrapper {
+  input {
+    font-size: 12px;
+    background-color: #fafafa;
+    width: 235px;
+    height: 18px;
+  }
+
+  .passwordWrapper {
+    width: 264px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  .signUpBtn:disabled {
+    background-color: #0095f6;
+    color: white;
+    opacity: 0.3;
+  }
+
+  .signUpBtn:hover {
+    background-color: #0095f6;
+  }
+
+  .signUpBtn {
+    width: 266px;
+    height: 33px;
+    background-color: #0095f6;
+    font-size: 14px;
+    text-transform: none;
+  }
+}

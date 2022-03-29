@@ -6,7 +6,6 @@ import { useGetPostsQuery } from "../../api/post.api";
 
 export const PostsContainer: React.FC = () => {
   const { data: posts, error, isLoading } = useGetPostsQuery();
-
   return (
     <div className={s.wrapperContain}>
       {isLoading && <CircularProgress />}

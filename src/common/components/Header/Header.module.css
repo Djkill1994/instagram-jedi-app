@@ -10,11 +10,16 @@
   background-color: white;
   z-index: 1;
 }
-
-img {
+.header img {
   height: 30px;
   width: 103px;
   margin-left: 70px;
+}
+
+@media (max-width: 850px) {
+  img {
+    margin-left: 2px;
+  }
 }
 
 /*# sourceMappingURL=Header.module.css.map */

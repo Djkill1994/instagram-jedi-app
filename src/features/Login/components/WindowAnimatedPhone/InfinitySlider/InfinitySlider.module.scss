@@ -1,0 +1,23 @@
+.img {
+  width: 246px;
+  height: 519px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.activeImg {
+  opacity: 1;
+  transition: opacity 1.5s ease-in;
+  visibility: visible;
+  z-index: 2;
+}
+
+.imageOut {
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+  visibility: visible;
+}
+

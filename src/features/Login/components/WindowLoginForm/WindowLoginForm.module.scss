@@ -1,0 +1,37 @@
+.loginFormWrapper {
+  width: 348px;
+}
+
+.registrationBarWrapper, .windowLogin {
+  border: 1px solid #dbdbdb;
+}
+
+.windowLogin {
+  padding: 0 40px;
+  background-color: white;
+}
+
+.logoWrapper {
+  margin: 40px auto 30px;
+  width: 175px;
+}
+
+.registrationBarWrapper {
+  height: 63px;
+  font-size: 14px;
+  background-color: white;
+  margin-top: 10px;
+  width: 346px;
+
+  a {
+    color: #0095f6;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  a:active {
+    opacity: 0.3;
+  }
+}

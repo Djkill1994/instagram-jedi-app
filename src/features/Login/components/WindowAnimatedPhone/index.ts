@@ -1,0 +1,1 @@
+export { WindowAnimatedPhone } from "./WindowAnimatedPhone";

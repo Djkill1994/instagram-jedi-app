@@ -7,4 +7,10 @@
   height: 10%;
 }
 
+@media (max-width: 850px) {
+  .nav {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=Navbar.module.css.map */
