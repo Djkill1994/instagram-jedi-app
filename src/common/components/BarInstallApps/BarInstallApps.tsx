@@ -1,12 +1,16 @@
 import React from "react";
 import s from "./BarInstallApps.module.scss";
-import { Link } from "@mui/material";
+import { Link, Stack } from "@mui/material";
 
 export const BarInstallApps: React.FC = () => {
   return (
-    <div className={s.installAppsWrapper}>
+    <Stack
+      className={s.installAppsWrapper}
+      alignItems="center"
+      flexDirection="column"
+    >
       <span>Get the app.</span>
-      <div className={s.barInstallApps}>
+      <Stack direction="row" spacing={1} className={s.barInstallApps}>
         <Link
           target="_blank"
           className={s.installAppStore}
@@ -33,7 +37,7 @@ export const BarInstallApps: React.FC = () => {
             }
           />
         </Link>
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 };

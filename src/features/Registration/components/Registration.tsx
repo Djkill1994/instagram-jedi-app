@@ -1,15 +1,15 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import logo from "../../assets/icon/1b47f9d0e595.png";
+import logo from "../../../assets/icon/1b47f9d0e595.png";
 import s from "./Registration.module.scss";
-import iconFb from "../../assets/icon/facebook-icon.png";
-import { DecorationBorder } from "../../common/components/DecorationBorder";
+import iconFb from "../../../assets/icon/facebook-icon.png";
+import { DecorationBorder } from "../../../common/components/DecorationBorder";
 import { Stack } from "@mui/material";
-import { BarInstallApps } from "../../common/components/BarInstallApps";
-import { Footer } from "../../common/components/Footer";
+import { BarInstallApps } from "../../../common/components/BarInstallApps";
+import { Footer } from "../../../common/components/Footer";
 import { Link } from "react-router-dom";
 import { AgreementPolicy } from "./AgreementPolicy";
-import { ROUTE_PATHS } from "../../common/components/App/App";
+import { ROUTE_PATHS } from "../../../common/components/App/App";
 import { RegistrationCustomForm } from "./RegistrationCustomForm";
 
 export const Registration: React.FC = () => {

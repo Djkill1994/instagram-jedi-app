@@ -1,23 +1,21 @@
 .loginFbButton {
-  font-size: 14px;
-  color: #4267b1;
-  gap: 10px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   img {
     width: 6%;
   }
-}
 
-.stack {
-  margin-top: 10px;
+  a {
+    font-size: 14px;
+    color: #4267b1;
+    text-decoration: none;
+  }
 }
 
 .loginFbButton:active {
   opacity: 0.3;
+}
+
+.stack {
+  margin-top: 10px;
 }
 
 .errorWindow {

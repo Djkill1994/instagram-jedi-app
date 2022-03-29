@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className={s.footer}>
       <Stack spacing={0.5} justifyContent="center" alignItems="center">
-        <Stack className={s.sectionOne} direction="row" spacing={2}>
+        <Stack direction="row" spacing={2}>
           <ComponentLink
             url={"https://about.facebook.com/meta"}
             title={"Meta"}
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
           />
         </Stack>
         <Stack spacing={2}>
-          <Stack className={s.sectionTwo} direction="row" spacing={2}>
+          <Stack direction="row" spacing={2}>
             <ComponentLink
               url={"https://www.instagram.com/topics/dance-and-performance/"}
               title={"Dance"}
@@ -77,13 +77,12 @@ export const Footer: React.FC = () => {
             />
           </Stack>
           <Stack
-            className={s.barTwo}
             direction="row"
             spacing={1}
             justifyContent="center"
             alignItems="center"
           >
-            <FormControl className={s.formControl}>
+            <FormControl>
               <NativeSelect className={s.nativeSelect}>
                 <option>English</option>
                 <option>Русский</option>

@@ -2,42 +2,26 @@
   width: 348px;
 }
 
-.barInstallApps, .registrationBarWrapper,
-.logoWrapper {
-  display: flex;
-}
-
 .registrationBarWrapper, .windowLogin {
   border: 1px solid #dbdbdb;
 }
 
 .windowLogin {
-  margin-top: 20px;
   padding: 0 40px;
   background-color: white;
 }
 
 .logoWrapper {
   margin: 40px auto 30px;
-  justify-content: center;
-
-  img {
-    width: 65%;
-  }
+  width: 175px;
 }
-
-.registrationBarWrapper {
-  margin-top: 10px;
-}
-
 
 .registrationBarWrapper {
   height: 63px;
-  align-items: center;
-  justify-content: center;
   font-size: 14px;
-  gap: 5px;
   background-color: white;
+  margin-top: 10px;
+  width: 348px;
 
   a {
     color: #0095f6;
@@ -50,6 +34,4 @@
   a:active {
     opacity: 0.3;
   }
-
 }
-

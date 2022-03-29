@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
-import { ROUTE_PATHS } from "../../../../common/components/App/App";
+import { ROUTE_PATHS } from "../../../../../common/components/App/App";
 
 interface LoginFormState {
   password: string;
@@ -30,11 +30,6 @@ export const CustomForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
     setLoading(true);
   };
 

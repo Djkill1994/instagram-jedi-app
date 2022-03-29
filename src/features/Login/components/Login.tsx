@@ -2,16 +2,16 @@ import React from "react";
 import s from "./Login.module.scss";
 import { WindowAnimatedPhone } from "./WindowAnimatedPhone";
 import { WindowLoginForm } from "./WindowLoginForm";
-import { Footer } from "../../common/components/Footer";
+import { Footer } from "../../../common/components/Footer";
+import { Stack } from "@mui/material";
 
 export const Login: React.FC = () => {
-  console.log("Login Load");
   return (
     <div className={s.wrapperPage}>
-      <div className={s.wrapperWindow}>
+      <Stack direction="row" className={s.wrapperWindow}>
         <WindowAnimatedPhone />
         <WindowLoginForm />
-      </div>
+      </Stack>
       <Footer />
     </div>
   );
