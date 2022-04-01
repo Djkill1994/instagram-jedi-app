@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./CustomForm.module.scss";
 import {
   Box,
@@ -12,7 +12,10 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
-import { ROUTE_PATHS } from "../../../../../common/components/App/App";
+import { useLoginMutation } from "../../../api/login.api";
+import { setAuth } from "../../../slices/login.slice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormState {
   password: string;
@@ -21,16 +24,27 @@ interface LoginFormState {
 }
 
 export const CustomForm: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const [values, setValues] = useState<LoginFormState>({
     password: "",
     email: "",
     showPassword: false,
   });
+  const [login, { isLoading, isSuccess, isError }] = useLoginMutation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(setAuth({ isAuth: true }));
+      navigate("/content", { replace: true });
+    }
+  }, [dispatch, isSuccess, navigate]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setLoading(true);
+    login({
+      password: values.password,
+      email: values.email,
+    });
   };
 
   const handleChange =
@@ -64,6 +78,7 @@ export const CustomForm: React.FC = () => {
             fullWidth
             id="email"
             label="Mobile Number or Email"
+            error={isError}
           />
         </Grid>
         <Grid item xs={12}>
@@ -80,6 +95,7 @@ export const CustomForm: React.FC = () => {
               type={values.showPassword ? "text" : "password"}
               name="password"
               onChange={handleChange("password")}
+              error={isError}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -95,14 +111,13 @@ export const CustomForm: React.FC = () => {
             />
           </FormControl>
         </Grid>
-        <Grid item xs={12} className={s.qwe}>
+        <Grid item xs={12}>
           <LoadingButton
             className={s.loadingButton}
-            loading={loading}
+            loading={isLoading}
             disabled={!values.password || !values.email}
             loadingPosition="center"
             variant="contained"
-            href={ROUTE_PATHS.Content}
             fullWidth
             type="submit"
           >

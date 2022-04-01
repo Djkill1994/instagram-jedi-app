@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 import { LogInForm } from "../LogInForm";
 import { ROUTE_PATHS } from "../../../../common/components/App/App";
 import { Stack } from "@mui/material";
+import { useLoginMutation } from "../../api/login.api";
 
 export const WindowLoginForm: React.FC = () => {
+  const [isError] = useLoginMutation();
   return (
     <Stack justifyContent="center" className={s.loginFormWrapper}>
       <Stack

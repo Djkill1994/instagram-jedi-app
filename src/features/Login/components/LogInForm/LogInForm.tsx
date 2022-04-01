@@ -30,7 +30,7 @@ export const LogInForm: React.FC = () => {
             src={"https://www.facebook.com/images/fb_icon_325x325.png"}
           />
         </Stack>
-        <div className={s.errorWindow}>ERROR</div>
+        <div className={s.errorWindow}>Error</div>
         <Link to={ROUTE_PATHS.RecPassword} className={s.forgotPasswordBtn}>
           Forgot password?
         </Link>
