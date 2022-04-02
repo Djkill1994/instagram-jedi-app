@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import s from "./RegistrationCustomForm.module.scss";
 import Button from "@mui/material/Button";
@@ -12,6 +12,8 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useRegistrationMutation } from "../../api/registration.api";
+import { useNavigate } from "react-router-dom";
 
 interface RegistrationFormState {
   password: string;
@@ -29,9 +31,17 @@ export const RegistrationCustomForm: React.FC = () => {
     fullName: "",
     userName: "",
   });
+  const [registerUser, { isSuccess }] = useRegistrationMutation();
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    registerUser({
+      password: values.password,
+      email: values.email,
+      fullName: values.fullName,
+      userName: values.userName,
+    });
   };
 
   const handleChange =
@@ -46,6 +56,12 @@ export const RegistrationCustomForm: React.FC = () => {
       showPassword: !values.showPassword,
     });
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/", { replace: true });
+    }
+  }, [isSuccess, navigate]);
 
   return (
     <Box
