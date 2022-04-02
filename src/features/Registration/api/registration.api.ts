@@ -12,7 +12,7 @@ export const registrationApi = createApi({
       query(data) {
         return {
           url: "signUp",
-          method: "post",
+          method: "put",
           body: data,
         };
       },

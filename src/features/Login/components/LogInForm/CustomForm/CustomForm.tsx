@@ -32,12 +32,6 @@ export const CustomForm: React.FC = () => {
   });
   const [login, { isLoading, isSuccess, isError }] = useLoginMutation();
   const navigate = useNavigate();
-  useEffect(() => {
-    if (isSuccess) {
-      dispatch(setAuth({ isAuth: true }));
-      navigate("/content", { replace: true });
-    }
-  }, [dispatch, isSuccess, navigate]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -59,6 +53,13 @@ export const CustomForm: React.FC = () => {
       showPassword: !values.showPassword,
     });
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(setAuth(true));
+      navigate("/content", { replace: true });
+    }
+  }, [dispatch, isSuccess, navigate]);
 
   return (
     <Box

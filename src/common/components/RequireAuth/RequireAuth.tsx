@@ -5,7 +5,6 @@ import { loginSelector } from "../../../features/Login/slices/login.slice";
 export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const { isAuth } = useSelector(loginSelector);
   const location = useLocation();
-  console.log(isAuth);
   if (!isAuth) {
     return <Navigate to="/" state={{ from: location }} replace />;
   }

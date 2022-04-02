@@ -1,4 +1,4 @@
-export interface IUsers {
+export interface IUser {
   id: number;
   email: string;
   userName: string;
@@ -6,9 +6,9 @@ export interface IUsers {
   password: string;
 }
 
-export type IUsersApi = IUsers[];
+export type IUsersApi = IUser[];
 
-const users = [
+export const usersResult: IUsersApi = [
   {
     id: 1,
     email: "test1@gmail.com",
@@ -25,5 +25,3 @@ const users = [
     password: "123456",
   },
 ];
-
-export const usersResult: IUsersApi = users;

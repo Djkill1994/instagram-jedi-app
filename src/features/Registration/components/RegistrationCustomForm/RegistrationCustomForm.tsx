@@ -31,24 +31,18 @@ export const RegistrationCustomForm: React.FC = () => {
     fullName: "",
     userName: "",
   });
-  const [pushUser, { isSuccess }] = useRegistrationMutation();
+  const [registerUser, { isSuccess }] = useRegistrationMutation();
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    pushUser({
+    registerUser({
       password: values.password,
       email: values.email,
       fullName: values.fullName,
       userName: values.userName,
     });
   };
-
-  useEffect(() => {
-    if (isSuccess) {
-      navigate("/", { replace: true });
-    }
-  }, [isSuccess, navigate]);
 
   const handleChange =
     (prop: keyof RegistrationFormState) =>
@@ -62,6 +56,12 @@ export const RegistrationCustomForm: React.FC = () => {
       showPassword: !values.showPassword,
     });
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/", { replace: true });
+    }
+  }, [isSuccess, navigate]);
 
   return (
     <Box

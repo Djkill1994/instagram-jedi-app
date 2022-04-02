@@ -14,7 +14,7 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     setAuth: (state, { payload }) => {
-      state.isAuth = payload.isAuth;
+      state.isAuth = payload;
     },
   },
 });

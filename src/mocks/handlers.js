@@ -14,16 +14,9 @@ export const handlers = [
     );
     return res(ctx.status(isUserExist ? 200 : 500));
   }),
-  rest.post(`${BACKEND_URL}/signUp`, (req, res, ctx) => {
-    const { email, password, fullName, userName } = req.body;
-    const newUser = {
-      userName,
-      email,
-      password,
-      fullName,
-    };
-    const pushUser = usersResult.push(newUser);
-    return res(ctx.json(pushUser));
+  rest.put(`${BACKEND_URL}/signUp`, (req, res, ctx) => {
+    usersResult.push(req.body);
+    return res(ctx.json(req.body));
   }),
   //
   // Examples
