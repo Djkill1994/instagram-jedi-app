@@ -1,11 +1,10 @@
 .navigationBar {
   display: flex;
   gap: 20px;
-  margin-right: 70px;
 }
 
 @media (max-width: 850px) {
   .navigationBar {
-    margin-right: 0;
+
   }
 }

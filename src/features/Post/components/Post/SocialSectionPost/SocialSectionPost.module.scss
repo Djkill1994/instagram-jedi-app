@@ -1,20 +1,29 @@
 .socialSectionWrapper {
-  padding: 0 20px;
-}
-
-.infoBlock {
-  display: flex;
-  gap: 10px
+  padding: 0 10px;
+  font-size: 14px;
 }
 
 .views {
   padding: 10px 0;
 }
 
-.author, .views {
-  font-weight: bold;
+.date {
+  margin-top: 5px !important;
+  opacity: 0.6;
 }
 
 .comments {
-  width: 100%;
+  border: none;
+  background-color: white;
+  display: flex;
+  padding: 0;
+  opacity: 0.6;
+}
+
+.comments:hover {
+  cursor: pointer;
+}
+
+.comments:active {
+  opacity: 0.3;
 }
