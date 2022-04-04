@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className={s.footer}>
       <Stack spacing={0.5} justifyContent="center" alignItems="center">
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={2} display="block">
           <ComponentLink
             url={"https://about.facebook.com/meta"}
             title={"Meta"}

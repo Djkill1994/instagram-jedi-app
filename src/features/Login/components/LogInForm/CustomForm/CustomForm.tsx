@@ -72,6 +72,7 @@ export const CustomForm: React.FC = () => {
       <Grid container spacing={1.2}>
         <Grid item sm={12}>
           <TextField
+            className={s.emailWrapper}
             onChange={handleChange("email")}
             size="small"
             autoComplete="email"
