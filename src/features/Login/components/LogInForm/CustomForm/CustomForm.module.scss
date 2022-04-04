@@ -2,6 +2,10 @@
   display: flex !important;
 }
 
+.emailWrapper {
+  width: 266px !important;
+}
+
 .wrapperLoginForm {
   margin-top: 0 !important;
 
@@ -19,6 +23,12 @@
     height: 30px;
     background-color: #0095f6;
     text-transform: none;
+    color: white;
+  }
+
+  .loadingButton:disabled {
+    opacity: 0.3;
+    background-color: #0095f6;
     color: white;
   }
 }
