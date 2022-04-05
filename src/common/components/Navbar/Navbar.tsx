@@ -6,6 +6,5 @@ export const Navbar: React.FC = () => (
     <div>nav 1</div>
     <div>nav 2</div>
     <div>nav 3</div>
-    <input placeholder="Search" />
   </div>
 );

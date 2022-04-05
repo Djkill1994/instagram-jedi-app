@@ -1,6 +1,7 @@
 import s from "./SocialSectionPost.module.scss";
 import React from "react";
 import { SocialSectionBar } from "../SocialSectionBar";
+import { Stack, Typography } from "@mui/material";
 
 interface SocialSectionPostProps {
   userName: string;
@@ -16,19 +17,21 @@ export const SocialSectionPost: React.FC<SocialSectionPostProps> = ({
   views,
 }) => {
   return (
-    <div className={s.socialSectionWrapper}>
+    <Stack className={s.socialSectionWrapper}>
       <SocialSectionBar />
-      <div className={s.views}>
-        <span>{views}: Views</span>
-      </div>
-      <div className={s.infoBlock}>
-        <span className={s.author}>{userName}</span>
-        <span className={s.description}>{description}</span>
-      </div>
-      <div className={s.comments}>View all comments</div>
-      <div className={s.publicationDate}>
-        <span>{datePublication}</span>
-      </div>
-    </div>
+      <Typography className={s.views} fontWeight="bold" fontSize={14}>
+        {views} views
+      </Typography>
+      <Stack direction="row" spacing={1.5}>
+        <Typography fontWeight="bold" fontSize={14}>
+          {userName}
+        </Typography>
+        <Typography fontSize={14}>{description}</Typography>
+      </Stack>
+      <button className={s.comments}>View all comments</button>
+      <Typography fontSize={12} className={s.date}>
+        {datePublication}
+      </Typography>
+    </Stack>
   );
 };
