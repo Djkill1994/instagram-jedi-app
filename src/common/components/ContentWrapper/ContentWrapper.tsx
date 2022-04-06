@@ -1,6 +1,5 @@
 import s from "./ContentWrapper.module.scss";
 import { Header } from "../Header";
-import { Navbar } from "../Navbar";
 import React from "react";
 import { Stack } from "@mui/material";
 
@@ -13,7 +12,6 @@ export const ContentWrapper: React.FC = ({ children }) => {
       justifyContent="center"
     >
       <Header />
-      <Navbar />
       <Stack className={s.appWrapperContent}>{children}</Stack>
     </Stack>
   );

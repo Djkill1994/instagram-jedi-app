@@ -1,9 +1,10 @@
 .nav {
   border: 1px solid #dbdbdb;
-  top: 72px;
+  top: 76px;
   position: sticky;
   width: 300px;
   height: 100px;
+  margin-left: 40px;
 }
 
 @media (max-width: 1000px) {
@@ -11,5 +12,3 @@
     display: none;
   }
 }
-
-

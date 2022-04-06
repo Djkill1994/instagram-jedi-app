@@ -1,36 +1,33 @@
 import s from "./NavigationBarHeader.module.scss";
-import { ReactComponent as Home } from "../../../../assets/svg/home.svg";
-import { ReactComponent as Message } from "../../../../assets/svg/message.svg";
+import { ReactComponent as HomeActive } from "../../../../assets/svg/homeActive.svg";
+import { ReactComponent as MessageActive } from "../../../../assets/svg/messageActive.svg";
 import { ReactComponent as NewPost } from "../../../../assets/svg/newPost.svg";
 import { ReactComponent as FindPeople } from "../../../../assets/svg/findPeople.svg";
 import { ReactComponent as WatsNews } from "../../../../assets/svg/watsNews.svg";
-import { Avatar } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Avatar, Stack } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../App/App";
+import React from "react";
 
 export const NavigationBarHeader = () => {
+  const navigate = useNavigate();
   return (
-    <div className={s.navigationBar}>
-      <div className={s.homeBtn}>
-        <Home />
-      </div>
-      <div className={s.messageBtn}>
-        <Message />
-      </div>
-      <div className={s.newPostBtn}>
-        <NewPost />
-      </div>
-      <div className={s.findPeopleBtn}>
-        <FindPeople />
-      </div>
-      <div className={s.watsNewsBtn}>
-        <WatsNews />
-      </div>
-      <div className={s.userOptions}>
-        <Link to={ROUTE_PATHS.Login}>
-          <Avatar sx={{ width: 26, height: 26 }} />
-        </Link>
-      </div>
-    </div>
+    <Stack direction="row" spacing={2}>
+      <button onClick={() => navigate("/content", { replace: true })}>
+        <HomeActive />
+      </button>
+      <button onClick={() => navigate("/messages", { replace: true })}>
+        <MessageActive />
+      </button>
+      <NewPost />
+
+      <FindPeople />
+
+      <WatsNews />
+
+      <Link to={ROUTE_PATHS.Login}>
+        <Avatar sx={{ width: 26, height: 26 }} />
+      </Link>
+    </Stack>
   );
 };
