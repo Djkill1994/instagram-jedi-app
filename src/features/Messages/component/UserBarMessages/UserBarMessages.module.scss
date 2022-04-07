@@ -1,0 +1,41 @@
+.usersBar {
+  width: 349px;
+  height: 483px;
+  border-right: 1px solid #dbdbdb;
+}
+
+.headerUserBar {
+  border-bottom: 1px solid #dbdbdb;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.barMessageItem {
+  margin-top: 10px;
+}
+
+.userMessageItem {
+  height: 55px;
+  padding: 8px 20px;
+}
+
+.userMessageItem:active {
+  background-color: #dbdbdb;
+}
+
+.active {
+  background-color: #dbdbdb;
+}
+
+.userMessageItem:hover {
+  cursor: pointer;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+}
+
+.lastMessageText {
+  opacity: 0.5;
+}
