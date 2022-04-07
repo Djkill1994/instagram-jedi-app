@@ -8,7 +8,6 @@ interface MessagesUserState {
   userName: string;
   userAvatar: string;
   lastVisit: string;
-  messages: string;
 }
 
 const messagesUser: MessagesUserState[] = [
@@ -17,20 +16,17 @@ const messagesUser: MessagesUserState[] = [
     userAvatar:
       "https://i.pinimg.com/736x/84/60/94/846094561ef58c77eb5c38b59b9a1e4f.jpg",
     lastVisit: "2",
-    messages: "Hello world",
   },
   {
     userName: "Triss",
     userAvatar:
       "https://images.hdqwalls.com/wallpapers/thumb/wanda-what-if-4k-2o.jpg",
     lastVisit: "5",
-    messages: "Hello Vlad",
   },
   {
     userName: "Geralt",
     userAvatar: "https://avatarfiles.alphacoders.com/148/thumb-148716.png",
     lastVisit: "1",
-    messages: "Hello People",
   },
 ];
 

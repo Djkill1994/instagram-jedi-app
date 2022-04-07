@@ -1,4 +1,3 @@
-import s from "./NavigationBarHeader.module.scss";
 import { ReactComponent as HomeActive } from "../../../../assets/svg/homeActive.svg";
 import { ReactComponent as MessageActive } from "../../../../assets/svg/messageActive.svg";
 import { ReactComponent as NewPost } from "../../../../assets/svg/newPost.svg";
@@ -11,12 +10,16 @@ import React from "react";
 
 export const NavigationBarHeader = () => {
   const navigate = useNavigate();
+  const handleClick = (way: string) => {
+    navigate(`${way}`, { replace: true });
+  };
+
   return (
     <Stack direction="row" spacing={2}>
-      <button onClick={() => navigate("/content", { replace: true })}>
+      <button onClick={() => handleClick("/content")}>
         <HomeActive />
       </button>
-      <button onClick={() => navigate("/messages", { replace: true })}>
+      <button onClick={() => handleClick("/messages")}>
         <MessageActive />
       </button>
       <NewPost />
