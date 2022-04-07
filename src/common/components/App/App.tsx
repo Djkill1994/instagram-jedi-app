@@ -6,11 +6,13 @@ import { ContentWrapper } from "../ContentWrapper";
 import { PostsContainer } from "../../../features/Post/components/PostsContainer";
 import { Stack } from "@mui/material";
 import { RequireAuth } from "../RequireAuth";
+import { Messages } from "../../../features/Messages/component";
 
 export const ROUTE_PATHS = {
   Login: "/",
   SignUp: "signUp",
   Content: "content",
+  Messages: "messages",
   FbLogin: "",
   RecPassword: "",
 };
@@ -26,6 +28,14 @@ export const App: React.FC = () => {
           element={
             <RequireAuth>
               <ContentWrapper children={<PostsContainer />} />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path={ROUTE_PATHS.Messages}
+          element={
+            <RequireAuth>
+              <ContentWrapper children={<Messages />} />
             </RequireAuth>
           }
         />
