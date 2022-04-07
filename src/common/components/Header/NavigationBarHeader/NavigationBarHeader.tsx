@@ -10,16 +10,13 @@ import React from "react";
 
 export const NavigationBarHeader = () => {
   const navigate = useNavigate();
-  const handleClick = (way: string) => {
-    navigate(`${way}`, { replace: true });
-  };
 
   return (
     <Stack direction="row" spacing={2}>
-      <button onClick={() => handleClick("/content")}>
+      <button onClick={() => navigate("/content", { replace: true })}>
         <HomeActive />
       </button>
-      <button onClick={() => handleClick("/messages")}>
+      <button onClick={() => navigate("/messages", { replace: true })}>
         <MessageActive />
       </button>
       <NewPost />
