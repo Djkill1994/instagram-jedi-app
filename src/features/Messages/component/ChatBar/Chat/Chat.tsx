@@ -11,9 +11,7 @@ export const Chat: React.FC = () => {
       justifyContent="flex-end"
     >
       <Stack className={s.itemMessage}>Item one</Stack>
-      <Stack className={s.itemMessage} direction="row-reverse">
-        Item two
-      </Stack>
+      <Stack className={s.itemMessage}>Item two</Stack>
     </Stack>
   );
 };

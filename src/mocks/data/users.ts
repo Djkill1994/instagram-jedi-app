@@ -14,7 +14,7 @@ export const usersResult: IUsersApi = [
     email: "test1@gmail.com",
     userName: "Vlad",
     userAvatar: "https://bmwdrug.ru/img/logotip-v-vektore-bmv_0.jpg",
-    password: "123456",
+    password: "1",
   },
   {
     id: 2,
@@ -22,6 +22,6 @@ export const usersResult: IUsersApi = [
     userName: "David",
     userAvatar:
       "https://www.meme-arsenal.com/memes/5527558dcdb2c5c7c441b2f4a9fa2007.jpg",
-    password: "123456",
+    password: "1",
   },
 ];
