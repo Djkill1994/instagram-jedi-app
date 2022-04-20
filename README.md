@@ -6,7 +6,7 @@ analogue of jira ![icons8-jira-15](https://user-images.githubusercontent.com/848
 , link (https://trello.com/b/tfEgzBj8/ig-jedi-project).
 
 Every day there was a call 📱 with the mentor [@Candyn](https://github.com/Candyn), and tasks were set.<br/>
-At the end of the task, a PR was made, The code was produced by the reviewer @Candyn 🤝 after which the PR was merged into
+At the end of the task, a PR was made, The code was produced by the reviewer [@Candyn](https://github.com/Candyn) 🤝 after which the PR was merged into
 the develop branch.
 
 The project uses a technology stack 👨‍💻 :
