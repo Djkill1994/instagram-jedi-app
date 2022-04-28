@@ -12,7 +12,19 @@ export const handlers = [
     const isUserExist = usersResult.some(
       (user) => user.email === email && user.password === password
     );
-    return res(ctx.status(isUserExist ? 200 : 500));
+    const authUser = isUserExist ? 200 : 500;
+    const authResult = authUser
+      ? usersResult.map((user) => {
+          if (user.email === email) {
+            return {
+              userName: user.userName,
+              userAvatar: user.userAvatar,
+              userId: user.id,
+            };
+          }
+        })
+      : null;
+    return res(ctx.status(authUser), ctx.json(authResult));
   }),
   rest.put(`${BACKEND_URL}/signUp`, (req, res, ctx) => {
     usersResult.push(req.body);

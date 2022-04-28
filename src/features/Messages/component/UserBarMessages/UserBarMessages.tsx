@@ -3,6 +3,7 @@ import { Avatar, Stack, Typography } from "@mui/material";
 import { ReactComponent as NewMessage } from "../../../../assets/svg/newMessage.svg";
 import clsx from "clsx";
 import React, { useState } from "react";
+import { useLocalStorage } from "react-use";
 
 interface MessagesUserState {
   userName: string;
@@ -32,6 +33,22 @@ const messagesUser: MessagesUserState[] = [
 
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // const [username, setUsername] = useLocalStorage("", "");
+  // // локальное состояние для комнаты
+  // const [roomId, setRoomId] = useState("free");
+  // const linkRef = useRef(null);
+  //
+  // const handleChangeRoom = (e) => {
+  //   setRoomId(e.target.value);
+  // };
+  //
+  // // имитируем отправку формы
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // выполняем нажатие кнопки
+  //   linkRef.current.click();
+  // };
 
   return (
     <Stack className={s.usersBar}>
