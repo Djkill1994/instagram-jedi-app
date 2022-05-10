@@ -5,7 +5,7 @@ import Picker from "emoji-picker-react";
 import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
 
-export const InputBar: React.FC<any> = ({ username, sendMessage }) => {
+export const InputBar: React.FC<any> = ({ sendMessage }) => {
   const [showEmoji, setShowEmoji] = useState(false);
   const [inputStr, setInputStr] = useState("");
 
@@ -17,7 +17,7 @@ export const InputBar: React.FC<any> = ({ username, sendMessage }) => {
     e.preventDefault();
     const trimmed = inputStr.trim();
     if (trimmed) {
-      sendMessage({ messageText: inputStr, senderName: username });
+      sendMessage({ messageText: inputStr });
       setInputStr("");
     }
   };
