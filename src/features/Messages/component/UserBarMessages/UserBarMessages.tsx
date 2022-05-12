@@ -4,6 +4,9 @@ import { ReactComponent as NewMessage } from "../../../../assets/svg/newMessage.
 import clsx from "clsx";
 import React, { useState } from "react";
 import { useLocalStorage } from "react-use";
+import { useLoginMutation } from "../../../Login/api/login.api";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../store";
 
 interface MessagesUserState {
   userName: string;
@@ -33,7 +36,7 @@ const messagesUser: MessagesUserState[] = [
 
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const userData = useSelector((state: RootState) => state.loginUser);
   // const [username, setUsername] = useLocalStorage("", "");
   // // локальное состояние для комнаты
   // const [roomId, setRoomId] = useState("free");
@@ -64,7 +67,7 @@ export const UserBarMessages: React.FC = () => {
           width="100%"
           display="flex"
         >
-          {messagesUser[0].userName}
+          {userData.userName}
         </Typography>
         <button>
           <NewMessage />

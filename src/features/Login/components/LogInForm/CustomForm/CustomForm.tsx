@@ -13,7 +13,7 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
 import { useLoginMutation } from "../../../api/login.api";
-import { setAuth } from "../../../slices/login.slice";
+import { setAuth, setUserData } from "../../../slices/login.slice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -30,7 +30,8 @@ export const CustomForm: React.FC = () => {
     email: "",
     showPassword: false,
   });
-  const [login, { isLoading, isSuccess, isError }] = useLoginMutation();
+  // получить data
+  const [login, { isLoading, isSuccess, data, isError }] = useLoginMutation();
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -60,6 +61,14 @@ export const CustomForm: React.FC = () => {
       navigate("/content", { replace: true });
     }
   }, [dispatch, isSuccess, navigate]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(setUserData(data));
+    }
+  }, [isSuccess]);
+
+  console.log(data);
 
   return (
     <Box
