@@ -3,6 +3,7 @@ import s from "./ChatBar.module.scss";
 import { Avatar, Stack, Typography } from "@mui/material";
 import { Chat } from "./Chat";
 import { InputBar } from "./InputBar";
+import { useChat } from "../../hooks/useChat";
 
 interface MessagesUserState {
   userName: string;
@@ -31,6 +32,9 @@ const messagesUser: MessagesUserState[] = [
 ];
 
 export const ChatBar: React.FC = () => {
+  const { users, messages, sendMessage } = useChat("1");
+  console.log(users);
+  console.log(messages);
   return (
     <Stack className={s.chatBar} direction="column">
       <Stack
@@ -53,7 +57,7 @@ export const ChatBar: React.FC = () => {
         </Stack>
       </Stack>
       <Chat />
-      <InputBar />
+      <InputBar sendMessage={sendMessage} />
     </Stack>
   );
 };

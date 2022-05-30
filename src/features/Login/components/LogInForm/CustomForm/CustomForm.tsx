@@ -68,8 +68,6 @@ export const CustomForm: React.FC = () => {
     }
   }, [isSuccess]);
 
-  console.log(data);
-
   return (
     <Box
       component="form"

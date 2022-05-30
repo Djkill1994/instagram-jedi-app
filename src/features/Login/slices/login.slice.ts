@@ -23,9 +23,9 @@ export const loginSlice = createSlice({
       state.isAuth = payload;
     },
     setUserData: (state, { payload }) => {
-      state.userName = payload;
-      state.userAvatar = payload;
-      state.userId = payload;
+      state.userName = payload.userName;
+      state.userAvatar = payload.userAvatar;
+      state.userId = payload.id;
     },
   },
 });

@@ -1,8 +1,11 @@
 import React from "react";
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import s from "./Chat.module.scss";
+import { useChat } from "../../../hooks/useChat";
 
 export const Chat: React.FC = () => {
+  const { messages } = useChat("1");
+
   return (
     <Stack
       className={s.chat}
@@ -10,8 +13,15 @@ export const Chat: React.FC = () => {
       alignItems="baseline"
       justifyContent="flex-end"
     >
-      <Stack className={s.itemMessage}>Item one</Stack>
-      <Stack className={s.itemMessage}>Item two</Stack>
+      {messages.map(({ messageText, messageId, currentUser }) => (
+        <Box
+          key={messageId}
+          className={s.itemMessage}
+          style={{ color: currentUser ? "green" : "red" }}
+        >
+          {messageText}
+        </Box>
+      ))}
     </Stack>
   );
 };

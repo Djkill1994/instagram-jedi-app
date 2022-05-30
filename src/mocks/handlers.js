@@ -9,22 +9,10 @@ export const handlers = [
   }),
   rest.post(`${BACKEND_URL}/login`, (req, res, ctx) => {
     const { email, password } = req.body;
-    const isUserExist = usersResult.some(
+    const user = usersResult.find(
       (user) => user.email === email && user.password === password
     );
-    const authUser = isUserExist ? 200 : 500;
-    const authResult = authUser
-      ? usersResult.map((user) => {
-          if (user.email === email) {
-            return {
-              userName: user.userName,
-              userAvatar: user.userAvatar,
-              userId: user.id,
-            };
-          }
-        })
-      : null;
-    return res(ctx.status(authUser), ctx.json(authResult));
+    return res(ctx.status(user ? 200 : 500), ctx.json(user));
   }),
   rest.put(`${BACKEND_URL}/signUp`, (req, res, ctx) => {
     usersResult.push(req.body);

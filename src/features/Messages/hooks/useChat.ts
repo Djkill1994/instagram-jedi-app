@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
-import { nanoid } from "nanoid";
 import { useBeforeUnload } from "./useBeforeUnload";
-import { useLocalStorage } from "./useLocalstorage";
+import { useSelector } from "react-redux";
+import { loginSelector } from "../../Login/slices/login.slice";
 
 const SERVER_URL = "http://localhost:5000";
 
 export const useChat = (roomId: any) => {
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
+  const { userId, userName: username } = useSelector(loginSelector);
 
   // создаем и записываем в локальное хранинище идентификатор пользователя
-  const [userId] = useLocalStorage("userId", nanoid(8));
+  // const [userId] = useLocalStorage("userId", nanoid(8));
   // получаем из локального хранилища имя пользователя
-  const [username] = useLocalStorage("username", "");
+  // const [username] = useLocalStorage("username", "");
 
   // useRef() используется не только для получения доступа к DOM-элементам,
   // но и для хранения любых мутирующих значений в течение всего жизненного цикла компонента
@@ -30,6 +31,9 @@ export const useChat = (roomId: any) => {
     // отправляем событие добавления пользователя,
     // в качестве данных передаем объект с именем и id пользователя
     socketRef.current.emit("user:add", { username, userId });
+
+    // todo брать пользвателя с кем мы хотим общаться тут
+    socketRef.current.emit("user:add", { username: "Alice", userId: "1" });
 
     // обрабатываем получение списка пользователей
     socketRef.current.on("users", (users: any) => {
@@ -61,12 +65,12 @@ export const useChat = (roomId: any) => {
 
   // функция отправки сообщения
   // принимает объект с текстом сообщения и именем отправителя
-  const sendMessage = (messageText: string, senderName: string) => {
+  const sendMessage = (messageText: string) => {
     // добавляем в объект id пользователя при отправке на сервер
     socketRef.current.emit("message:add", {
       userId,
       messageText,
-      senderName,
+      username,
     });
   };
 

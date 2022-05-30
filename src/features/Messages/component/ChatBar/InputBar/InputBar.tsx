@@ -17,7 +17,7 @@ export const InputBar: React.FC<any> = ({ sendMessage }) => {
     e.preventDefault();
     const trimmed = inputStr.trim();
     if (trimmed) {
-      sendMessage({ messageText: inputStr });
+      sendMessage(inputStr);
       setInputStr("");
     }
   };
