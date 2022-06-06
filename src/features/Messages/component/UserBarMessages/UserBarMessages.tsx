@@ -1,10 +1,8 @@
 import s from "./UserBarMessages.module.scss";
-import { Avatar, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Modal, Stack, Typography } from "@mui/material";
 import { ReactComponent as NewMessage } from "../../../../assets/svg/newMessage.svg";
 import clsx from "clsx";
 import React, { useState } from "react";
-import { useLocalStorage } from "react-use";
-import { useLoginMutation } from "../../../Login/api/login.api";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 
@@ -37,24 +35,41 @@ const messagesUser: MessagesUserState[] = [
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const userData = useSelector((state: RootState) => state.loginUser);
-  // const [username, setUsername] = useLocalStorage("", "");
-  // // локальное состояние для комнаты
-  // const [roomId, setRoomId] = useState("free");
-  // const linkRef = useRef(null);
-  //
-  // const handleChangeRoom = (e) => {
-  //   setRoomId(e.target.value);
-  // };
-  //
-  // // имитируем отправку формы
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // выполняем нажатие кнопки
-  //   linkRef.current.click();
-  // };
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <Stack className={s.usersBar}>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        className={s.tes}
+      >
+        <Box className={s.modalBox}>
+          <Typography fontWeight="bold">New Message</Typography>
+          <div className={s.modalBoxLine}></div>
+          <Stack spacing={1.5} className={s.itemModalBox}>
+            {messagesUser.map((u, index) => (
+              <Stack alignItems="center" flexDirection="row">
+                <Avatar src={u.userAvatar} className={s.avatarModalBox} />
+                <Stack direction="column">
+                  <Typography
+                    fontWeight="bold"
+                    fontSize={14}
+                    className={s.nameModalBox}
+                  >
+                    {u.userName}
+                  </Typography>
+                </Stack>
+              </Stack>
+            ))}
+          </Stack>
+        </Box>
+      </Modal>
       <Stack
         direction="row"
         justifyContent="space-between"
@@ -69,7 +84,7 @@ export const UserBarMessages: React.FC = () => {
         >
           {userData.userName}
         </Typography>
-        <button>
+        <button onClick={handleOpen}>
           <NewMessage />
         </button>
       </Stack>
