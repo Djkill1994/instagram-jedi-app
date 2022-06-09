@@ -44,7 +44,7 @@
   width: 400px;
   height: 375px;
   background-color: white;
- border-radius: 10px;
+  border-radius: 10px;
 }
 
 .modalBoxLine {
@@ -52,20 +52,30 @@
   border-bottom: 1px solid #dbdbdb;
 }
 
-.avatarModalBox{
-  width: 50px;
-  height: 50px;
+.itemModalBox {
+  margin: 10px 0 0 10px;
 }
 
-.itemModalBox{
-  margin-left: 10px;
-}
-.nameModalBox{
-  margin-left: 15px;
+.nameModalBox {
+  margin-left: 15px !important;
 }
 
-.tes {
+.modalWindow {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.titleModalBox {
+  margin: 10px 145px !important;
+}
+
+.itemUser:hover {
+  cursor: pointer;
+}
+
+.itemUser:active {
+  background-color: #dbdbdb;
+  width: 380px;
+  border-radius: 15px;
 }

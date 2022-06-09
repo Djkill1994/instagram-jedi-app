@@ -47,18 +47,28 @@ export const UserBarMessages: React.FC = () => {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className={s.tes}
+        className={s.modalWindow}
       >
         <Box className={s.modalBox}>
-          <Typography fontWeight="bold">New Message</Typography>
+          <Typography fontWeight="bold" className={s.titleModalBox}>
+            New Message
+          </Typography>
           <div className={s.modalBoxLine}></div>
           <Stack spacing={1.5} className={s.itemModalBox}>
             {messagesUser.map((u, index) => (
-              <Stack alignItems="center" flexDirection="row">
-                <Avatar src={u.userAvatar} className={s.avatarModalBox} />
+              <Stack
+                alignItems="center"
+                flexDirection="row"
+                className={s.itemUser}
+              >
+                <Avatar
+                  alt="User Avatar"
+                  src={u.userAvatar}
+                  sx={{ width: 50, height: 50 }}
+                />
                 <Stack direction="column">
                   <Typography
-                    fontWeight="bold"
+                    fontWeight="600"
                     fontSize={14}
                     className={s.nameModalBox}
                   >
