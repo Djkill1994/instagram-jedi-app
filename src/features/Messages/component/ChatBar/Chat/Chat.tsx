@@ -17,7 +17,7 @@ function useChatScroll<T>(
 }
 
 export const Chat: React.FC = () => {
-  const { messages } = useChat("1");
+  const { messages } = useChat("", "qwe", 0);
   const ref = useChatScroll(messages);
 
   return (

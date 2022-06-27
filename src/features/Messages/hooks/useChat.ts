@@ -6,7 +6,11 @@ import { loginSelector } from "../../Login/slices/login.slice";
 
 const SERVER_URL = "http://localhost:5000";
 
-export const useChat = (roomId: any) => {
+export const useChat = (
+  roomId: any,
+  selectedUser: string,
+  selectedUserId: number
+) => {
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
   const { userId, userName: username } = useSelector(loginSelector);
@@ -33,7 +37,10 @@ export const useChat = (roomId: any) => {
     socketRef.current.emit("user:add", { username, userId });
 
     // todo брать пользвателя с кем мы хотим общаться тут
-    socketRef.current.emit("user:add", { username: "Alice", userId: "1" });
+    socketRef.current.emit("user:add", {
+      username: selectedUser,
+      userId: selectedUserId,
+    });
 
     // обрабатываем получение списка пользователей
     socketRef.current.on("users", (users: any) => {

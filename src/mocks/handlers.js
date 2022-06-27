@@ -7,6 +7,9 @@ export const handlers = [
   rest.get(`${BACKEND_URL}/posts`, (req, res, ctx) => {
     return res(ctx.json(postsResult));
   }),
+  rest.get(`${BACKEND_URL}/users`, (req, res, ctx) => {
+    return res(ctx.json(usersResult));
+  }),
   rest.post(`${BACKEND_URL}/login`, (req, res, ctx) => {
     const { email, password } = req.body;
     const user = usersResult.find(

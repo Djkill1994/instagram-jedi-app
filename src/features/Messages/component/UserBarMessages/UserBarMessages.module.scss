@@ -54,6 +54,8 @@
 
 .itemModalBox {
   margin: 10px 0 0 10px;
+  overflow-y: auto;
+  height: 300px;
 }
 
 .nameModalBox {
@@ -76,6 +78,6 @@
 
 .itemUser:active {
   background-color: #dbdbdb;
-  width: 380px;
+  width: 370px;
   border-radius: 15px;
 }
