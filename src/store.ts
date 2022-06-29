@@ -5,9 +5,11 @@ import { loginApi } from "./features/Login/api/login.api";
 import { loginSlice } from "./features/Login/slices/login.slice";
 import { registrationApi } from "./features/Registration/api/registration.api";
 import { usersApi } from "./features/Messages/api/users.api";
+import { messageSlice } from "./features/Messages/slices/Message.slice";
 
 export const store = configureStore({
   reducer: {
+    activeUserId: messageSlice.reducer,
     loginUser: loginSlice.reducer,
     [postsApi.reducerPath]: postsApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,

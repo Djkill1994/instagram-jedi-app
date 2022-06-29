@@ -2,29 +2,23 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
 
 interface MessageState {
-  userName: string;
-  userAvatar: string;
-  id: number | null;
+  id: string;
 }
 
 const initialState: MessageState = {
-  userName: "",
-  userAvatar: "",
-  id: null,
+  id: "",
 };
 
-export const MessageSlice = createSlice({
+export const messageSlice = createSlice({
   name: "Message",
   initialState,
   reducers: {
-    setUserMessageData: (state, { payload }) => {
-      state.userName = payload.userName;
-      state.userAvatar = payload.userAvatar;
-      state.id = payload.id;
+    setActiveUserId: (state, { payload }) => {
+      state.id = payload;
     },
   },
 });
 
-export const { setUserMessageData } = MessageSlice.actions;
+export const { setActiveUserId } = messageSlice.actions;
 
-export const loginSelector = (state: RootState) => state.loginUser;
+export const MessageSelector = (state: RootState) => state.activeUserId;

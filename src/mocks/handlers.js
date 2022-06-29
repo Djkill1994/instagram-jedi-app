@@ -2,6 +2,7 @@ import { rest } from "msw";
 import { postsResult } from "./data/posts";
 import { BACKEND_URL } from "../config";
 import { usersResult } from "./data/users";
+import { activeChatUsersResult } from "./data/selectedUsersChat";
 
 export const handlers = [
   rest.get(`${BACKEND_URL}/posts`, (req, res, ctx) => {
@@ -19,6 +20,11 @@ export const handlers = [
   }),
   rest.put(`${BACKEND_URL}/signUp`, (req, res, ctx) => {
     usersResult.push(req.body);
+    return res(ctx.json(req.body));
+  }),
+  // пользоваель который был выбран как активный добавляется в массив и ему дополнттельно добавляется поле roomId
+  rest.post(`${BACKEND_URL}/selectedUserId`, (req, res, ctx) => {
+    activeChatUsersResult.push(req.body);
     return res(ctx.json(req.body));
   }),
   //

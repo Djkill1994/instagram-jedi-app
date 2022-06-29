@@ -14,27 +14,23 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { useGetUsersQuery } from "../../api/users.api";
-import { useChat } from "../../hooks/useChat";
-import { setUserMessageData } from "../../slices/Message.slice";
+import { setActiveUserId } from "../../slices/Message.slice";
 
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [open, setOpen] = useState(false);
   const userData = useSelector((state: RootState) => state.loginUser);
   const { data: users, error, isLoading } = useGetUsersQuery();
-  // const { users: user } = useChat("2", "", 0);
   const dispatch = useDispatch();
 
-  const [open, setOpen] = useState(false);
   const handleOpen = () => {
     return setOpen(true);
   };
   const handleClose = () => setOpen(false);
 
   const handleClick = (user: any) => {
-    return;
-
-    dispatch(setUserMessageData(user));
     handleClose();
+    return dispatch(setActiveUserId(user.id));
   };
 
   return (
