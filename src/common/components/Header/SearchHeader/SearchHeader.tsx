@@ -11,6 +11,7 @@ export const SearchHeader = () => {
         type="text"
         placeholder="Поиск"
         value=""
+        readOnly={true}
       />
       <div role="button" className={s.divBtn}>
         <div className={s.wrapper}>

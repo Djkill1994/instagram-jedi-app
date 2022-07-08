@@ -15,12 +15,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { useGetUsersQuery } from "../../api/users.api";
 import { setActiveUserId } from "../../slices/Message.slice";
+import { useActiveUserMutation } from "../../api/activeUser.api";
+import any = jasmine.any
 
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const userData = useSelector((state: RootState) => state.loginUser);
   const { data: users, error, isLoading } = useGetUsersQuery();
+  const [activeUser] = useActiveUserMutation();
   const dispatch = useDispatch();
 
   const handleOpen = () => {
@@ -30,6 +33,9 @@ export const UserBarMessages: React.FC = () => {
 
   const handleClick = (user: any) => {
     handleClose();
+    let activeUser = {
+      id: user.id,
+    };
     return dispatch(setActiveUserId(user.id));
   };
 

@@ -23,10 +23,13 @@ export const handlers = [
     return res(ctx.json(req.body));
   }),
   // пользоваель который был выбран как активный добавляется в массив и ему дополнттельно добавляется поле roomId
-  rest.post(`${BACKEND_URL}/selectedUserId`, (req, res, ctx) => {
+  rest.post(`${BACKEND_URL}/activeUser`, (req, res, ctx) => {
     activeChatUsersResult.push(req.body);
     return res(ctx.json(req.body));
   }),
+  // rest.get(`${BACKEND_URL}/activeUser`, (req, res, ctx) => {
+  //   return res(ctx.json(activeChatUsersResult));
+  // }),
   //
   // Examples
   // rest.get(`${import.meta.env.VITE_BACKEND_URL}/brands/:brandId/examples`, (req, res, ctx) => {
