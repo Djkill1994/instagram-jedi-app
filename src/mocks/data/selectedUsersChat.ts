@@ -1,16 +1,10 @@
 import { faker } from "@faker-js/faker";
 
 export interface activeChatUsers {
-  id: number;
-  roomId: number;
+  id: number | string;
+  roomId: number | string;
 }
 
-export type activeChatUsersApi = activeChatUsers[];
+export type IActiveChatUsersApi = activeChatUsers[];
 
-export const activeChatUsersResult = [
-  {
-    id: 1,
-    roomId: faker.datatype.uuid(),
-  },
-];
-
+export const activeChatUsersResult = [];

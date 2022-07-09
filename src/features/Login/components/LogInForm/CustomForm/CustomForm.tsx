@@ -30,7 +30,6 @@ export const CustomForm: React.FC = () => {
     email: "",
     showPassword: false,
   });
-  // получить data
   const [login, { isLoading, isSuccess, data, isError }] = useLoginMutation();
   const navigate = useNavigate();
 

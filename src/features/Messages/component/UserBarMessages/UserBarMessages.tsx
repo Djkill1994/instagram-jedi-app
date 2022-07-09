@@ -16,14 +16,15 @@ import { RootState } from "../../../../store";
 import { useGetUsersQuery } from "../../api/users.api";
 import { setActiveUserId } from "../../slices/Message.slice";
 import { useActiveUserMutation } from "../../api/activeUser.api";
-import any = jasmine.any
+import { useGetActiveChatUserQuery } from "../../api/activeChatUser.api";
 
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [open, setOpen] = useState(false);
-  const userData = useSelector((state: RootState) => state.loginUser);
   const { data: users, error, isLoading } = useGetUsersQuery();
+  const { data: activeChatUser } = useGetActiveChatUserQuery();
   const [activeUser] = useActiveUserMutation();
+  const userData = useSelector((state: RootState) => state.loginUser);
   const dispatch = useDispatch();
 
   const handleOpen = () => {
@@ -33,9 +34,10 @@ export const UserBarMessages: React.FC = () => {
 
   const handleClick = (user: any) => {
     handleClose();
-    let activeUser = {
-      id: user.id,
-    };
+    activeUser({
+      activeUserId: user.id,
+      authUserId: userData.userId,
+    });
     return dispatch(setActiveUserId(user.id));
   };
 
@@ -116,8 +118,8 @@ export const UserBarMessages: React.FC = () => {
               This is an error alert — check it out!
             </Alert>
           )}
-          {users &&
-            users.map((user, index) => (
+          {activeChatUser &&
+            activeChatUser.map((user, index) => (
               <Stack
                 key={index}
                 direction="row"
