@@ -23,7 +23,7 @@ export const UserBarMessages: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { data: users, error, isLoading } = useGetUsersQuery();
   const { data: activeChatUser } = useGetActiveChatUserQuery();
-  const [activeUser] = useActiveUserMutation();
+  const [data] = useActiveUserMutation();
   const userData = useSelector((state: RootState) => state.loginUser);
   const dispatch = useDispatch();
 
@@ -34,7 +34,7 @@ export const UserBarMessages: React.FC = () => {
 
   const handleClick = (user: any) => {
     handleClose();
-    activeUser({
+    data({
       activeUserId: user.id,
       authUserId: userData.userId,
     });

@@ -29,16 +29,20 @@ export const handlers = [
   // пользоваель который был выбран как активный добавляется в массив и ему дополнттельно добавляется поле roomId
   rest.post(`${BACKEND_URL}/activeUser`, (req, res, ctx) => {
     const { activeUserId, authUserId } = req.body;
-    const activeUser = activeChatUsersResult.includes(activeUserId);
-    if (activeUser === true) {
-      console.log(activeChatUsersResult);
-    } else {
-      activeChatUsersResult.concat({
-        roomId: faker.datatype.uuid(),
-        authUser: authUserId,
+    const test = activeChatUsersResult.find(
+      (el) => el.activeUserChat === activeUserId
+    );
+    if (test === undefined) {
+      activeChatUsersResult.push({
         activeUserChat: activeUserId,
+        authUser: authUserId,
+        roomId: faker.datatype.uuid(),
       });
+    } else {
+      alert("Error, chat already created");
     }
+    console.log(test);
+
     return res(ctx.json(activeChatUsersResult));
   }),
   // rest.get(`${BACKEND_URL}/activeUser`, (req, res, ctx) => {

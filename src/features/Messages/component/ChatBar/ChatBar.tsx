@@ -8,8 +8,6 @@ import { useChat } from "../../hooks/useChat";
 export const ChatBar: React.FC = () => {
   const { users, messages, sendMessage } = useChat("", "", 0);
 
-  console.log(users);
-  console.log(messages);
   return (
     <Stack className={s.chatBar} direction="column">
       <Stack
