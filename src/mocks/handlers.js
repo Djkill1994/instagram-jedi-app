@@ -26,29 +26,21 @@ export const handlers = [
     usersResult.push(req.body);
     return res(ctx.json(req.body));
   }),
-  // пользоваель который был выбран как активный добавляется в массив и ему дополнттельно добавляется поле roomId
   rest.post(`${BACKEND_URL}/activeUser`, (req, res, ctx) => {
     const { activeUserId, authUserId } = req.body;
-    const test = activeChatUsersResult.find(
+    const findArray = activeChatUsersResult.find(
       (el) => el.activeUserChat === activeUserId
     );
-    if (test === undefined) {
+    if (!findArray) {
       activeChatUsersResult.push({
         activeUserChat: activeUserId,
         authUser: authUserId,
         roomId: faker.datatype.uuid(),
       });
-    } else {
-      alert("Error, chat already created");
     }
-    console.log(test);
 
-    return res(ctx.json(activeChatUsersResult));
+    return res(ctx.json(!findArray ? 200 : 500));
   }),
-  // rest.get(`${BACKEND_URL}/activeUser`, (req, res, ctx) => {
-  //   return res(ctx.json(activeChatUsersResult));
-  // }),
-  //
   // Examples
   // rest.get(`${import.meta.env.VITE_BACKEND_URL}/brands/:brandId/examples`, (req, res, ctx) => {
   //     return res(ctx.json(examplesResult));
