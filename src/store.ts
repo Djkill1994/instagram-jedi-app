@@ -7,7 +7,6 @@ import { registrationApi } from "./features/Registration/api/registration.api";
 import { usersApi } from "./features/Messages/api/users.api";
 import { messageSlice } from "./features/Messages/slices/Message.slice";
 import { activeUserApi } from "./features/Messages/api/activeUser.api";
-import { activeChatUserApi } from "./features/Messages/api/activeChatUser.api";
 
 export const store = configureStore({
   reducer: {
@@ -18,7 +17,6 @@ export const store = configureStore({
     [loginApi.reducerPath]: loginApi.reducer,
     [registrationApi.reducerPath]: registrationApi.reducer,
     [activeUserApi.reducerPath]: activeUserApi.reducer,
-    [activeChatUserApi.reducerPath]: activeChatUserApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -26,8 +24,7 @@ export const store = configureStore({
       usersApi.middleware,
       loginApi.middleware,
       registrationApi.middleware,
-      activeUserApi.middleware,
-      activeChatUserApi.middleware
+      activeUserApi.middleware
     ),
 });
 

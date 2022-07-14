@@ -14,16 +14,18 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { useGetUsersQuery } from "../../api/users.api";
-import { setActiveUserId } from "../../slices/Message.slice";
-import { useActiveUserMutation } from "../../api/activeUser.api";
-import { useGetActiveChatUserQuery } from "../../api/activeChatUser.api";
+import { setActiveUser } from "../../slices/Message.slice";
+import {
+  useAddActiveUserMutation,
+  useGetActiveChatUserQuery,
+} from "../../api/activeUser.api";
 
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const { data: users, error, isLoading } = useGetUsersQuery();
   const { data: activeChatUser } = useGetActiveChatUserQuery();
-  const [data] = useActiveUserMutation();
+  const [data] = useAddActiveUserMutation();
   const userData = useSelector((state: RootState) => state.loginUser);
   const dispatch = useDispatch();
 
@@ -36,9 +38,10 @@ export const UserBarMessages: React.FC = () => {
     handleClose();
     data({
       activeUserId: user.id,
-      authUserId: userData.userId,
+      userAvatar: user.userAvatar,
+      userName: user.userName,
     });
-    return dispatch(setActiveUserId(user.id));
+    return dispatch(setActiveUser(user));
   };
 
   return (
@@ -117,6 +120,7 @@ export const UserBarMessages: React.FC = () => {
             <Alert severity="error">
               This is an error alert — check it out!
             </Alert>
+            //todo map in arr users
           )}
           {activeChatUser &&
             activeChatUser.map((user, index) => (

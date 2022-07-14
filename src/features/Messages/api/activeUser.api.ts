@@ -5,25 +5,27 @@ import { IUsersApi } from "../../../mocks/data/users";
 export const activeUserApi = createApi({
   reducerPath: "activeUserApi",
   baseQuery: fetchBaseQuery({ baseUrl: BACKEND_URL }),
-  tagTypes: ["ActiveUser", "ActiveChat"],
+  tagTypes: ["ActiveUser"],
   endpoints: (build) => ({
-    activeUser: build.mutation<void, { activeUserId: any; authUserId: any }>({
+    getActiveChatUser: build.query<IUsersApi, void>({
+      query: () => "/activeChat",
+      providesTags: ["ActiveUser"],
+    }),
+    addActiveUser: build.mutation<
+      void,
+      { activeUserId: any; userName: string; userAvatar: string }
+    >({
       query(data) {
         return {
           url: "activeUser",
           method: "post",
           body: data,
-          providesTags: ["ActiveUser"],
         };
       },
-    }),
-    getActiveChatUser: build.query<IUsersApi, void>({
-      query: () => ({
-        url: `/activeChat`,
-        providesTags: ["ActiveUser"],
-      }),
+      invalidatesTags: ["ActiveUser"],
     }),
   }),
 });
 
-export const { useActiveUserMutation } = activeUserApi;
+export const { useAddActiveUserMutation, useGetActiveChatUserQuery } =
+  activeUserApi;
