@@ -13,7 +13,6 @@ export const handlers = [
     return res(ctx.json(usersResult));
   }),
   rest.get(`${BACKEND_URL}/activeChat`, (req, res, ctx) => {
-    console.log("I am message");
     return res(ctx.json(activeChatUsersResult));
   }),
   rest.post(`${BACKEND_URL}/login`, (req, res, ctx) => {
@@ -30,7 +29,7 @@ export const handlers = [
   rest.post(`${BACKEND_URL}/activeUser`, (req, res, ctx) => {
     const { activeUserId, userName, userAvatar } = req.body;
     const findArray = activeChatUsersResult.find(
-      (el) => el.activeUserChat === activeUserId
+      (el) => el.activeUserId === activeUserId
     );
     if (!findArray) {
       activeChatUsersResult.push({

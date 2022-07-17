@@ -14,7 +14,7 @@ const initialState: MessageState = {
 };
 
 export const messageSlice = createSlice({
-  name: "Message",
+  name: "activeUserChat",
   initialState,
   reducers: {
     setActiveUser: (state, { payload }) => {
@@ -27,4 +27,4 @@ export const messageSlice = createSlice({
 
 export const { setActiveUser } = messageSlice.actions;
 
-export const MessageSelector = (state: RootState) => state.activeUserId;
+export const MessageSelector = (state: RootState) => state.activeUserChat;

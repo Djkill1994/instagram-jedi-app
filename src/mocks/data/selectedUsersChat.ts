@@ -1,6 +1,7 @@
 export interface activeChatUsers {
-  authUser: number | string;
-  activeUserChat: number | string;
+  activeUserId: number | string;
+  userName: string;
+  userAvatar: string;
   roomId: number | string;
 }
 

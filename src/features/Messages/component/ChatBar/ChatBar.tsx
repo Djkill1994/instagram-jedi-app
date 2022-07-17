@@ -18,10 +18,8 @@ export const ChatBar: React.FC = () => {
       >
         <Avatar className={s.avatarHeaderChat} />
         <Stack direction="column">
-          <Typography fontWeight="bolder"></Typography>
-          <Typography fontSize={12} className={s.lastMessageText}>
-            Active 1 h ago
-          </Typography>
+          <Typography fontWeight="bolder">huita</Typography>
+          <Typography fontSize={12} className={s.lastMessageText}></Typography>
         </Stack>
       </Stack>
       <Chat />
