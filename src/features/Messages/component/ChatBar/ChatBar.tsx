@@ -4,9 +4,16 @@ import { Avatar, Stack, Typography } from "@mui/material";
 import { Chat } from "./Chat";
 import { InputBar } from "./InputBar";
 import { useChat } from "../../hooks/useChat";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../store";
 
 export const ChatBar: React.FC = () => {
-  const { users, messages, sendMessage } = useChat("", "", 0);
+  const userData = useSelector((state: RootState) => state.activeUserChat);
+  const { sendMessage } = useChat(
+    userData.roomId,
+    userData.userName,
+    userData.id
+  );
 
   return (
     <Stack className={s.chatBar} direction="column">
@@ -16,9 +23,13 @@ export const ChatBar: React.FC = () => {
         alignItems="center"
         spacing={2}
       >
-        <Avatar className={s.avatarHeaderChat} />
+        <Avatar
+          className={s.avatarHeaderChat}
+          src={userData.userAvatar}
+          sx={{ width: 24, height: 24 }}
+        />
         <Stack direction="column">
-          <Typography fontWeight="bolder">huita</Typography>
+          <Typography fontWeight="bolder">{userData.userName}</Typography>
           <Typography fontSize={12} className={s.lastMessageText}></Typography>
         </Stack>
       </Stack>

@@ -14,7 +14,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { useGetUsersQuery } from "../../api/users.api";
-import { setActiveUser } from "../../slices/Message.slice";
+import { setActiveUser, setOnUser } from "../../slices/Message.slice";
 import {
   useAddActiveUserMutation,
   useGetActiveChatUserQuery,
@@ -33,7 +33,10 @@ export const UserBarMessages: React.FC = () => {
     return setOpen(true);
   };
   const handleClose = () => setOpen(false);
-
+  const handleClickOnUser = (index: number, user: any) => {
+    setActiveIndex(index);
+    return dispatch(setOnUser(user));
+  };
   const handleClick = (user: any) => {
     handleClose();
     data({
@@ -129,7 +132,7 @@ export const UserBarMessages: React.FC = () => {
                 direction="row"
                 alignItems="center"
                 spacing={2}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleClickOnUser(index, user)}
                 className={clsx(
                   s.userMessageItem,
                   index === activeIndex ? s.active : null
@@ -139,6 +142,7 @@ export const UserBarMessages: React.FC = () => {
                   key={index}
                   src={user.userAvatar}
                   className={s.avatar}
+                  sx={{ width: 56, height: 56 }}
                 />
                 <Stack direction="column">
                   <Typography fontSize={14}>{user.userName}</Typography>

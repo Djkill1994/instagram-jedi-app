@@ -3,6 +3,8 @@ import { Box, Stack } from "@mui/material";
 import s from "./Chat.module.scss";
 import { useChat } from "../../../hooks/useChat";
 import clsx from "clsx";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../../store";
 
 function useChatScroll<T>(
   dep: T
@@ -17,7 +19,8 @@ function useChatScroll<T>(
 }
 
 export const Chat: React.FC = () => {
-  const { messages } = useChat("", "qwe", 0);
+  const userData = useSelector((state: RootState) => state.activeUserChat);
+  const { messages } = useChat(userData.roomId, userData.userName, userData.id);
   const ref = useChatScroll(messages);
 
   return (

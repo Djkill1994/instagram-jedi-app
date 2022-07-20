@@ -2,15 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
 
 interface MessageState {
-  id: string;
+  id: any;
   userName: string;
   userAvatar: string;
+  roomId: string;
 }
 
 const initialState: MessageState = {
   id: "",
   userAvatar: "",
   userName: "",
+  roomId: "",
 };
 
 export const messageSlice = createSlice({
@@ -18,13 +20,18 @@ export const messageSlice = createSlice({
   initialState,
   reducers: {
     setActiveUser: (state, { payload }) => {
-      state.id = payload;
-      state.userName = payload;
-      state.userAvatar = payload;
+      state.id = payload.id;
+      state.userName = payload.userName;
+      state.userAvatar = payload.userAvatar;
+      state.roomId = payload.roomId;
+    },
+    setOnUser: (state, { payload }) => {
+      state.userName = payload.userName;
+      state.userAvatar = payload.userAvatar;
     },
   },
 });
 
-export const { setActiveUser } = messageSlice.actions;
+export const { setActiveUser, setOnUser } = messageSlice.actions;
 
 export const MessageSelector = (state: RootState) => state.activeUserChat;
