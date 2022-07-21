@@ -5,16 +5,16 @@ import { Chat } from "./Chat";
 import { InputBar } from "./InputBar";
 import { useChat } from "../../hooks/useChat";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../store";
+import { MessageSelector } from "../../slices/Message.slice";
 
 export const ChatBar: React.FC = () => {
-  const userData = useSelector((state: RootState) => state.activeUserChat);
+  const userData = useSelector(MessageSelector);
   const { sendMessage } = useChat(
     userData.roomId,
     userData.userName,
     userData.id
   );
-
+  console.log(userData);
   return (
     <Stack className={s.chatBar} direction="column">
       <Stack
@@ -23,11 +23,13 @@ export const ChatBar: React.FC = () => {
         alignItems="center"
         spacing={2}
       >
-        <Avatar
-          className={s.avatarHeaderChat}
-          src={userData.userAvatar}
-          sx={{ width: 24, height: 24 }}
-        />
+        {userData.userAvatar ? (
+          <Avatar
+            className={s.avatarHeaderChat}
+            src={userData.userAvatar}
+            sx={{ width: 24, height: 24 }}
+          />
+        ) : null}
         <Stack direction="column">
           <Typography fontWeight="bolder">{userData.userName}</Typography>
           <Typography fontSize={12} className={s.lastMessageText}></Typography>

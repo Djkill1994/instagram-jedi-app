@@ -53,7 +53,9 @@ export const InputBar: React.FC<any> = ({ sendMessage }) => {
             type="text"
           />
           {inputStr !== "" ? (
-            <button type="submit">Send</button>
+            <button type="submit" className={s.sendBtn}>
+              Send
+            </button>
           ) : (
             <label htmlFor="icon-button-file">
               <input
