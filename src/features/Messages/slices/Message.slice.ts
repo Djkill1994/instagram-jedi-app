@@ -19,11 +19,11 @@ export const messageSlice = createSlice({
   name: "activeUserChat",
   initialState,
   reducers: {
-    setActiveUser: (state, { payload }) => {
-      state.id = payload.id;
-      state.userName = payload.userName;
-      state.userAvatar = payload.userAvatar;
-      state.roomId = payload.roomId;
+    setActiveUser: (state, { ...payload }) => {
+      state.id = payload.payload.id;
+      state.userName = payload.payload.userName;
+      state.userAvatar = payload.payload.userAvatar;
+      state.roomId = payload.payload.roomId;
     },
     setOnUser: (state, { payload }) => {
       state.userName = payload.userName;

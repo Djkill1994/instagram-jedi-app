@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { ReactComponent as NewMessage } from "../../../../assets/svg/newMessage.svg";
 import clsx from "clsx";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { useGetUsersQuery } from "../../api/users.api";
@@ -24,8 +24,8 @@ export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const { data: users, error, isLoading } = useGetUsersQuery();
-  const { data: activeChatUser } = useGetActiveChatUserQuery();
-  const [data] = useAddActiveUserMutation();
+  const { data } = useGetActiveChatUserQuery();
+  const [addedActiveUser, { isSuccess }] = useAddActiveUserMutation();
   const userData = useSelector((state: RootState) => state.loginUser);
   const dispatch = useDispatch();
 
@@ -39,13 +39,18 @@ export const UserBarMessages: React.FC = () => {
   };
   const handleClick = (user: any) => {
     handleClose();
-    data({
+    addedActiveUser({
       activeUserId: user.id,
       userAvatar: user.userAvatar,
       userName: user.userName,
     });
-    return dispatch(setActiveUser(user));
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(setActiveUser(data));
+    }
+  }, [isSuccess]);
 
   return (
     <Stack className={s.usersBar}>
@@ -125,8 +130,8 @@ export const UserBarMessages: React.FC = () => {
             </Alert>
             //todo map in arr users
           )}
-          {activeChatUser &&
-            activeChatUser.map((user, index) => (
+          {data &&
+            data.map((user, index) => (
               <Stack
                 key={index}
                 direction="row"
