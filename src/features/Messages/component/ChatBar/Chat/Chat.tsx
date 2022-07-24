@@ -20,7 +20,11 @@ function useChatScroll<T>(
 
 export const Chat: React.FC = () => {
   const userData = useSelector((state: RootState) => state.activeUserChat);
-  const { messages } = useChat(userData.roomId, userData.userName, userData.id);
+  const { messages } = useChat(
+    userData.roomId,
+    userData.userName,
+    userData.activeUserId
+  );
   const ref = useChatScroll(messages);
 
   return (

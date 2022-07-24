@@ -12,9 +12,9 @@ export const ChatBar: React.FC = () => {
   const { sendMessage } = useChat(
     userData.roomId,
     userData.userName,
-    userData.id
+    userData.activeUserId
   );
-  console.log(userData);
+  console.log("user Data on Chat Bar", userData);
   return (
     <Stack className={s.chatBar} direction="column">
       <Stack

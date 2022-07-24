@@ -10,35 +10,36 @@ import {
 } from "@mui/material";
 import { ReactComponent as NewMessage } from "../../../../assets/svg/newMessage.svg";
 import clsx from "clsx";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../store";
 import { useGetUsersQuery } from "../../api/users.api";
-import { setActiveUser, setOnUser } from "../../slices/Message.slice";
+import { setActiveUserChat } from "../../slices/Message.slice";
 import {
   useAddActiveUserMutation,
   useGetActiveChatUserQuery,
 } from "../../api/activeUser.api";
+import { loginSelector } from "../../../Login/slices/login.slice";
 
 export const UserBarMessages: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const { data: users, error, isLoading } = useGetUsersQuery();
-  const { data } = useGetActiveChatUserQuery();
-  const [addedActiveUser, { isSuccess }] = useAddActiveUserMutation();
-  const userData = useSelector((state: RootState) => state.loginUser);
+  const { data: activeChatUsers } = useGetActiveChatUserQuery();
+  const [addedActiveUser] = useAddActiveUserMutation();
+  const authUser = useSelector(loginSelector);
   const dispatch = useDispatch();
-
   const handleOpen = () => {
     return setOpen(true);
   };
   const handleClose = () => setOpen(false);
   const handleClickOnUser = (index: number, user: any) => {
     setActiveIndex(index);
-    return dispatch(setOnUser(user));
+    return dispatch(setActiveUserChat(user));
   };
+
   const handleClick = (user: any) => {
     handleClose();
+    setActiveIndex(Infinity);
     addedActiveUser({
       activeUserId: user.id,
       userAvatar: user.userAvatar,
@@ -46,11 +47,11 @@ export const UserBarMessages: React.FC = () => {
     });
   };
 
-  useEffect(() => {
-    if (isSuccess) {
-      dispatch(setActiveUser(data));
-    }
-  }, [isSuccess]);
+  const sortArrayUsersFunc = (users: any) => {
+    return authUser.userName !== users.userName;
+  };
+
+  let newArrayUsers = users?.filter(sortArrayUsersFunc);
 
   return (
     <Stack className={s.usersBar}>
@@ -73,8 +74,8 @@ export const UserBarMessages: React.FC = () => {
                 This is an error alert — check it out!
               </Alert>
             )}
-            {users &&
-              users.map((user, index) => (
+            {newArrayUsers &&
+              newArrayUsers.map((user, index) => (
                 <Stack
                   key={index}
                   alignItems="center"
@@ -115,7 +116,7 @@ export const UserBarMessages: React.FC = () => {
           width="100%"
           display="flex"
         >
-          {userData.userName}
+          {authUser.userName}
         </Typography>
         <button onClick={handleOpen}>
           <NewMessage />
@@ -130,8 +131,8 @@ export const UserBarMessages: React.FC = () => {
             </Alert>
             //todo map in arr users
           )}
-          {data &&
-            data.map((user, index) => (
+          {activeChatUsers &&
+            activeChatUsers.map((user, index) => (
               <Stack
                 key={index}
                 direction="row"
