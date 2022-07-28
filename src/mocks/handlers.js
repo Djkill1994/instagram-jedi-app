@@ -39,8 +39,7 @@ export const handlers = [
         roomId: faker.datatype.uuid(),
       });
     }
-
-    return res(ctx.json(!findArray ? 200 : 500));
+    return res(ctx.json(isActiveChatUserExist ? 500 : 200));
   }),
   // Examples
   // rest.get(`${import.meta.env.VITE_BACKEND_URL}/brands/:brandId/examples`, (req, res, ctx) => {

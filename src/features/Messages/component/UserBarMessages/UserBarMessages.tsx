@@ -1,109 +1,32 @@
 import s from "./UserBarMessages.module.scss";
-import {
-  Alert,
-  Avatar,
-  Box,
-  CircularProgress,
-  Modal,
-  Stack,
-  Typography,
-} from "@mui/material";
-import { ReactComponent as NewMessage } from "../../../../assets/svg/newMessage.svg";
-import clsx from "clsx";
-import React, { useState } from "react";
+// fix s to styles on all places in the project
+import { Alert, CircularProgress, Stack, Typography } from "@mui/material";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetUsersQuery } from "../../api/users.api";
-import { setActiveUserChat } from "../../slices/Message.slice";
 import {
-  useAddActiveUserMutation,
-  useGetActiveChatUserQuery,
-} from "../../api/activeUser.api";
+  activeChatUserSelector,
+  setActiveUserChat,
+} from "../../slices/message.slice";
+import { useGetActiveChatUserQuery } from "../../api/activeUser.api";
 import { loginSelector } from "../../../Login/slices/login.slice";
+import { IActiveChatUser } from "../../../../mocks/data/selectedUsersChat";
+import { UserItem } from "../../../../common/components/UserItem";
+import { AllUsersWindowModal } from "./AllUsersWindowModal";
 
 export const UserBarMessages: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [open, setOpen] = useState(false);
-  const { data: users, error, isLoading } = useGetUsersQuery();
+  const { error, isLoading } = useGetUsersQuery();
   const { data: activeChatUsers } = useGetActiveChatUserQuery();
-  const [addedActiveUser] = useAddActiveUserMutation();
   const authUser = useSelector(loginSelector);
+  const activeChatUser = useSelector(activeChatUserSelector);
   const dispatch = useDispatch();
-  const handleOpen = () => {
-    return setOpen(true);
-  };
-  const handleClose = () => setOpen(false);
-  const handleClickOnUser = (index: number, user: any) => {
-    setActiveIndex(index);
-    return dispatch(setActiveUserChat(user));
-  };
 
-  const handleClick = (user: any) => {
-    handleClose();
-    setActiveIndex(Infinity);
-    addedActiveUser({
-      activeUserId: user.id,
-      userAvatar: user.userAvatar,
-      userName: user.userName,
-    });
+  const handleClickOnUser = (user: IActiveChatUser): void => {
+    dispatch(setActiveUserChat(user));
   };
-
-  const sortArrayUsersFunc = (users: any) => {
-    return authUser.userName !== users.userName;
-  };
-
-  let newArrayUsers = users?.filter(sortArrayUsersFunc);
 
   return (
     <Stack className={s.usersBar}>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        className={s.modalWindow}
-      >
-        <Box className={s.modalBox}>
-          <Typography fontWeight="bold" className={s.titleModalBox}>
-            New Message
-          </Typography>
-          <div className={s.modalBoxLine}></div>
-          <Stack spacing={1.5} className={s.itemModalBox}>
-            {isLoading && <CircularProgress />}
-            {error && (
-              <Alert severity="error">
-                This is an error alert — check it out!
-              </Alert>
-            )}
-            {newArrayUsers &&
-              newArrayUsers.map((user, index) => (
-                <Stack
-                  key={index}
-                  alignItems="center"
-                  flexDirection="row"
-                  className={s.itemUser}
-                  onClick={() => handleClick(user)}
-                >
-                  <Avatar
-                    key={index}
-                    alt="User Avatar"
-                    src={user.userAvatar}
-                    sx={{ width: 50, height: 50 }}
-                  />
-                  <Stack direction="column">
-                    <Typography
-                      key={index}
-                      fontWeight="600"
-                      fontSize={14}
-                      className={s.nameModalBox}
-                    >
-                      {user.userName}
-                    </Typography>
-                  </Stack>
-                </Stack>
-              ))}
-          </Stack>
-        </Box>
-      </Modal>
       <Stack
         direction="row"
         justifyContent="space-between"
@@ -118,9 +41,7 @@ export const UserBarMessages: React.FC = () => {
         >
           {authUser.userName}
         </Typography>
-        <button onClick={handleOpen}>
-          <NewMessage />
-        </button>
+        <AllUsersWindowModal />
       </Stack>
       <Stack direction="column" className={s.barMessageItem}>
         <>
@@ -129,32 +50,19 @@ export const UserBarMessages: React.FC = () => {
             <Alert severity="error">
               This is an error alert — check it out!
             </Alert>
-            //todo map in arr users
           )}
-          {activeChatUsers &&
-            activeChatUsers.map((user, index) => (
-              <Stack
-                key={index}
-                direction="row"
-                alignItems="center"
-                spacing={2}
-                onClick={() => handleClickOnUser(index, user)}
-                className={clsx(
-                  s.userMessageItem,
-                  index === activeIndex ? s.active : null
-                )}
-              >
-                <Avatar
-                  key={index}
-                  src={user.userAvatar}
-                  className={s.avatar}
-                  sx={{ width: 56, height: 56 }}
-                />
-                <Stack direction="column">
-                  <Typography fontSize={14}>{user.userName}</Typography>
-                </Stack>
-              </Stack>
-            ))}
+          {activeChatUsers?.map((user) => (
+            <UserItem
+              userName={user.userName}
+              key={user.id}
+              userAvatar={user.userAvatar}
+              onClick={() => handleClickOnUser(user)}
+              sizeAvatar={"big"}
+              isSelected={true}
+              user={user}
+              activeChatUser={activeChatUser}
+            />
+          ))}
         </>
       </Stack>
     </Stack>

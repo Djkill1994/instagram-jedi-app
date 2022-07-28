@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
+import { IActiveChatUser } from "../../../mocks/data/selectedUsersChat";
+
+interface IMessageSlice {
+  activeChatUser?: IActiveChatUser;
+}
 
 interface MessageState {
   activeUserId: any;

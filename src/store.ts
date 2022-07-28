@@ -5,7 +5,7 @@ import { loginApi } from "./features/Login/api/login.api";
 import { loginSlice } from "./features/Login/slices/login.slice";
 import { registrationApi } from "./features/Registration/api/registration.api";
 import { usersApi } from "./features/Messages/api/users.api";
-import { messageSlice } from "./features/Messages/slices/Message.slice";
+import { messageSlice } from "./features/Messages/slices/message.slice";
 import { activeUserApi } from "./features/Messages/api/activeUser.api";
 
 export const store = configureStore({
