@@ -5,6 +5,7 @@ import img2 from "../../../../../assets/image/dynamicImages/img2.png";
 import img3 from "../../../../../assets/image/dynamicImages/img3.png";
 import img4 from "../../../../../assets/image/dynamicImages/img4.png";
 import clsx from "clsx";
+import { current } from "@reduxjs/toolkit";
 
 const images = [img1, img2, img3, img4];
 
@@ -13,13 +14,15 @@ export const InfinitySlider: React.FC = () => {
   const [isSliderStarted, setIsSliderStarted] = useState(false);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setActiveIndex((current) =>
         current === images.length - 1 ? 0 : current + 1
       );
       setIsSliderStarted(true);
     }, 4000);
-    return () => clearInterval();
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (

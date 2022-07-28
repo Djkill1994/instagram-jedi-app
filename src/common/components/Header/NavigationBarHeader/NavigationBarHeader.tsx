@@ -7,9 +7,12 @@ import { Avatar, Stack } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../App/App";
 import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../store";
 
 export const NavigationBarHeader = () => {
   const navigate = useNavigate();
+  const userData = useSelector((state: RootState) => state.loginUser);
 
   return (
     <Stack direction="row" spacing={2}>
@@ -26,7 +29,7 @@ export const NavigationBarHeader = () => {
       <WatsNews />
 
       <Link to={ROUTE_PATHS.Login}>
-        <Avatar sx={{ width: 26, height: 26 }} />
+        <Avatar sx={{ width: 26, height: 26 }} src={userData.userAvatar} />
       </Link>
     </Stack>
   );

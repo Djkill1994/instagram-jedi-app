@@ -1,37 +1,29 @@
 import s from "./UserBarMessages.module.scss";
-import { Avatar, Stack, Typography } from "@mui/material";
-import { ReactComponent as NewMessage } from "../../../../assets/svg/newMessage.svg";
-import clsx from "clsx";
-import React, { useState } from "react";
-
-interface MessagesUserState {
-  userName: string;
-  userAvatar: string;
-  lastVisit: string;
-}
-
-const messagesUser: MessagesUserState[] = [
-  {
-    userName: "Vlad",
-    userAvatar:
-      "https://i.pinimg.com/736x/84/60/94/846094561ef58c77eb5c38b59b9a1e4f.jpg",
-    lastVisit: "2",
-  },
-  {
-    userName: "Triss",
-    userAvatar:
-      "https://images.hdqwalls.com/wallpapers/thumb/wanda-what-if-4k-2o.jpg",
-    lastVisit: "5",
-  },
-  {
-    userName: "Geralt",
-    userAvatar: "https://avatarfiles.alphacoders.com/148/thumb-148716.png",
-    lastVisit: "1",
-  },
-];
+// fix s to styles on all places in the project
+import { Alert, CircularProgress, Stack, Typography } from "@mui/material";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useGetUsersQuery } from "../../api/users.api";
+import {
+  activeChatUserSelector,
+  setActiveUserChat,
+} from "../../slices/message.slice";
+import { useGetActiveChatUserQuery } from "../../api/activeUser.api";
+import { loginSelector } from "../../../Login/slices/login.slice";
+import { IActiveChatUser } from "../../../../mocks/data/selectedUsersChat";
+import { UserItem } from "../../../../common/components/UserItem";
+import { AllUsersWindowModal } from "./AllUsersWindowModal";
 
 export const UserBarMessages: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { error, isLoading } = useGetUsersQuery();
+  const { data: activeChatUsers } = useGetActiveChatUserQuery();
+  const authUser = useSelector(loginSelector);
+  const activeChatUser = useSelector(activeChatUserSelector);
+  const dispatch = useDispatch();
+
+  const handleClickOnUser = (user: IActiveChatUser): void => {
+    dispatch(setActiveUserChat(user));
+  };
 
   return (
     <Stack className={s.usersBar}>
@@ -47,34 +39,29 @@ export const UserBarMessages: React.FC = () => {
           width="100%"
           display="flex"
         >
-          {messagesUser[0].userName}
+          {authUser.userName}
         </Typography>
-        <button>
-          <NewMessage />
-        </button>
+        <AllUsersWindowModal />
       </Stack>
       <Stack direction="column" className={s.barMessageItem}>
         <>
-          {messagesUser.map((u, index) => (
-            <Stack
-              key={1}
-              direction="row"
-              alignItems="center"
-              spacing={2}
-              onClick={() => setActiveIndex(index)}
-              className={clsx(
-                s.userMessageItem,
-                index === activeIndex ? s.active : null
-              )}
-            >
-              <Avatar src={u.userAvatar} className={s.avatar} />
-              <Stack direction="column">
-                <Typography fontSize={14}>{u.userName}</Typography>
-                <Typography fontSize={14} className={s.lastMessageText}>
-                  Active {u.lastVisit}h ago
-                </Typography>
-              </Stack>
-            </Stack>
+          {isLoading && <CircularProgress />}
+          {error && (
+            <Alert severity="error">
+              This is an error alert — check it out!
+            </Alert>
+          )}
+          {activeChatUsers?.map((user) => (
+            <UserItem
+              userName={user.userName}
+              key={user.id}
+              userAvatar={user.userAvatar}
+              onClick={() => handleClickOnUser(user)}
+              sizeAvatar={"big"}
+              isSelected={true}
+              user={user}
+              activeChatUser={activeChatUser}
+            />
           ))}
         </>
       </Stack>

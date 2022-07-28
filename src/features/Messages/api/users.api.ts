@@ -1,17 +1,17 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BACKEND_URL } from "../../../config";
-import { IPostApi } from "../../../mocks/data/posts";
+import { IUsersApi } from "../../../mocks/data/users";
 
-export const postsApi = createApi({
-  reducerPath: "postsApi",
+export const usersApi = createApi({
+  reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({ baseUrl: BACKEND_URL }),
   endpoints: (build) => ({
-    getPosts: build.query<IPostApi, void>({
+    getUsers: build.query<IUsersApi, void>({
       query: () => ({
-        url: `/posts`,
+        url: `/users`,
       }),
     }),
   }),
 });
 
-export const { useGetPostsQuery } = postsApi;
+export const { useGetUsersQuery } = usersApi;

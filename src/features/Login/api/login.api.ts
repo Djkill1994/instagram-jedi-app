@@ -5,7 +5,13 @@ export const loginApi = createApi({
   reducerPath: "loginApi",
   baseQuery: fetchBaseQuery({ baseUrl: BACKEND_URL }),
   endpoints: (build) => ({
-    login: build.mutation<void, { email: string; password: string }>({
+    login: build.mutation<
+      void,
+      {
+        email: string;
+        password: string;
+      }
+    >({
       query(data) {
         return {
           url: "login",

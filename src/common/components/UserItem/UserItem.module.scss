@@ -1,0 +1,29 @@
+.userMessageItem {
+  padding: 8px 20px;
+}
+
+.userMessageItem:active {
+  background-color: #dbdbdb;
+}
+
+.active {
+  background-color: #dbdbdb;
+}
+
+.userMessageItem:hover {
+  cursor: pointer;
+}
+
+.itemUser:hover {
+  cursor: pointer;
+}
+
+.itemUser:active {
+  background-color: #dbdbdb;
+  width: 370px;
+  border-radius: 15px;
+}
+
+.nameModalBox {
+  margin-left: 15px;
+}

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CustomForm } from "./CustomForm";
 import { Stack } from "@mui/material";
 import { ROUTE_PATHS } from "../../../../common/components/App/App";
+import fbLogo from "../../../../assets/icon/FB logo blue.png";
 
 export const LogInForm: React.FC = () => {
   return (
@@ -25,10 +26,7 @@ export const LogInForm: React.FC = () => {
           className={s.loginFbButton}
         >
           <Link to={ROUTE_PATHS.FbLogin}>Log in with facebook</Link>
-          <img
-            alt={"FB"}
-            src={"https://www.facebook.com/images/fb_icon_325x325.png"}
-          />
+          <img alt={"FB"} src={fbLogo} />
         </Stack>
         <div className={s.errorWindow}>Error</div>
         <Link to={ROUTE_PATHS.RecPassword} className={s.forgotPasswordBtn}>
