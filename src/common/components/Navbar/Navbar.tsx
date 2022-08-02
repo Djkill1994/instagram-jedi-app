@@ -1,8 +1,8 @@
 import React from "react";
-import s from "./Navbar.module.scss";
+import styled from "./Navbar.module.scss";
 
 export const Navbar: React.FC = () => (
-  <div className={s.nav}>
+  <div className={styled.nav}>
     <div>nav 1</div>
     <div>nav 2</div>
     <div>nav 3</div>

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Box, Stack } from "@mui/material";
-import s from "./Chat.module.scss";
+import styled from "./Chat.module.scss";
 import { useChat } from "../../../hooks/useChat";
 import clsx from "clsx";
 import { useSelector } from "react-redux";
@@ -28,13 +28,13 @@ export const Chat: React.FC = () => {
   const ref = useChatScroll(messages);
 
   return (
-    <Stack className={s.chat} spacing={1} alignItems="baseline" ref={ref}>
+    <Stack className={styled.chat} spacing={1} alignItems="baseline" ref={ref}>
       {messages.map(({ messageText, messageId, currentUser }) => (
         <Box
           key={messageId}
           className={clsx(
-            s.itemMessage,
-            currentUser ? s.otherUser : s.currentUser
+            styled.itemMessage,
+            currentUser ? styled.otherUser : styled.currentUser
           )}
         >
           {messageText}

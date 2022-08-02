@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import s from "./RegistrationCustomForm.module.scss";
+import styled from "./RegistrationCustomForm.module.scss";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
@@ -69,7 +69,7 @@ export const RegistrationCustomForm: React.FC = () => {
       noValidate
       onSubmit={handleSubmit}
       sx={{ mt: 3 }}
-      className={s.formWrapper}
+      className={styled.formWrapper}
     >
       <Grid
         container
@@ -114,7 +114,7 @@ export const RegistrationCustomForm: React.FC = () => {
               Password
             </InputLabel>
             <OutlinedInput
-              className={s.passwordWrapper}
+              className={styled.passwordWrapper}
               id="outlined-adornment-password"
               type={values.showPassword ? "text" : "password"}
               name="password"
@@ -145,7 +145,7 @@ export const RegistrationCustomForm: React.FC = () => {
             type="submit"
             variant="contained"
             sx={{ mt: 3 }}
-            className={s.signUpBtn}
+            className={styled.signUpBtn}
           >
             Sign Up
           </Button>

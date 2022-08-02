@@ -1,4 +1,4 @@
-import s from "./UserBarMessages.module.scss";
+import styled from "./UserBarMessages.module.scss";
 // fix s to styles on all places in the project
 import { Alert, CircularProgress, Stack, Typography } from "@mui/material";
 import React from "react";
@@ -26,12 +26,12 @@ export const UserBarMessages: React.FC = () => {
   };
 
   return (
-    <Stack className={s.usersBar}>
+    <Stack className={styled.usersBar}>
       <Stack
         direction="row"
         justifyContent="space-between"
         alignItems="center"
-        className={s.headerUserBar}
+        className={styled.headerUserBar}
       >
         <Typography
           fontWeight="bolder"
@@ -43,7 +43,7 @@ export const UserBarMessages: React.FC = () => {
         </Typography>
         <AllUsersWindowModal />
       </Stack>
-      <Stack direction="column" className={s.barMessageItem}>
+      <Stack direction="column" className={styled.barMessageItem}>
         <>
           {isLoading && <CircularProgress />}
           {error && (

@@ -1,21 +1,21 @@
-import s from "./SearchHeader.module.scss";
+import styled from "./SearchHeader.module.scss";
 import { ReactComponent as Search } from "../../../.././assets/svg/searching.svg";
 
 export const SearchHeader = () => {
   return (
-    <div className={s.searchWrapper}>
+    <div className={styled.searchWrapper}>
       <input
         aria-label="Ввод поискового запроса"
         autoCapitalize="none"
-        className={s.searchInput}
+        className={styled.searchInput}
         type="text"
         placeholder="Поиск"
         value=""
         readOnly={true}
       />
-      <div role="button" className={s.divBtn}>
-        <div className={s.wrapper}>
-          <div className={s.searchIcon}>
+      <div role="button" className={styled.divBtn}>
+        <div className={styled.wrapper}>
+          <div className={styled.searchIcon}>
             <Search />
           </div>
         </div>

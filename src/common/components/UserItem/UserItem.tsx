@@ -1,17 +1,20 @@
-import s from "./UserItem.module.scss";
+import styled from "./UserItem.module.scss";
 import { Avatar, Stack, Typography } from "@mui/material";
 import React from "react";
 import clsx from "clsx";
 import { IUser } from "../../../mocks/data/users";
+import { IActiveChatUser } from "../../../mocks/data/selectedUsersChat";
+
+type AvatarSize = "small" | "large" | "big";
 
 export interface IUserItemProps {
   userName: string;
   onClick: (user: IUser | any) => void;
-  sizeAvatar: any;
+  sizeAvatar: AvatarSize;
   isSelected?: boolean;
   userAvatar: string;
-  user?: IUser | any;
-  activeChatUser?: IUser | any;
+  user?: IActiveChatUser;
+  activeChatUser?: IActiveChatUser;
 }
 
 export const UserItem = ({
@@ -43,16 +46,20 @@ export const UserItem = ({
       flexDirection="row"
       className={
         isSelected === true
-          ? clsx(s.userMessageItem, {
-              [s.active]: user.id === activeChatUser?.id,
+          ? clsx(styled.userMessageItem, {
+              [styled.active]: user?.id === activeChatUser?.id,
             })
-          : s.itemUser
+          : styled.itemUser
       }
       onClick={onClick}
     >
       <Avatar alt="User Avatar" src={userAvatar} sx={sizeAvatar} />
       <Stack direction="column">
-        <Typography fontWeight="600" fontSize={14} className={s.nameModalBox}>
+        <Typography
+          fontWeight="600"
+          fontSize={14}
+          className={styled.nameModalBox}
+        >
           {userName}
         </Typography>
       </Stack>

@@ -1,4 +1,4 @@
-import s from "./CommentsPost.module.scss";
+import styled from "./CommentsPost.module.scss";
 import React, { useState } from "react";
 import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
 import { Stack } from "@mui/material";
@@ -13,9 +13,9 @@ export const CommentsPost: React.FC = () => {
       alignItems="center"
       boxSizing="border-box"
       flexDirection="row"
-      className={s.addCommentWrapper}
+      className={styled.addCommentWrapper}
     >
-      <div className={s.emojiPicker}>
+      <div className={styled.emojiPicker}>
         {chosenEmoji && (
           <Picker
             onEmojiClick={(_, emojiObject: any) => setChosenEmoji(emojiObject)}
@@ -23,13 +23,13 @@ export const CommentsPost: React.FC = () => {
         )}
       </div>
       <button
-        className={s.btnEmoji}
+        className={styled.btnEmoji}
         onClick={() => setChosenEmoji((prevState) => !prevState)}
       >
         <Smile />
       </button>
-      <input className={s.inputComment} placeholder="Add to comment" />
-      <button className={s.btnComment}>Post</button>
+      <input className={styled.inputComment} placeholder="Add to comment" />
+      <button className={styled.btnComment}>Post</button>
     </Stack>
   );
 };

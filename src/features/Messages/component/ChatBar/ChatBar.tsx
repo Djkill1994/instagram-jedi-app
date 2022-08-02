@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./ChatBar.module.scss";
+import styled from "./ChatBar.module.scss";
 import { Avatar, Stack, Typography } from "@mui/material";
 import { Chat } from "./Chat";
 import { InputBar } from "./InputBar";
@@ -19,7 +19,7 @@ export const ChatBar: React.FC = () => {
     <Stack direction="column">
       <Stack
         direction="row"
-        className={s.headerChat}
+        className={styled.headerChat}
         alignItems="center"
         spacing={2}
       >

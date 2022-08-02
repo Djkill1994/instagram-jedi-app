@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, IconButton, Stack } from "@mui/material";
-import s from "./InputBar.module.scss";
+import styled from "./InputBar.module.scss";
 import Picker from "emoji-picker-react";
 import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
@@ -28,32 +28,32 @@ export const InputBar: React.FC<any> = ({ sendMessage }) => {
   };
 
   return (
-    <Stack className={s.inputBar}>
+    <Stack className={styled.inputBar}>
       <Box component="form" onSubmit={handleSendMessage}>
         <Stack
-          className={s.inputWrapper}
+          className={styled.inputWrapper}
           justifyContent="space-between"
           alignItems="center"
           flexDirection="row"
         >
-          <div className={s.emojiPicker}>
+          <div className={styled.emojiPicker}>
             {showEmoji && <Picker onEmojiClick={onEmojiClick} />}
           </div>
           <button
-            className={s.btnEmoji}
+            className={styled.btnEmoji}
             onClick={() => setShowEmoji((prevState) => !prevState)}
           >
             <Smile />
           </button>
           <input
             placeholder="Message..."
-            className={s.inputText}
+            className={styled.inputText}
             value={inputStr}
             onChange={handleChangeText}
             type="text"
           />
           {inputStr !== "" ? (
-            <button type="submit" className={s.sendBtn}>
+            <button type="submit" className={styled.sendBtn}>
               Send
             </button>
           ) : (
@@ -62,7 +62,7 @@ export const InputBar: React.FC<any> = ({ sendMessage }) => {
                 accept="image/*"
                 id="icon-button-file"
                 type="file"
-                className={s.upLoadImage}
+                className={styled.upLoadImage}
               />
               <IconButton
                 color="primary"

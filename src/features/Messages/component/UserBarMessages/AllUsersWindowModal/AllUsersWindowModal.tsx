@@ -1,4 +1,4 @@
-import s from "./AllUsersWindowModal.module.scss";
+import styled from "./AllUsersWindowModal.module.scss";
 import {
   Alert,
   Box,
@@ -26,14 +26,14 @@ export const AllUsersWindowModal = () => {
         onClose={() => close()}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className={s.modalWindow}
+        className={styled.modalWindow}
       >
-        <Box className={s.modalBox}>
-          <Typography fontWeight="bold" className={s.titleModalBox}>
+        <Box className={styled.modalBox}>
+          <Typography fontWeight="bold" className={styled.titleModalBox}>
             New Message
           </Typography>
-          <div className={s.modalBoxLine}></div>
-          <Stack spacing={1.5} className={s.itemModalBox}>
+          <div className={styled.modalBoxLine}></div>
+          <Stack spacing={1.5} className={styled.itemModalBox}>
             {isLoading && <CircularProgress />}
             {error && (
               <Alert severity="error">

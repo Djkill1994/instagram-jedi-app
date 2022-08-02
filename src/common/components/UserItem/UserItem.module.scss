@@ -1,9 +1,9 @@
 .userMessageItem {
   padding: 8px 20px;
-}
 
-.userMessageItem:active {
-  background-color: #dbdbdb;
+  &:active {
+    background-color: #dbdbdb;
+  }
 }
 
 .active {
@@ -25,5 +25,5 @@
 }
 
 .nameModalBox {
-  margin-left: 15px;
+  margin-left: 15px!important;
 }

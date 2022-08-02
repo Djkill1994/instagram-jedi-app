@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./LogInForm.module.scss";
+import styled from "./LogInForm.module.scss";
 import { DecorationBorder } from "../../../../common/components/DecorationBorder";
 import { Link } from "react-router-dom";
 import { CustomForm } from "./CustomForm";
@@ -23,13 +23,13 @@ export const LogInForm: React.FC = () => {
           justifyContent="center"
           spacing={1}
           direction="row-reverse"
-          className={s.loginFbButton}
+          className={styled.loginFbButton}
         >
           <Link to={ROUTE_PATHS.FbLogin}>Log in with facebook</Link>
           <img alt={"FB"} src={fbLogo} />
         </Stack>
-        <div className={s.errorWindow}>Error</div>
-        <Link to={ROUTE_PATHS.RecPassword} className={s.forgotPasswordBtn}>
+        <div className={styled.errorWindow}>Error</div>
+        <Link to={ROUTE_PATHS.RecPassword} className={styled.forgotPasswordBtn}>
           Forgot password?
         </Link>
       </Stack>
