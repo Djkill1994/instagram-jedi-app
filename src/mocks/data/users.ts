@@ -1,5 +1,5 @@
 export interface IUser {
-  id: number;
+  id: string;
   email: string;
   userName: string;
   userAvatar: string;
@@ -10,14 +10,14 @@ export type IUsersApi = IUser[];
 
 export const usersResult: IUsersApi = [
   {
-    id: 1,
+    id: "1",
     email: "test1@gmail.com",
     userName: "Vlad",
     userAvatar: "https://bmwdrug.ru/img/logotip-v-vektore-bmv_0.jpg",
     password: "1",
   },
   {
-    id: 2,
+    id: "2",
     email: "test2@gmail.com",
     userName: "David",
     userAvatar:
@@ -25,7 +25,7 @@ export const usersResult: IUsersApi = [
     password: "1",
   },
   {
-    id: 3,
+    id: "3",
     email: "test3@gmail.com",
     userName: "Geralt",
     userAvatar:
@@ -33,7 +33,7 @@ export const usersResult: IUsersApi = [
     password: "1",
   },
   {
-    id: 4,
+    id: "4",
     email: "test4@gmail.com",
     userName: "Lola Taylor",
     userAvatar:
@@ -41,7 +41,7 @@ export const usersResult: IUsersApi = [
     password: "1",
   },
   {
-    id: 5,
+    id: "5",
     email: "test5@gmail.com",
     userName: "Tirion",
     userAvatar:
@@ -49,7 +49,7 @@ export const usersResult: IUsersApi = [
     password: "1",
   },
   {
-    id: 6,
+    id: "6",
     email: "test6@gmail.com",
     userName: "Kirill",
     userAvatar:

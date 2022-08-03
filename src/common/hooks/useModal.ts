@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-export const useModal = () => {
+interface IProps {
+  isOpened: boolean;
+  open: () => void;
+  close: () => void;
+}
+
+export const useModal = (): IProps => {
   const [isOpened, setIsOpened] = useState(false);
   return {
     isOpened,

@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BACKEND_URL } from "../../../config";
 import { IActiveChatUsersApi } from "../../../mocks/data/selectedUsersChat";
 
-export const activeUserApi = createApi({
-  reducerPath: "activeUserApi",
+export const activeChatUserApi = createApi({
+  reducerPath: "activeChatUserApi",
   baseQuery: fetchBaseQuery({ baseUrl: BACKEND_URL }),
   tagTypes: ["ActiveUser"],
   endpoints: (build) => ({
@@ -11,14 +11,7 @@ export const activeUserApi = createApi({
       query: () => "/activeChat",
       providesTags: ["ActiveUser"],
     }),
-    addActiveUser: build.mutation<
-      void,
-      {
-        activeUserId: any;
-        userName: string;
-        userAvatar: string;
-      }
-    >({
+    addActiveUser: build.mutation<void, { id: string }>({
       query(data) {
         return {
           url: "activeUser",
@@ -32,4 +25,4 @@ export const activeUserApi = createApi({
 });
 
 export const { useAddActiveUserMutation, useGetActiveChatUserQuery } =
-  activeUserApi;
+  activeChatUserApi;

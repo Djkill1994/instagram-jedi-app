@@ -13,7 +13,7 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
 import { useLoginMutation } from "../../../api/login.api";
-import { setAuth, setUserData } from "../../../slices/login.slice";
+import { setAuthUser } from "../../../slices/login.slice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -56,16 +56,10 @@ export const CustomForm: React.FC = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      dispatch(setAuth(true));
+      dispatch(setAuthUser(data));
       navigate("/content", { replace: true });
     }
   }, [dispatch, isSuccess, navigate]);
-
-  useEffect(() => {
-    if (isSuccess) {
-      dispatch(setUserData(data));
-    }
-  }, [isSuccess]);
 
   return (
     <Box

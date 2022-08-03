@@ -1,14 +1,13 @@
 import styled from "./UserBarMessages.module.scss";
-// fix s to styles on all places in the project
 import { Alert, CircularProgress, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetUsersQuery } from "../../api/users.api";
+import { useGetUsersQuery } from "../../../User/api/users.api";
 import {
   activeChatUserSelector,
   setActiveUserChat,
 } from "../../slices/message.slice";
-import { useGetActiveChatUserQuery } from "../../api/activeUser.api";
+import { useGetActiveChatUserQuery } from "../../api/activeChatUser.api";
 import { loginSelector } from "../../../Login/slices/login.slice";
 import { IActiveChatUser } from "../../../../mocks/data/selectedUsersChat";
 import { UserItem } from "../../../../common/components/UserItem";
@@ -17,7 +16,7 @@ import { AllUsersWindowModal } from "./AllUsersWindowModal";
 export const UserBarMessages: React.FC = () => {
   const { error, isLoading } = useGetUsersQuery();
   const { data: activeChatUsers } = useGetActiveChatUserQuery();
-  const authUser = useSelector(loginSelector);
+  const userData = useSelector(loginSelector);
   const activeChatUser = useSelector(activeChatUserSelector);
   const dispatch = useDispatch();
 
@@ -39,7 +38,7 @@ export const UserBarMessages: React.FC = () => {
           width="100%"
           display="flex"
         >
-          {authUser.userName}
+          {userData.authUser?.userName}
         </Typography>
         <AllUsersWindowModal />
       </Stack>
@@ -57,10 +56,8 @@ export const UserBarMessages: React.FC = () => {
               key={user.id}
               userAvatar={user.userAvatar}
               onClick={() => handleClickOnUser(user)}
-              sizeAvatar={"big"}
-              isSelected={true}
-              user={user}
-              activeChatUser={activeChatUser}
+              avatarSize={"big"}
+              isSelected={user.id === activeChatUser?.id}
             />
           ))}
         </>

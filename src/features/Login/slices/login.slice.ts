@@ -1,35 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
+import { IUser } from "../../../mocks/data/users";
 
 interface LoginState {
   isAuth: boolean;
-  userName: string;
-  userAvatar: string;
-  userId: string;
+  authUser?: IUser;
 }
 
 const initialState: LoginState = {
   isAuth: false,
-  userName: "",
-  userAvatar: "",
-  userId: "",
 };
 
 export const loginSlice = createSlice({
   name: "loginUser",
   initialState,
   reducers: {
-    setAuth: (state, { payload }) => {
+    setAuthUser: (state, { payload }) => {
+      console.log(payload.userAvatar);
       state.isAuth = payload;
-    },
-    setUserData: (state, { payload }) => {
-      state.userName = payload.userName;
-      state.userAvatar = payload.userAvatar;
-      state.userId = payload.id;
+      state.authUser = payload;
     },
   },
 });
 
-export const { setAuth, setUserData } = loginSlice.actions;
+export const { setAuthUser } = loginSlice.actions;
 
 export const loginSelector = (state: RootState) => state.loginUser;

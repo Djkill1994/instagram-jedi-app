@@ -7,13 +7,15 @@ import { loginSelector } from "../../Login/slices/login.slice";
 const SERVER_URL = "http://localhost:5000";
 
 export const useChat = (
-  roomId: any,
-  selectedUser: string,
-  selectedUserId: number
+  roomId: string | undefined,
+  selectedUser: string | undefined,
+  selectedUserId: string | undefined
 ) => {
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
-  const { userId, userName: username } = useSelector(loginSelector);
+  const userData = useSelector(loginSelector);
+  const username = userData.authUser?.userName;
+  const userId = userData.authUser?.id;
 
   // создаем и записываем в локальное хранинище идентификатор пользователя
   // const [userId] = useLocalStorage("userId", nanoid(8));

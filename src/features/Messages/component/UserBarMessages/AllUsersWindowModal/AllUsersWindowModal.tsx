@@ -2,6 +2,7 @@ import styled from "./AllUsersWindowModal.module.scss";
 import {
   Alert,
   Box,
+  Button,
   CircularProgress,
   Modal,
   Stack,
@@ -10,8 +11,8 @@ import {
 import { UserItem } from "../../../../../common/components/UserItem";
 import React from "react";
 import { useModal } from "../../../../../common/hooks/useModal";
-import { useGetUsersQuery } from "../../../api/users.api";
-import { useAddActiveUserMutation } from "../../../api/activeUser.api";
+import { useGetUsersQuery } from "../../../../User/api/users.api";
+import { useAddActiveUserMutation } from "../../../api/activeChatUser.api";
 import { ReactComponent as NewMessage } from "../../../../../assets/svg/newMessage.svg";
 
 export const AllUsersWindowModal = () => {
@@ -50,15 +51,15 @@ export const AllUsersWindowModal = () => {
                     id: user.id,
                   }).then(() => close())
                 }
-                sizeAvatar={"large"}
+                avatarSize={"large"}
               />
             ))}
           </Stack>
         </Box>
       </Modal>
-      <button onClick={() => open()}>
+      <Button onClick={() => open()}>
         <NewMessage />
-      </button>
+      </Button>
     </>
   );
 };

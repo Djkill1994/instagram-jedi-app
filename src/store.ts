@@ -4,9 +4,9 @@ import { postsApi } from "./features/Post/api/post.api";
 import { loginApi } from "./features/Login/api/login.api";
 import { loginSlice } from "./features/Login/slices/login.slice";
 import { registrationApi } from "./features/Registration/api/registration.api";
-import { usersApi } from "./features/Messages/api/users.api";
+import { usersApi } from "./features/User/api/users.api";
 import { messageSlice } from "./features/Messages/slices/message.slice";
-import { activeUserApi } from "./features/Messages/api/activeUser.api";
+import { activeChatUserApi } from "./features/Messages/api/activeChatUser.api";
 
 export const store = configureStore({
   reducer: {
@@ -16,7 +16,7 @@ export const store = configureStore({
     [usersApi.reducerPath]: usersApi.reducer,
     [loginApi.reducerPath]: loginApi.reducer,
     [registrationApi.reducerPath]: registrationApi.reducer,
-    [activeUserApi.reducerPath]: activeUserApi.reducer,
+    [activeChatUserApi.reducerPath]: activeChatUserApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -24,7 +24,7 @@ export const store = configureStore({
       usersApi.middleware,
       loginApi.middleware,
       registrationApi.middleware,
-      activeUserApi.middleware
+      activeChatUserApi.middleware
     ),
 });
 
