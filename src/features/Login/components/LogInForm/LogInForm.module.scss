@@ -8,10 +8,10 @@
     color: #4267b1;
     text-decoration: none;
   }
-}
 
-.loginFbButton:active {
-  opacity: 0.3;
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .errorWindow {
@@ -23,8 +23,8 @@
   font-size: 11px;
   text-decoration: none;
   padding-bottom: 25px;
-}
 
-.forgotPasswordBtn:active {
-  opacity: 0.3;
+  &:active {
+    opacity: 0.3;
+  }
 }

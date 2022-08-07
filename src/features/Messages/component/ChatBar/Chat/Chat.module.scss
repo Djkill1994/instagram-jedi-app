@@ -1,14 +1,23 @@
 .chat {
-  height: 335px;
   padding: 10px 20px 0 20px;
-  overflow: auto;
+  overflow-y: auto;
+  max-height: 360px;
 }
 
 .itemMessage {
   max-width: 220px;
   border-radius: 50px;
-  background-color: #efefef;
   padding: 16px;
   font-size: 14px;
   word-break: break-word;
+  margin-left: 400px;
+}
+
+.currentUser {
+  background-color: white;
+  border: #efefef 1px solid;
+}
+
+.otherUser {
+  background-color: #efefef;
 }

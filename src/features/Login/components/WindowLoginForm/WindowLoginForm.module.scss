@@ -29,9 +29,9 @@
     font-weight: 600;
     font-size: 14px;
     text-decoration: none;
-  }
 
-  a:active {
-    opacity: 0.3;
+    &:active {
+      opacity: 0.3;
+    }
   }
 }

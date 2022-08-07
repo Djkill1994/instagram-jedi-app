@@ -1,5 +1,5 @@
 .inputBar {
-  padding: 20px;
+  padding: 5px 20px;
   border-radius: 100px;
 }
 
@@ -19,9 +19,6 @@
 button {
   background-color: white;
   border: none;
-}
-
-button:hover {
   cursor: pointer;
 }
 
@@ -33,4 +30,9 @@ button:hover {
 
 .upLoadImage {
   display: none;
+}
+
+.sendBtn {
+  color: #0095f6;
+  font-weight: bolder;
 }

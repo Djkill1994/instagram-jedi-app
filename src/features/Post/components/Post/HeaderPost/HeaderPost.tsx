@@ -1,4 +1,4 @@
-import s from "./HeaderPost.module.scss";
+import styled from "./HeaderPost.module.scss";
 import React from "react";
 import { Avatar, Stack } from "@mui/material";
 import { ReactComponent as Additionally } from "../../../../../assets/svg/additionally.svg";
@@ -17,11 +17,11 @@ export const HeaderPost: React.FC<HeaderPostProps> = ({
       justifyContent="space-between"
       alignItems="center"
       flexDirection="row"
-      className={s.headerBar}
+      className={styled.headerBar}
     >
       <Stack alignItems="center" direction="row" spacing={2}>
-        <Avatar src={userAvatar} alt="Avatar" className={s.avatar} />
-        <span className={s.nameAccount}>{userName}</span>
+        <Avatar src={userAvatar} alt="Avatar" sx={{ w: 40, h: 40 }} />
+        <span className={styled.nameAccount}>{userName}</span>
       </Stack>
       <Additionally />
     </Stack>

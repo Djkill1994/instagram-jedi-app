@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./DecorationBorder.module.scss";
+import styled from "./DecorationBorder.module.scss";
 import { Stack, Typography } from "@mui/material";
 
 export const DecorationBorder: React.FC = () => {
@@ -9,11 +9,11 @@ export const DecorationBorder: React.FC = () => {
       justifyContent="center"
       alignItems="center"
       direction="row"
-      className={s.stack}
+      className={styled.stack}
     >
-      <div className={s.line} />
+      <div className={styled.line} />
       <Typography fontSize={14}>OR</Typography>
-      <div className={s.line} />
+      <div className={styled.line} />
     </Stack>
   );
 };

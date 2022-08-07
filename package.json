@@ -2,6 +2,8 @@
   "name": "instagram-jedi-app",
   "version": "0.1.0",
   "private": true,
+  "main": "index.tsx",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -17,6 +19,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.13",
     "clsx": "^1.1.1",
+    "concurrently": "^7.1.0",
     "emoji-picker-react": "^3.5.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "msw": "^0.35.0",
@@ -26,14 +29,18 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-use": "^17.3.2",
+    "socket.io-client": "^4.4.1",
     "typescript": "^4.6.2"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "server": "npm --cwd ./src/libs/chatServer/package.json dev",
+    "client": "npm --cwd client start",
+    "start": "react-scripts start"
   },
   "browserslist": {
     "production": [
@@ -54,5 +61,6 @@
     "@faker-js/faker": "^6.0.0",
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.0"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }

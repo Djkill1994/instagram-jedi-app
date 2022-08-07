@@ -1,19 +1,34 @@
 import React from "react";
-import { Stack } from "@mui/material";
-import s from "./Chat.module.scss";
+import { Box, Stack } from "@mui/material";
+import styled from "./Chat.module.scss";
+import { useChat } from "../../../hooks/useChat";
+import clsx from "clsx";
+import { useSelector } from "react-redux";
+import { activeChatUserSelector } from "../../../slices/message.slice";
+import { useChatScroll } from "../../../../../common/hooks/useChatScroll";
 
 export const Chat: React.FC = () => {
+  const activeChatUser = useSelector(activeChatUserSelector);
+  const { messages } = useChat(
+    activeChatUser?.roomId,
+    activeChatUser?.userName,
+    activeChatUser?.id
+  );
+  const ref = useChatScroll(messages);
+
   return (
-    <Stack
-      className={s.chat}
-      spacing={1}
-      alignItems="baseline"
-      justifyContent="flex-end"
-    >
-      <Stack className={s.itemMessage}>Item one</Stack>
-      <Stack className={s.itemMessage} direction="row-reverse">
-        Item two
-      </Stack>
+    <Stack className={styled.chat} spacing={1} alignItems="baseline" ref={ref}>
+      {messages.map(({ messageText, messageId, currentUser }) => (
+        <Box
+          key={messageId}
+          className={clsx(
+            styled.itemMessage,
+            currentUser ? styled.otherUser : styled.currentUser
+          )}
+        >
+          {messageText}
+        </Box>
+      ))}
     </Stack>
   );
 };
