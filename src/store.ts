@@ -10,7 +10,7 @@ import { activeChatUserApi } from "./features/Messages/api/activeChatUser.api";
 
 export const store = configureStore({
   reducer: {
-    activeUserChat: messageSlice.reducer,
+    messageReducer: messageSlice.reducer,
     loginUser: loginSlice.reducer,
     [postsApi.reducerPath]: postsApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,

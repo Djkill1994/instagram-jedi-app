@@ -1,10 +1,9 @@
-export interface activeChatUsers {
-  activeUserId: number | string;
-  userName: string;
-  userAvatar: string;
-  roomId: number | string;
+import { IUser } from "./users";
+
+export interface IActiveChatUsers extends Omit<IUser, "password" | "email"> {
+  roomId: string;
 }
 
-export type IActiveChatUsersApi = activeChatUsers[];
+export type IActiveChatUsersApi = IActiveChatUsers[];
 
 export const activeChatUsersResult: IActiveChatUsersApi = [];
