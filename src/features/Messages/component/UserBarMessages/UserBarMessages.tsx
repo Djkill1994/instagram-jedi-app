@@ -42,7 +42,7 @@ export const UserBarMessages: React.FC = () => {
         </Typography>
         <AllUsersWindowModal />
       </Stack>
-      <Stack direction="column" className={styled.barMessageItem}>
+      <Stack direction="column" mt={2}>
         <>
           {isLoading && <CircularProgress />}
           {error && (

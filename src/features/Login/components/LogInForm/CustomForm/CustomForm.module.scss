@@ -24,11 +24,11 @@
     background-color: #0095f6;
     text-transform: none;
     color: white;
-  }
 
-  .loadingButton:disabled {
-    opacity: 0.3;
-    background-color: #0095f6;
-    color: white;
+    &:disabled {
+      opacity: 0.3;
+      background-color: #0095f6;
+      color: white;
+    }
   }
 }

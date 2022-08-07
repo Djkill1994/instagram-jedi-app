@@ -4,31 +4,25 @@ import styled from "./Chat.module.scss";
 import { useChat } from "../../../hooks/useChat";
 import clsx from "clsx";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../../store";
-
-function useChatScroll<T>(
-  dep: T
-): React.MutableRefObject<HTMLDivElement | undefined> {
-  const ref = useRef<HTMLDivElement>();
-  React.useEffect(() => {
-    if (ref.current) {
-      ref.current.scrollTop = ref.current.scrollHeight;
-    }
-  }, [dep]);
-  return ref;
-}
+import { activeChatUserSelector } from "../../../slices/message.slice";
+import { useChatScroll } from "../../../../../common/hooks/useChatScroll";
 
 export const Chat: React.FC = () => {
-  const userData = useSelector((state: RootState) => state.activeUserChat);
+  const activeChatUser = useSelector(activeChatUserSelector);
   const { messages } = useChat(
-    userData.roomId,
-    userData.userName,
-    userData.activeUserId
+    activeChatUser?.roomId,
+    activeChatUser?.userName,
+    activeChatUser?.id
   );
-  const ref = useChatScroll(messages);
+  const refik = useChatScroll(messages);
 
   return (
-    <Stack className={styled.chat} spacing={1} alignItems="baseline" ref={ref}>
+    <Stack
+      className={styled.chat}
+      spacing={1}
+      alignItems="baseline"
+      ref={refik}
+    >
       {messages.map(({ messageText, messageId, currentUser }) => (
         <Box
           key={messageId}

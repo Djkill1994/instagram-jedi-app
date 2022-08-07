@@ -29,7 +29,7 @@ export const SocialSectionPost: React.FC<SocialSectionPostProps> = ({
         <Typography fontSize={14}>{description}</Typography>
       </Stack>
       <button className={styled.comments}>View all comments</button>
-      <Typography fontSize={12} className={styled.date}>
+      <Typography fontSize={12} className={styled.date} mt={1}>
         {datePublication}
       </Typography>
     </Stack>

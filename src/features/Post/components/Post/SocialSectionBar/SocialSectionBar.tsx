@@ -8,11 +8,7 @@ import { Stack } from "@mui/material";
 
 export const SocialSectionBar = () => {
   return (
-    <Stack
-      direction="row"
-      className={styled.socialBar}
-      justifyContent="space-between"
-    >
+    <Stack direction="row" justifyContent="space-between" mt={3}>
       <Stack direction="row" spacing={1}>
         <Like />
         <Comments />

@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Box, IconButton, Stack } from "@mui/material";
 import styled from "./InputBar.module.scss";
-import Picker from "emoji-picker-react";
+import Picker, { IEmojiData } from "emoji-picker-react";
 import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
 
-export const InputBar: React.FC<any> = ({ sendMessage }) => {
+interface IProps {
+  sendMessage: (arg1: string) => void;
+}
+
+export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
   const [showEmoji, setShowEmoji] = useState(false);
   const [inputStr, setInputStr] = useState("");
 
-  const handleChangeText = (e: any) => {
+  const handleChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputStr(e.target.value);
   };
 
@@ -22,7 +26,7 @@ export const InputBar: React.FC<any> = ({ sendMessage }) => {
     }
   };
 
-  const onEmojiClick = (event: any, emojiObject: any) => {
+  const onEmojiClick = (event: React.MouseEvent, emojiObject: IEmojiData) => {
     setInputStr((prevInput) => prevInput + emojiObject.emoji);
     setShowEmoji(false);
   };
@@ -52,7 +56,7 @@ export const InputBar: React.FC<any> = ({ sendMessage }) => {
             onChange={handleChangeText}
             type="text"
           />
-          {inputStr !== "" ? (
+          {inputStr ? (
             <button type="submit" className={styled.sendBtn}>
               Send
             </button>

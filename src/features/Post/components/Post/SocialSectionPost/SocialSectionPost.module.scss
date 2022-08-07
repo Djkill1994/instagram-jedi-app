@@ -8,7 +8,6 @@
 }
 
 .date {
-  margin-top: 5px !important;
   opacity: 0.6;
 }
 
@@ -18,12 +17,12 @@
   display: flex;
   padding: 0;
   opacity: 0.6;
-}
 
-.comments:hover {
-  cursor: pointer;
-}
+  &:hover {
+    cursor: pointer;
+  }
 
-.comments:active {
-  opacity: 0.3;
+  &:active {
+    opacity: 0.3;
+  }
 }

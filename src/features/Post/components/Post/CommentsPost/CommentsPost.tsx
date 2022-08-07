@@ -2,10 +2,16 @@ import styled from "./CommentsPost.module.scss";
 import React, { useState } from "react";
 import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
 import { Stack } from "@mui/material";
-import Picker from "emoji-picker-react";
+import Picker, { IEmojiData } from "emoji-picker-react";
 
 export const CommentsPost: React.FC = () => {
-  const [chosenEmoji, setChosenEmoji] = useState(false);
+  const [showEmoji, setShowEmoji] = useState(false);
+  const [inputStr, setInputStr] = useState("");
+
+  const onEmojiClick = (event: React.MouseEvent, emojiObject: IEmojiData) => {
+    setInputStr((prevInput) => prevInput + emojiObject.emoji);
+    setShowEmoji(false);
+  };
 
   return (
     <Stack
@@ -16,15 +22,11 @@ export const CommentsPost: React.FC = () => {
       className={styled.addCommentWrapper}
     >
       <div className={styled.emojiPicker}>
-        {chosenEmoji && (
-          <Picker
-            onEmojiClick={(_, emojiObject: any) => setChosenEmoji(emojiObject)}
-          />
-        )}
+        {showEmoji && <Picker onEmojiClick={onEmojiClick} />}
       </div>
       <button
         className={styled.btnEmoji}
-        onClick={() => setChosenEmoji((prevState) => !prevState)}
+        onClick={() => setShowEmoji((prevState) => !prevState)}
       >
         <Smile />
       </button>

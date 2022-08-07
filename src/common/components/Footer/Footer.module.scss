@@ -17,15 +17,15 @@
     option {
       font-size: 14px;
     }
-  }
 
-  .nativeSelect:before {
-    border: none;
-    content: none;
-  }
+    &:before {
+      border: none;
+      content: none;
+    }
 
-  .nativeSelect:after {
-    border: none;
+    &:after {
+      border: none;
+    }
   }
 }
 

@@ -20,7 +20,7 @@ export const HeaderPost: React.FC<HeaderPostProps> = ({
       className={styled.headerBar}
     >
       <Stack alignItems="center" direction="row" spacing={2}>
-        <Avatar src={userAvatar} alt="Avatar" className={styled.avatar} />
+        <Avatar src={userAvatar} alt="Avatar" sx={{ w: 40, h: 40 }} />
         <span className={styled.nameAccount}>{userName}</span>
       </Stack>
       <Additionally />

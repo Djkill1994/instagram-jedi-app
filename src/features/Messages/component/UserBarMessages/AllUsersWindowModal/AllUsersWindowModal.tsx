@@ -9,13 +9,13 @@ import {
   Typography,
 } from "@mui/material";
 import { UserItem } from "../../../../../common/components/UserItem";
-import React from "react";
+import React, { VFC } from "react";
 import { useModal } from "../../../../../common/hooks/useModal";
 import { useGetUsersQuery } from "../../../../User/api/users.api";
 import { useAddActiveUserMutation } from "../../../api/activeChatUser.api";
 import { ReactComponent as NewMessage } from "../../../../../assets/svg/newMessage.svg";
 
-export const AllUsersWindowModal = () => {
+export const AllUsersWindowModal: VFC = () => {
   const { isOpened, open, close } = useModal();
   const { data: users, error, isLoading } = useGetUsersQuery();
   const [addActiveUser] = useAddActiveUserMutation();
@@ -24,13 +24,13 @@ export const AllUsersWindowModal = () => {
     <>
       <Modal
         open={isOpened}
-        onClose={() => close()}
+        onClose={close}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         className={styled.modalWindow}
       >
         <Box className={styled.modalBox}>
-          <Typography fontWeight="bold" className={styled.titleModalBox}>
+          <Typography fontWeight="bold" align="center" m={1.5}>
             New Message
           </Typography>
           <div className={styled.modalBoxLine}></div>
@@ -49,7 +49,7 @@ export const AllUsersWindowModal = () => {
                 onClick={() =>
                   addActiveUser({
                     id: user.id,
-                  }).then(() => close())
+                  }).then(close)
                 }
                 avatarSize={"large"}
               />
@@ -57,7 +57,7 @@ export const AllUsersWindowModal = () => {
           </Stack>
         </Box>
       </Modal>
-      <Button onClick={() => open()}>
+      <Button onClick={open}>
         <NewMessage />
       </Button>
     </>
