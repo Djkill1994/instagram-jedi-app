@@ -1,10 +1,11 @@
 import React from "react";
-import s from "./LogInForm.module.scss";
+import styled from "./LogInForm.module.scss";
 import { DecorationBorder } from "../../../../common/components/DecorationBorder";
 import { Link } from "react-router-dom";
 import { CustomForm } from "./CustomForm";
 import { Stack } from "@mui/material";
 import { ROUTE_PATHS } from "../../../../common/components/App/App";
+import fbLogo from "../../../../assets/icon/FB logo blue.png";
 
 export const LogInForm: React.FC = () => {
   return (
@@ -22,16 +23,13 @@ export const LogInForm: React.FC = () => {
           justifyContent="center"
           spacing={1}
           direction="row-reverse"
-          className={s.loginFbButton}
+          className={styled.loginFbButton}
         >
           <Link to={ROUTE_PATHS.FbLogin}>Log in with facebook</Link>
-          <img
-            alt={"FB"}
-            src={"https://www.facebook.com/images/fb_icon_325x325.png"}
-          />
+          <img alt={"FB"} src={fbLogo} />
         </Stack>
-        <div className={s.errorWindow}>Error</div>
-        <Link to={ROUTE_PATHS.RecPassword} className={s.forgotPasswordBtn}>
+        <div className={styled.errorWindow}>Error</div>
+        <Link to={ROUTE_PATHS.RecPassword} className={styled.forgotPasswordBtn}>
           Forgot password?
         </Link>
       </Stack>

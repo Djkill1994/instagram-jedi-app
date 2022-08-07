@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
+import { IUser } from "../../../mocks/data/users";
 
 interface LoginState {
   isAuth: boolean;
+  authUser?: IUser;
 }
 
 const initialState: LoginState = {
@@ -13,12 +15,14 @@ export const loginSlice = createSlice({
   name: "loginUser",
   initialState,
   reducers: {
-    setAuth: (state, { payload }) => {
+    setAuthUser: (state, { payload }) => {
+      console.log(payload.userAvatar);
       state.isAuth = payload;
+      state.authUser = payload;
     },
   },
 });
 
-export const { setAuth } = loginSlice.actions;
+export const { setAuthUser } = loginSlice.actions;
 
 export const loginSelector = (state: RootState) => state.loginUser;

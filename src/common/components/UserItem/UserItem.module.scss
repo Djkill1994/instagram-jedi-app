@@ -1,0 +1,21 @@
+.userMessageItem {
+  padding: 8px 20px;
+  cursor: pointer;
+
+  &:active {
+    background-color: #dbdbdb;
+  }
+}
+
+.active {
+  background-color: #dbdbdb;
+}
+
+.itemUser {
+  cursor: pointer;
+
+  &:active {
+    background-color: #dbdbdb;
+    border-radius: 15px;
+  }
+}

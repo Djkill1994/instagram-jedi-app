@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Stack } from "@mui/material";
-import s from "./AgreementPolicy.module.scss";
+import styled from "./AgreementPolicy.module.scss";
 
 export const AgreementPolicy: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ export const AgreementPolicy: React.FC = () => {
       alignItems="center"
       direction="row"
       fontSize={10}
-      className={s.titleDocumentation}
+      className={styled.titleDocumentation}
     >
       <p>By signing up, you agree to our</p>
       <Link target="_blank" href={"https://help.instagram.com/581066165581870"}>

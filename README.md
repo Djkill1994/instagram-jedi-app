@@ -24,8 +24,8 @@ The project uses a technology stack 👨‍💻 :
 <li>Pretier
   <br>
    <br>
-  
-Implemented in the project at the moment 👍 : 
+
+Implemented in the project at the moment 👍 :
 <li>User authorization 
 <li>User Registration 
 <li>Infinite slider on login page Application
@@ -36,60 +36,60 @@ Implemented in the project at the moment 👍 :
 <li>Adaptive layout
 
 Implemented through 💻 :
-  <br>
+<br>
 <li>Registration and authorization 🧙 is implemented using RTK Query and Mock Service Worker.
   <br>
-  
+
 ![React App - Google Chrome 16 04 2022 16_29_25](https://user-images.githubusercontent.com/84898137/163684830-f634172d-71d6-4ce2-bf38-99e9f8afce5b.png)
 ![React App - Google Chrome 16 04 2022 16_29_33](https://user-images.githubusercontent.com/84898137/163684870-76703d32-c1bc-4659-96f5-0ef62cb2a612.png)
-  
-Video 🎥 : 
-  
-  
+
+Video 🎥 :
+
+
 https://user-images.githubusercontent.com/84898137/163685476-d3cf57a7-a820-4c1c-97de-bd8c6d73dc8e.mp4
 
 
 <li>Posts 📰 implemented using RTK Query , Mock Service Worker, randomly generated posts using faker-js.
   <br>
-  
+
 ![React App - Google Chrome 16 04 2022 16_32_41](https://user-images.githubusercontent.com/84898137/163684918-dd621626-09c4-4783-aa8e-c3f777081a1b.png)
 ![React App - Google Chrome 16 04 2022 16_32_49](https://user-images.githubusercontent.com/84898137/163684921-f69f3a94-4ccf-493c-97ec-7cbdf2a0d6af.png)
-  
+
 <li>Emoji 😀 are implemented using the npm package Emoji-picker-react.
   <br>
-  
+
 ![React App - Google Chrome 16 04 2022 20_20_17](https://user-images.githubusercontent.com/84898137/163685026-e9879d7d-6f4a-4df9-bbb6-9b47269b1211.png)
-  
+
 <li>Application navigation implemented using React-router-dom 🚲 .
   <br>
-  
+
 <li>The infinite  slider has been implemented like this 👉 : <br>by timeout, certain styles are thrown onto the pictures, thereby one begins to fade and the second appears, thus a
 smooth transition is realized.
-  
-  
-Video 🎥 : 
-  
- 
+
+
+Video 🎥 :
+
+
 https://user-images.githubusercontent.com/84898137/163685505-f3832ca8-d4af-4caa-b4f1-981d9344a2f3.mp4
 
-  
+
 <li>Messages 📝 between users will be implemented using low db, RTK Query, socket-io.
   <br>
-  
+
 ![React App - Google Chrome 16 04 2022 16_30_03](https://user-images.githubusercontent.com/84898137/163685411-569748d7-ad81-4e63-8b90-06491770fa7d.png)
 
   <br>
 An example of implementing adaptability 📱 .
-  
 
-Video 🎥 : 
-  
+
+Video 🎥 :
+
 
 https://user-images.githubusercontent.com/84898137/163685908-12f723ec-d969-4cdb-8ba2-df1e7a8973e6.mp4
 
 An example of the implemented work of the application 👀 .
-  
-Video 🎥 : 
+
+Video 🎥 :
 
 https://user-images.githubusercontent.com/84898137/163686172-ccea6a76-5098-442c-a050-9c52733ff8bb.mp4
 

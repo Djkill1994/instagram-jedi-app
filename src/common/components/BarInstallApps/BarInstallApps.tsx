@@ -1,19 +1,19 @@
 import React from "react";
-import s from "./BarInstallApps.module.scss";
+import styled from "./BarInstallApps.module.scss";
 import { Link, Stack } from "@mui/material";
 
 export const BarInstallApps: React.FC = () => {
   return (
     <Stack
-      className={s.installAppsWrapper}
+      className={styled.installAppsWrapper}
       alignItems="center"
       flexDirection="column"
     >
       <span>Get the app.</span>
-      <Stack direction="row" spacing={1} className={s.barInstallApps}>
+      <Stack direction="row" spacing={1} className={styled.barInstallApps}>
         <Link
           target="_blank"
-          className={s.installAppStore}
+          className={styled.installAppStore}
           href={"https://apps.apple.com/app/instagram/id389801252?vt=lo"}
         >
           <img
@@ -24,7 +24,7 @@ export const BarInstallApps: React.FC = () => {
           />
         </Link>
         <Link
-          className={s.installGooglePlay}
+          className={styled.installGooglePlay}
           target="_blank"
           href={
             "https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=6F8FE621-2D27-49E1-8F4A-68D804A778EE&utm_content=lo&utm_medium=badge"

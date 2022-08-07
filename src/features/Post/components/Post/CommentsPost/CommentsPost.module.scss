@@ -20,14 +20,11 @@
   color: #0095f6;
   font-weight: bold;
   border: none;
-}
-
-.btnComment:hover {
   cursor: pointer;
-}
 
-.btnComment:active {
-  opacity: 0.3;
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .emojiPicker {
@@ -39,8 +36,5 @@
 .btnEmoji {
   border: none;
   background-color: white;
-}
-
-.btnEmoji:hover {
   cursor: pointer;
 }

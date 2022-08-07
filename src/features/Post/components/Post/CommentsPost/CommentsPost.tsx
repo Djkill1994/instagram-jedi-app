@@ -1,11 +1,17 @@
-import s from "./CommentsPost.module.scss";
+import styled from "./CommentsPost.module.scss";
 import React, { useState } from "react";
 import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
 import { Stack } from "@mui/material";
-import Picker from "emoji-picker-react";
+import Picker, { IEmojiData } from "emoji-picker-react";
 
 export const CommentsPost: React.FC = () => {
-  const [chosenEmoji, setChosenEmoji] = useState(false);
+  const [showEmoji, setShowEmoji] = useState(false);
+  const [inputStr, setInputStr] = useState("");
+
+  const onEmojiClick = (event: React.MouseEvent, emojiObject: IEmojiData) => {
+    setInputStr((prevInput) => prevInput + emojiObject.emoji);
+    setShowEmoji(false);
+  };
 
   return (
     <Stack
@@ -13,23 +19,19 @@ export const CommentsPost: React.FC = () => {
       alignItems="center"
       boxSizing="border-box"
       flexDirection="row"
-      className={s.addCommentWrapper}
+      className={styled.addCommentWrapper}
     >
-      <div className={s.emojiPicker}>
-        {chosenEmoji && (
-          <Picker
-            onEmojiClick={(_, emojiObject: any) => setChosenEmoji(emojiObject)}
-          />
-        )}
+      <div className={styled.emojiPicker}>
+        {showEmoji && <Picker onEmojiClick={onEmojiClick} />}
       </div>
       <button
-        className={s.btnEmoji}
-        onClick={() => setChosenEmoji((prevState) => !prevState)}
+        className={styled.btnEmoji}
+        onClick={() => setShowEmoji((prevState) => !prevState)}
       >
         <Smile />
       </button>
-      <input className={s.inputComment} placeholder="Add to comment" />
-      <button className={s.btnComment}>Post</button>
+      <input className={styled.inputComment} placeholder="Add to comment" />
+      <button className={styled.btnComment}>Post</button>
     </Stack>
   );
 };
