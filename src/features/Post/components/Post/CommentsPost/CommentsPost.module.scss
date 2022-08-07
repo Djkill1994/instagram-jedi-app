@@ -20,16 +20,12 @@
   color: #0095f6;
   font-weight: bold;
   border: none;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &:active {
     opacity: 0.3;
   }
 }
-
 
 .emojiPicker {
   position: absolute;
@@ -40,9 +36,5 @@
 .btnEmoji {
   border: none;
   background-color: white;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
-

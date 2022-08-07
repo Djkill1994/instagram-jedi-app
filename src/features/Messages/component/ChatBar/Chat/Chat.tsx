@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Box, Stack } from "@mui/material";
 import styled from "./Chat.module.scss";
 import { useChat } from "../../../hooks/useChat";
@@ -14,15 +14,10 @@ export const Chat: React.FC = () => {
     activeChatUser?.userName,
     activeChatUser?.id
   );
-  const refik = useChatScroll(messages);
+  const ref = useChatScroll(messages);
 
   return (
-    <Stack
-      className={styled.chat}
-      spacing={1}
-      alignItems="baseline"
-      ref={refik}
-    >
+    <Stack className={styled.chat} spacing={1} alignItems="baseline" ref={ref}>
       {messages.map(({ messageText, messageId, currentUser }) => (
         <Box
           key={messageId}

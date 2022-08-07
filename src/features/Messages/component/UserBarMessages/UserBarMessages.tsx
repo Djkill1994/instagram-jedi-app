@@ -11,7 +11,7 @@ import { useGetActiveChatUserQuery } from "../../api/activeChatUser.api";
 import { loginSelector } from "../../../Login/slices/login.slice";
 import { IActiveChatUsers } from "../../../../mocks/data/selectedUsersChat";
 import { UserItem } from "../../../../common/components/UserItem";
-import { SearchUsersModal } from "./AllUsersWindowModal";
+import { SearchUsersModal } from "./SearchUsersModal";
 
 export const UserBarMessages: React.FC = () => {
   const { error, isLoading } = useGetUsersQuery();

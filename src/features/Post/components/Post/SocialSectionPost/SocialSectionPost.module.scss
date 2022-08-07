@@ -17,10 +17,7 @@
   display: flex;
   padding: 0;
   opacity: 0.6;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &:active {
     opacity: 0.3;

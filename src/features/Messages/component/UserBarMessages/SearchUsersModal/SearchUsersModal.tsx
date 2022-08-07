@@ -1,4 +1,4 @@
-import styled from "./AllUsersWindowModal.module.scss";
+import styled from "./SearchUsersModal.module.scss";
 import {
   Alert,
   Box,

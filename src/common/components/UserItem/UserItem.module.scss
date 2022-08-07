@@ -1,12 +1,9 @@
 .userMessageItem {
   padding: 8px 20px;
+  cursor: pointer;
 
   &:active {
     background-color: #dbdbdb;
-  }
-
-  &:hover {
-    cursor: pointer;
   }
 }
 
@@ -15,13 +12,10 @@
 }
 
 .itemUser {
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &:active {
     background-color: #dbdbdb;
-    width: 370px;
     border-radius: 15px;
   }
 }
