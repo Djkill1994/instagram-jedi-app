@@ -9,12 +9,12 @@ const AVATAR_SIZES = {
   big: { width: 56, height: 56 },
 };
 
-type avatarSize = "small" | "large" | "big";
+type AvatarSizes = "small" | "large" | "big";
 
 export interface IUserItemProps {
   userName: string;
-  onClick: VoidFunction;
-  avatarSize: avatarSize;
+  onClick?: VoidFunction;
+  avatarSize?: AvatarSizes;
   isSelected?: boolean;
   userAvatar: string;
 }
@@ -22,7 +22,7 @@ export interface IUserItemProps {
 export const UserItem = ({
   userName,
   onClick,
-  avatarSize,
+  avatarSize = "small",
   isSelected,
   userAvatar,
 }: IUserItemProps) => {
@@ -38,15 +38,14 @@ export const UserItem = ({
         src={userAvatar}
         sx={AVATAR_SIZES[avatarSize]}
       />
-      <Stack direction="column">
-        <Typography
-          fontWeight="600"
-          fontSize={14}
-          className={styled.nameModalBox}
-        >
-          {userName}
-        </Typography>
-      </Stack>
+      <Typography
+        fontWeight="600"
+        fontSize={14}
+        className={styled.nameModalBox}
+        ml={1.5}
+      >
+        {userName}
+      </Typography>
     </Stack>
   );
 };

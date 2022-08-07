@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-interface IProps {
+interface IUseModalReturn {
   isOpened: boolean;
   open: () => void;
   close: () => void;
 }
 
-export const useModal = (): IProps => {
+export const useModal = (): IUseModalReturn => {
   const [isOpened, setIsOpened] = useState(false);
   return {
     isOpened,

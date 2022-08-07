@@ -6,7 +6,7 @@ import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
 
 interface IProps {
-  sendMessage: (arg1: string) => void;
+  sendMessage: (inputStr: string) => void;
 }
 
 export const InputBar: React.FC<IProps> = ({ sendMessage }) => {

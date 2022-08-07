@@ -1,1 +1,1 @@
-export { AllUsersWindowModal } from "./AllUsersWindowModal";
+export { SearchUsersModal } from "./SearchUsersModal";

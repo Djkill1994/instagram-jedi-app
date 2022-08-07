@@ -9,9 +9,9 @@ import {
 } from "../../slices/message.slice";
 import { useGetActiveChatUserQuery } from "../../api/activeChatUser.api";
 import { loginSelector } from "../../../Login/slices/login.slice";
-import { IActiveChatUser } from "../../../../mocks/data/selectedUsersChat";
+import { IActiveChatUsers } from "../../../../mocks/data/selectedUsersChat";
 import { UserItem } from "../../../../common/components/UserItem";
-import { AllUsersWindowModal } from "./AllUsersWindowModal";
+import { SearchUsersModal } from "./AllUsersWindowModal";
 
 export const UserBarMessages: React.FC = () => {
   const { error, isLoading } = useGetUsersQuery();
@@ -20,7 +20,7 @@ export const UserBarMessages: React.FC = () => {
   const activeChatUser = useSelector(activeChatUserSelector);
   const dispatch = useDispatch();
 
-  const handleClickOnUser = (user: IActiveChatUser): void => {
+  const handleClickOnUser = (user: IActiveChatUsers): void => {
     dispatch(setActiveUserChat(user));
   };
 
@@ -40,7 +40,7 @@ export const UserBarMessages: React.FC = () => {
         >
           {userData.authUser?.userName}
         </Typography>
-        <AllUsersWindowModal />
+        <SearchUsersModal />
       </Stack>
       <Stack direction="column" mt={2}>
         <>

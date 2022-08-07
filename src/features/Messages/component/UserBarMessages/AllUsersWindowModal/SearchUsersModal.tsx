@@ -15,7 +15,7 @@ import { useGetUsersQuery } from "../../../../User/api/users.api";
 import { useAddActiveUserMutation } from "../../../api/activeChatUser.api";
 import { ReactComponent as NewMessage } from "../../../../../assets/svg/newMessage.svg";
 
-export const AllUsersWindowModal: VFC = () => {
+export const SearchUsersModal: VFC = () => {
   const { isOpened, open, close } = useModal();
   const { data: users, error, isLoading } = useGetUsersQuery();
   const [addActiveUser] = useAddActiveUserMutation();
