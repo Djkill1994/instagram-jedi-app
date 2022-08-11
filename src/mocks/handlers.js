@@ -44,6 +44,7 @@ export const handlers = [
         roomId: faker.datatype.uuid(),
       });
     }
+    console.log(activeChatUsersResult);
     return res(ctx.json(isActiveChatUserExist ? 500 : 200));
   }),
 ];

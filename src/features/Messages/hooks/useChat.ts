@@ -17,11 +17,6 @@ export const useChat = (
   const username = userData.authUser?.userName;
   const userId = userData.authUser?.id;
 
-  // создаем и записываем в локальное хранинище идентификатор пользователя
-  // const [userId] = useLocalStorage("userId", nanoid(8));
-  // получаем из локального хранилища имя пользователя
-  // const [username] = useLocalStorage("username", "");
-
   // useRef() используется не только для получения доступа к DOM-элементам,
   // но и для хранения любых мутирующих значений в течение всего жизненного цикла компонента
   const socketRef = useRef(null as any);
@@ -45,10 +40,11 @@ export const useChat = (
     });
 
     // обрабатываем получение списка пользователей
-    socketRef.current.on("users", (users: any) => {
-      // обновляем массив пользователей
-      setUsers(users);
-    });
+    // socketRef.current.on("users", (users: any) => {
+    //   // обновляем массив пользователей
+    //   console.log(users);
+    //   setUsers(users);
+    // });
 
     // отправляем запрос на получение сообщений
     socketRef.current.emit("message:get");

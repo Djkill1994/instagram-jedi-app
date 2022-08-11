@@ -18,17 +18,19 @@ export const Chat: React.FC = () => {
 
   return (
     <Stack className={styled.chat} spacing={1} alignItems="baseline" ref={ref}>
-      {messages.map(({ messageText, messageId, currentUser }) => (
-        <Box
-          key={messageId}
-          className={clsx(
-            styled.itemMessage,
-            currentUser ? styled.otherUser : styled.currentUser
-          )}
-        >
-          {messageText}
-        </Box>
-      ))}
+      {activeChatUser?.roomId
+        ? messages.map(({ messageText, messageId, currentUser }) => (
+            <Box
+              key={messageId}
+              className={clsx(
+                styled.itemMessage,
+                currentUser ? styled.otherUser : styled.currentUser
+              )}
+            >
+              {messageText}
+            </Box>
+          ))
+        : null}
     </Stack>
   );
 };
