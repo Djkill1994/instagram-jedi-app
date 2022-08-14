@@ -1,20 +1,17 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "./ChatBar.module.scss";
-import { Avatar, Stack, Typography } from "@mui/material";
-import { Chat } from "./Chat";
-import { InputBar } from "./InputBar";
-import { useChat } from "../../hooks/useChat";
-import { useSelector } from "react-redux";
-import { activeChatUserSelector } from "../../slices/message.slice";
+import { Stack, Typography } from "@mui/material";
 
-export const ChatBar: React.FC = () => {
-  const activeChatUser = useSelector(activeChatUserSelector);
-  const { sendMessage } = useChat(
-    activeChatUser?.roomId,
-    activeChatUser?.userName,
-    activeChatUser?.id
-  );
+interface IChatBarProps {
+  senderAvatar?: ReactNode;
+  senderUserName?: string;
+}
 
+export const ChatBar: FC<IChatBarProps> = ({
+  children,
+  senderUserName,
+  senderAvatar,
+}) => {
   return (
     <Stack direction="column">
       <Stack
@@ -23,20 +20,12 @@ export const ChatBar: React.FC = () => {
         alignItems="center"
         spacing={2}
       >
-        {activeChatUser?.userAvatar && (
-          <Avatar
-            src={activeChatUser?.userAvatar}
-            sx={{ width: 24, height: 24 }}
-          />
-        )}
+        {senderAvatar}
         <Stack direction="column">
-          <Typography fontWeight="bolder">
-            {activeChatUser?.userName}
-          </Typography>
+          <Typography fontWeight="bolder">{senderUserName}</Typography>
         </Stack>
       </Stack>
-      <Chat />
-      <InputBar sendMessage={sendMessage} />
+      {children}
     </Stack>
   );
 };

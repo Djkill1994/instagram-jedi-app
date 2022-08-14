@@ -3,92 +3,63 @@ import io from "socket.io-client";
 import { useBeforeUnload } from "./useBeforeUnload";
 import { useSelector } from "react-redux";
 import { loginSelector } from "../../Login/slices/login.slice";
+import { activeChatUserSelector } from "../slices/message.slice";
+import { CHAT_URL } from "../../../config";
 
-const SERVER_URL = "http://localhost:5000";
-
-export const useChat = (
-  roomId: string | undefined,
-  selectedUser: string | undefined,
-  selectedUserId: string | undefined
-) => {
-  const [users, setUsers] = useState([]);
+export const useChat = () => {
+  const recipient = useSelector(activeChatUserSelector);
+  const sender = useSelector(loginSelector);
   const [messages, setMessages] = useState([]);
-  const userData = useSelector(loginSelector);
-  const username = userData.authUser?.userName;
-  const userId = userData.authUser?.id;
-
-  // useRef() используется не только для получения доступа к DOM-элементам,
-  // но и для хранения любых мутирующих значений в течение всего жизненного цикла компонента
   const socketRef = useRef(null as any);
 
+  // todo почитать про рукопаожатие http
   useEffect(() => {
-    // создаем экземпляр сокета, передаем ему адрес сервера
-    // и записываем объект с названием комнаты в строку запроса "рукопожатия"
-    // socket.handshake.query.roomId
-    socketRef.current = io(SERVER_URL, {
-      query: { roomId },
+    socketRef.current = io(CHAT_URL, {
+      query: { roomId: recipient?.roomId },
     });
-
-    // отправляем событие добавления пользователя,
-    // в качестве данных передаем объект с именем и id пользователя
-    socketRef.current.emit("user:add", { username, userId });
-
-    // todo брать пользвателя с кем мы хотим общаться тут
     socketRef.current.emit("user:add", {
-      username: selectedUser,
-      userId: selectedUserId,
+      username: sender.authUser?.userName,
+      userId: sender.authUser?.id,
     });
-
-    // обрабатываем получение списка пользователей
-    // socketRef.current.on("users", (users: any) => {
-    //   // обновляем массив пользователей
-    //   console.log(users);
-    //   setUsers(users);
-    // });
-
-    // отправляем запрос на получение сообщений
+    socketRef.current.emit("user:add", {
+      username: recipient?.userName,
+      userId: recipient?.id,
+    });
     socketRef.current.emit("message:get");
-
-    // обрабатываем получение сообщений
     socketRef.current.on("messages", (messages: any) => {
-      // определяем, какие сообщения были отправлены данным пользователем,
-      // если значение свойства "userId" объекта сообщения совпадает с id пользователя,
-      // то добавляем в объект сообщения свойство "currentUser" со значением "true",
-      // иначе, просто возвращаем объект сообщения
       const newMessages = messages.map((msg: any) =>
-        msg.userId === userId ? { ...msg, currentUser: true } : msg
+        msg.userId === sender.authUser?.id ? { ...msg, currentUser: true } : msg
       );
-      // обновляем массив сообщений
       setMessages(newMessages);
     });
 
     return () => {
-      // при размонтировании компонента выполняем отключение сокета
       socketRef.current.disconnect();
     };
-  }, [roomId, userId, username]);
+  }, [
+    recipient?.id,
+    recipient?.roomId,
+    recipient?.userName,
+    sender.authUser?.id,
+    sender.authUser?.userName,
+  ]);
 
-  // функция отправки сообщения
-  // принимает объект с текстом сообщения и именем отправителя
   const sendMessage = (messageText: string) => {
-    // добавляем в объект id пользователя при отправке на сервер
     socketRef.current.emit("message:add", {
-      userId,
+      userId: sender.authUser?.id,
+      username: sender.authUser?.userName,
       messageText,
-      username,
     });
   };
 
-  // функция удаления сообщения по id
   const removeMessage = (id: any) => {
     socketRef.current.emit("message:remove", id);
   };
 
-  // отправляем на сервер событие "user:leave" перед перезагрузкой страницы
   useBeforeUnload(() => {
-    socketRef.current.emit("user:leave", userId);
+    socketRef.current.emit("user:leave", sender.authUser?.id);
+    socketRef.current.emit("user:leave", recipient?.id);
   });
 
-  // хук возвращает пользователей, сообщения и функции для отправки удаления сообщений
-  return { users, messages, sendMessage, removeMessage };
+  return { messages, sendMessage, removeMessage };
 };
