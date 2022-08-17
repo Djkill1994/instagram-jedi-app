@@ -5,14 +5,14 @@ import { useSelector } from "react-redux";
 import { loginSelector } from "../../Login/slices/login.slice";
 import { activeChatUserSelector } from "../slices/message.slice";
 import { CHAT_URL } from "../../../config";
+import { IActiveChatUsersApi } from "../../../mocks/data/selectedUsersChat";
 
 export const useChat = () => {
   const recipient = useSelector(activeChatUserSelector);
   const sender = useSelector(loginSelector);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<IActiveChatUsersApi>([]);
   const socketRef = useRef(null as any);
 
-  // todo почитать про рукопаожатие http
   useEffect(() => {
     socketRef.current = io(CHAT_URL, {
       query: { roomId: recipient?.roomId },
@@ -26,7 +26,7 @@ export const useChat = () => {
       userId: recipient?.id,
     });
     socketRef.current.emit("message:get");
-    socketRef.current.on("messages", (messages: any) => {
+    socketRef.current.on("messages", (messages: IActiveChatUsersApi) => {
       const newMessages = messages.map((msg: any) =>
         msg.userId === sender.authUser?.id ? { ...msg, currentUser: true } : msg
       );
@@ -52,7 +52,7 @@ export const useChat = () => {
     });
   };
 
-  const removeMessage = (id: any) => {
+  const removeMessage = (id: string) => {
     socketRef.current.emit("message:remove", id);
   };
 

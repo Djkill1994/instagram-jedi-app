@@ -5,7 +5,7 @@ import { UserBarMessages } from "./UserBarMessages";
 import { ChatBar } from "./ChatBar";
 import { useSelector } from "react-redux";
 import { activeChatUserSelector } from "../slices/message.slice";
-import { ChatSection } from "./ChatSection/ChatSection";
+import { ChatSection } from "./ChatSection";
 
 export const Messages: React.FC = () => {
   const activeChatUser = useSelector(activeChatUserSelector);
