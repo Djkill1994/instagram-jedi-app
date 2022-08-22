@@ -5,7 +5,10 @@ import { useSelector } from "react-redux";
 import { loginSelector } from "../../Login/slices/login.slice";
 import { activeChatUserSelector } from "../slices/message.slice";
 import { CHAT_URL } from "../../../config";
-import { IActiveChatUsersApi } from "../../../mocks/data/selectedUsersChat";
+import {
+  IActiveChatUsers,
+  IActiveChatUsersApi,
+} from "../../../mocks/data/selectedUsersChat";
 
 export const useChat = () => {
   const recipient = useSelector(activeChatUserSelector);
@@ -27,7 +30,7 @@ export const useChat = () => {
     });
     socketRef.current.emit("message:get");
     socketRef.current.on("messages", (messages: IActiveChatUsersApi) => {
-      const newMessages = messages.map((msg: any) =>
+      const newMessages = messages.map((msg: IActiveChatUsers) =>
         msg.userId === sender.authUser?.id ? { ...msg, currentUser: true } : msg
       );
       setMessages(newMessages);

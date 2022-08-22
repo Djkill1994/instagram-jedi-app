@@ -3,11 +3,15 @@ import Picker, { IEmojiData } from "emoji-picker-react";
 import { ReactComponent as Smile } from "../../../assets/svg/smile.svg";
 import React, { useState } from "react";
 
-export const EmojiBar = (setInputStr: any) => {
+interface IProps {
+  setInputStr: (prevState: (prevState: string) => string) => void;
+}
+
+export const EmojiBar: React.FC<IProps> = ({ setInputStr }) => {
   const [showEmoji, setShowEmoji] = useState(false);
 
   const onEmojiClick = (event: React.MouseEvent, emojiObject: IEmojiData) => {
-    setInputStr((prevState: string) => prevState + emojiObject.emoji);
+    setInputStr((prevState) => prevState + emojiObject.emoji);
     setShowEmoji(false);
   };
 

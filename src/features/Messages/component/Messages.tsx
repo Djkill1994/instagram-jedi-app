@@ -1,17 +1,25 @@
-import styled from "./Messages.module.scss";
-import { Avatar, Box, Stack } from "@mui/material";
-import React from "react";
+import { Avatar, Box, Button, Stack } from "@mui/material";
+import React, { useState, VFC } from "react";
 import { UserBarMessages } from "./UserBarMessages";
 import { ChatBar } from "./ChatBar";
 import { useSelector } from "react-redux";
 import { activeChatUserSelector } from "../slices/message.slice";
 import { ChatSection } from "./ChatSection";
+import { ReactComponent as IconMessages } from "../../../assets/svg/iconMessages.svg";
+import { SearchUsersModal } from "./UserBarMessages/SearchUsersModal";
 
-export const Messages: React.FC = () => {
+export const Messages: VFC = () => {
+  const [isOpen, setOpen] = useState(false);
+
   const activeChatUser = useSelector(activeChatUserSelector);
 
   return (
-    <Box role="main" className={styled.messagesPage}>
+    <Box
+      role="main"
+      bgcolor="white"
+      border="1px solid #dbdbdb"
+      borderRadius="5px"
+    >
       <Stack direction="row">
         <UserBarMessages />
         {activeChatUser ? (
@@ -28,8 +36,17 @@ export const Messages: React.FC = () => {
           </ChatBar>
         ) : (
           <ChatBar>
-            <Box width="100%" p="200px">
+            <Box
+              width="600px"
+              flexDirection="column"
+              alignItems="center"
+              display="flex"
+              m="auto"
+            >
+              <IconMessages />
               Выберите пользователя
+              <Button onClick={() => setOpen(true)}>Нажми меня</Button>
+              {isOpen && <SearchUsersModal />}
             </Box>
           </ChatBar>
         )}

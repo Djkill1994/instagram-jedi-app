@@ -1,6 +1,6 @@
 import styled from "./UserBarMessages.module.scss";
 import { Alert, CircularProgress, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { VFC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetUsersQuery } from "../../../User/api/users.api";
 import {
@@ -13,7 +13,7 @@ import { IActiveChatUsers } from "../../../../mocks/data/selectedUsersChat";
 import { UserItem } from "../../../../common/components/UserItem";
 import { SearchUsersModal } from "./SearchUsersModal";
 
-export const UserBarMessages: React.FC = () => {
+export const UserBarMessages: VFC = () => {
   const { error, isLoading } = useGetUsersQuery();
   const { data: activeChatUsers } = useGetActiveChatUserQuery();
   const userData = useSelector(loginSelector);
