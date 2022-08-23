@@ -14,17 +14,19 @@ export const ChatBar: FC<IChatBarProps> = ({
 }) => {
   return (
     <Stack direction="column">
-      <Stack
-        direction="row"
-        className={styled.headerChat}
-        alignItems="center"
-        spacing={2}
-      >
-        {senderAvatar}
-        <Stack direction="column">
-          <Typography fontWeight="bolder">{senderUserName}</Typography>
+      {senderAvatar ? (
+        <Stack
+          direction="row"
+          className={styled.headerChat}
+          alignItems="center"
+          spacing={2}
+        >
+          {senderAvatar}
+          <Stack direction="column">
+            <Typography fontWeight="bolder">{senderUserName}</Typography>
+          </Stack>
         </Stack>
-      </Stack>
+      ) : null}
       {children}
     </Stack>
   );

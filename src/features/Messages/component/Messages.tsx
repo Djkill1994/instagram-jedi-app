@@ -1,16 +1,17 @@
-import { Avatar, Box, Button, Stack } from "@mui/material";
-import React, { useState, VFC } from "react";
+import { Avatar, Box, Stack, Typography } from "@mui/material";
+import React, { VFC } from "react";
 import { UserBarMessages } from "./UserBarMessages";
 import { ChatBar } from "./ChatBar";
 import { useSelector } from "react-redux";
 import { activeChatUserSelector } from "../slices/message.slice";
 import { ChatSection } from "./ChatSection";
 import { ReactComponent as IconMessages } from "../../../assets/svg/iconMessages.svg";
-import { SearchUsersModal } from "./UserBarMessages/SearchUsersModal";
+import { ModalWindow } from "../../../common/components/ModalWindow";
+import { useModal } from "../../../common/hooks/useModal";
+import styled from "./Messages.module.scss";
 
 export const Messages: VFC = () => {
-  const [isOpen, setOpen] = useState(false);
-
+  const { isOpened, open, close } = useModal();
   const activeChatUser = useSelector(activeChatUserSelector);
 
   return (
@@ -36,17 +37,24 @@ export const Messages: VFC = () => {
           </ChatBar>
         ) : (
           <ChatBar>
-            <Box
-              width="600px"
-              flexDirection="column"
-              alignItems="center"
-              display="flex"
-              m="auto"
-            >
-              <IconMessages />
-              Выберите пользователя
-              <Button onClick={() => setOpen(true)}>Нажми меня</Button>
-              {isOpen && <SearchUsersModal />}
+            <Box width="600px" m="auto">
+              <ModalWindow isOpened={isOpened} close={close} />
+              <Stack
+                spacing={1.5}
+                flexDirection="column"
+                alignItems="center"
+                display="flex"
+                m="auto"
+              >
+                <IconMessages />
+                <Typography fontSize={20}>Your messages</Typography>
+                <Typography className={styled.text} fontSize={14}>
+                  Send beautiful photos and messages to your friends.
+                </Typography>
+                <button className={styled.button} onClick={() => open()}>
+                  Send messages
+                </button>
+              </Stack>
             </Box>
           </ChatBar>
         )}
