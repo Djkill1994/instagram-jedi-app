@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "./SocialSectionBar.module.scss";
+import styles from "./SocialSectionBar.module.scss";
 import { ReactComponent as Like } from "../../../../../assets/svg/like.svg";
 import { ReactComponent as Comments } from "../../../../../assets/svg/comment.svg";
 import { ReactComponent as Share } from "../../../../../assets/svg/message.svg";

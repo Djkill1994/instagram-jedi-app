@@ -1,4 +1,4 @@
-import styled from "./UserBarMessages.module.scss";
+import styles from "./UserBarMessages.module.scss";
 import { Alert, CircularProgress, Stack, Typography } from "@mui/material";
 import React, { VFC } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,12 +25,12 @@ export const UserBarMessages: VFC = () => {
   };
 
   return (
-    <Stack className={styled.usersBar}>
+    <Stack className={styles.usersBar}>
       <Stack
         direction="row"
         justifyContent="space-between"
         alignItems="center"
-        className={styled.headerUserBar}
+        className={styles.headerUserBar}
       >
         <Typography
           fontWeight="bolder"

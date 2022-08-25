@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, IconButton, Stack } from "@mui/material";
-import styled from "./InputBar.module.scss";
+import styles from "./InputBar.module.scss";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
 import { EmojiBar } from "../../../../../common/components/EmojiBar";
 
@@ -25,24 +25,24 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
   };
 
   return (
-    <Stack className={styled.inputBar}>
+    <Stack className={styles.inputBar}>
       <Box component="form" onSubmit={handleSendMessage}>
         <Stack
-          className={styled.inputWrapper}
+          className={styles.inputWrapper}
           justifyContent="space-between"
           alignItems="center"
           flexDirection="row"
         >
-          <EmojiBar setInputStr={setInputStr} />
+          <EmojiBar onEmojiSelected={setInputStr} />
           <input
             placeholder="Message..."
-            className={styled.inputText}
+            className={styles.inputText}
             value={inputStr}
             onChange={handleChangeText}
             type="text"
           />
           {inputStr ? (
-            <button type="submit" className={styled.sendBtn}>
+            <button type="submit" className={styles.sendBtn}>
               Send
             </button>
           ) : (
@@ -51,7 +51,7 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
                 accept="image/*"
                 id="icon-button-file"
                 type="file"
-                className={styled.upLoadImage}
+                className={styles.upLoadImage}
               />
               <IconButton
                 color="primary"

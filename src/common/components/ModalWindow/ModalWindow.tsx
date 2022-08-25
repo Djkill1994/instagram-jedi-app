@@ -14,17 +14,17 @@ import React, { VFC } from "react";
 
 interface IProps {
   isOpened: boolean;
-  close: () => void;
+  onClose: () => void;
 }
 
-export const ModalWindow: VFC<IProps> = ({ isOpened, close }) => {
+export const ModalWindow: VFC<IProps> = ({ isOpened, onClose }) => {
   const { data: users, error, isLoading } = useGetUsersQuery();
   const [addActiveUser] = useAddActiveUserMutation();
 
   return (
     <Modal
       open={isOpened}
-      onClose={close}
+      onClose={onClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       className={styled.modalWindow}
@@ -49,7 +49,7 @@ export const ModalWindow: VFC<IProps> = ({ isOpened, close }) => {
               onClick={() =>
                 addActiveUser({
                   id: user.id,
-                }).then(close)
+                }).then(onClose)
               }
               avatarSize={"large"}
             />

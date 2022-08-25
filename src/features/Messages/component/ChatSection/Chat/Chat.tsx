@@ -1,24 +1,25 @@
 import React, { VFC } from "react";
 import { Box, Stack } from "@mui/material";
-import styled from "./Chat.module.scss";
+import styles from "./Chat.module.scss";
 import clsx from "clsx";
 import { useChatScroll } from "../../../../../common/hooks/useChatScroll";
+import { IMessage } from "../../../hooks/useChat";
 
 interface IChatProps {
-  messages: any[];
+  messages: IMessage[];
 }
 
 export const Chat: VFC<IChatProps> = ({ messages }) => {
   const ref = useChatScroll(messages);
 
   return (
-    <Stack className={styled.chat} spacing={1} alignItems="baseline" ref={ref}>
+    <Stack className={styles.chat} spacing={1} alignItems="baseline" ref={ref}>
       {messages?.map(({ messageText, messageId, currentUser }) => (
         <Box
           key={messageId}
           className={clsx(
-            styled.itemMessage,
-            currentUser ? styled.otherUser : styled.currentUser
+            styles.itemMessage,
+            currentUser ? styles.otherUser : styles.currentUser
           )}
         >
           {messageText}

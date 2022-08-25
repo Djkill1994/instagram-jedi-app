@@ -9,7 +9,7 @@ export const SearchUsersModal: VFC = () => {
 
   return (
     <>
-      <ModalWindow isOpened={isOpened} close={close} />
+      <ModalWindow isOpened={isOpened} onClose={close} />
       <Button onClick={() => open()}>
         <NewMessage />
       </Button>

@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "./Footer.module.scss";
+import styles from "./Footer.module.scss";
 import { FormControl, NativeSelect, Stack } from "@mui/material";
 import { ComponentLink } from "./ComponentLink";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className={styled.footer}>
+    <footer className={styles.footer}>
       <Stack spacing={0.5} justifyContent="center" alignItems="center">
         <Stack direction="row" spacing={2} display="block">
           <ComponentLink
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
             alignItems="center"
           >
             <FormControl>
-              <NativeSelect className={styled.nativeSelect}>
+              <NativeSelect className={styles.nativeSelect}>
                 <option>English</option>
                 <option>Русский</option>
               </NativeSelect>

@@ -1,4 +1,4 @@
-import { Avatar, Box, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Button, Stack, Typography } from "@mui/material";
 import React, { VFC } from "react";
 import { UserBarMessages } from "./UserBarMessages";
 import { ChatBar } from "./ChatBar";
@@ -8,7 +8,7 @@ import { ChatSection } from "./ChatSection";
 import { ReactComponent as IconMessages } from "../../../assets/svg/iconMessages.svg";
 import { ModalWindow } from "../../../common/components/ModalWindow";
 import { useModal } from "../../../common/hooks/useModal";
-import styled from "./Messages.module.scss";
+import styles from "./Messages.module.scss";
 
 export const Messages: VFC = () => {
   const { isOpened, open, close } = useModal();
@@ -38,7 +38,7 @@ export const Messages: VFC = () => {
         ) : (
           <ChatBar>
             <Box width="600px" m="auto">
-              <ModalWindow isOpened={isOpened} close={close} />
+              <ModalWindow isOpened={isOpened} onClose={close} />
               <Stack
                 spacing={1.5}
                 flexDirection="column"
@@ -48,12 +48,12 @@ export const Messages: VFC = () => {
               >
                 <IconMessages />
                 <Typography fontSize={20}>Your messages</Typography>
-                <Typography className={styled.text} fontSize={14}>
+                <Typography className={styles.text} fontSize={14}>
                   Send beautiful photos and messages to your friends.
                 </Typography>
-                <button className={styled.button} onClick={() => open()}>
+                <Button variant="contained" onClick={() => open()}>
                   Send messages
-                </button>
+                </Button>
               </Stack>
             </Box>
           </ChatBar>

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "./Post.module.scss";
+import styles from "./Post.module.scss";
 import { IPost } from "../../../../mocks/data/posts";
 import { HeaderPost } from "./HeaderPost";
 import { ContentPost } from "./ContentPost";
@@ -13,7 +13,7 @@ export interface PostItemProps {
 
 export const Post: React.FC<PostItemProps> = ({ post }) => {
   return (
-    <Stack flexDirection="column" className={styled.wrapperContain}>
+    <Stack flexDirection="column" className={styles.wrapperContain}>
       <HeaderPost userName={post.userName} userAvatar={post.userAvatar} />
       <ContentPost images={post.images} />
       <SocialSectionPost

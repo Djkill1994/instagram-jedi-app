@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import styled from "./ChatBar.module.scss";
+import styles from "./ChatBar.module.scss";
 import { Stack, Typography } from "@mui/material";
 
 interface IChatBarProps {
@@ -14,10 +14,10 @@ export const ChatBar: FC<IChatBarProps> = ({
 }) => {
   return (
     <Stack direction="column">
-      {senderAvatar ? (
+      {senderAvatar && (
         <Stack
           direction="row"
-          className={styled.headerChat}
+          className={styles.headerChat}
           alignItems="center"
           spacing={2}
         >
@@ -26,7 +26,7 @@ export const ChatBar: FC<IChatBarProps> = ({
             <Typography fontWeight="bolder">{senderUserName}</Typography>
           </Stack>
         </Stack>
-      ) : null}
+      )}
       {children}
     </Stack>
   );

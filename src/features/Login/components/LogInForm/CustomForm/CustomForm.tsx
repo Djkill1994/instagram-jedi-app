@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "./CustomForm.module.scss";
+import styles from "./CustomForm.module.scss";
 import {
   Box,
   FormControl,
@@ -67,12 +67,12 @@ export const CustomForm: React.FC = () => {
       noValidate
       onSubmit={handleSubmit}
       sx={{ mt: 3 }}
-      className={styled.wrapperLoginForm}
+      className={styles.wrapperLoginForm}
     >
       <Grid container spacing={1.2}>
         <Grid item sm={12}>
           <TextField
-            className={styled.emailWrapper}
+            className={styles.emailWrapper}
             onChange={handleChange("email")}
             size="small"
             autoComplete="email"
@@ -87,7 +87,7 @@ export const CustomForm: React.FC = () => {
           <FormControl
             variant="outlined"
             size="small"
-            className={styled.passwordWrapper}
+            className={styles.passwordWrapper}
           >
             <InputLabel htmlFor="outlined-adornment-password">
               Password
@@ -115,7 +115,7 @@ export const CustomForm: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <LoadingButton
-            className={styled.loadingButton}
+            className={styles.loadingButton}
             loading={isLoading}
             disabled={!values.password || !values.email}
             loadingPosition="center"

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "./WindowLoginForm.module.scss";
+import styles from "./WindowLoginForm.module.scss";
 import logo from "../../../../assets/icon/1b47f9d0e595.png";
 import { BarInstallApps } from "../../../../common/components/BarInstallApps";
 import { Link } from "react-router-dom";
@@ -9,14 +9,14 @@ import { Stack } from "@mui/material";
 
 export const WindowLoginForm: React.FC = () => {
   return (
-    <Stack justifyContent="center" className={styled.loginFormWrapper}>
+    <Stack justifyContent="center" className={styles.loginFormWrapper}>
       <Stack
         justifyContent="center"
         alignItems="center"
-        className={styled.windowLogin}
+        className={styles.windowLogin}
       >
-        <header className={styled.headerLogin}>
-          <img alt={"Logo"} src={logo} className={styled.logoWrapper} />
+        <header className={styles.headerLogin}>
+          <img alt={"Logo"} src={logo} className={styles.logoWrapper} />
         </header>
         <LogInForm />
       </Stack>
@@ -25,7 +25,7 @@ export const WindowLoginForm: React.FC = () => {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        className={styled.registrationBarWrapper}
+        className={styles.registrationBarWrapper}
       >
         <span>Don't have an account yet?</span>
         <Link to={ROUTE_PATHS.SignUp}>Sign up</Link>

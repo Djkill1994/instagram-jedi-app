@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "./InfinitySlider.module.scss";
+import styles from "./InfinitySlider.module.scss";
 import img1 from "../../../../../assets/image/dynamicImages/img1.png";
 import img2 from "../../../../../assets/image/dynamicImages/img2.png";
 import img3 from "../../../../../assets/image/dynamicImages/img3.png";
@@ -26,15 +26,15 @@ export const InfinitySlider: React.FC = () => {
   }, []);
 
   return (
-    <div className={styled.slider}>
+    <div className={styles.slider}>
       {images.map((image, index) => (
         <img
           key={index}
           alt={"images"}
           src={images[index]}
-          className={clsx(styled.img, {
-            [styled.activeImg]: index === activeIndex,
-            [styled.imageOut]:
+          className={clsx(styles.img, {
+            [styles.activeImg]: index === activeIndex,
+            [styles.imageOut]:
               (isSliderStarted &&
                 index ===
                   (activeIndex - 1 === images.length - 1
