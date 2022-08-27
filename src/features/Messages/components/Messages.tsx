@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { activeChatUserSelector } from "../slices/message.slice";
 import { ChatSection } from "./ChatSection";
 import { ReactComponent as IconMessages } from "../../../assets/svg/iconMessages.svg";
-import { AllUsersModal } from "../../../common/components/AllUsersModal";
+import { SelectChatUserModal } from "./SelectChatUserModal";
 import { useModal } from "../../../common/hooks/useModal";
 import styles from "./Messages.module.scss";
 
@@ -38,7 +38,7 @@ export const Messages: VFC = () => {
         ) : (
           <ChatBar>
             <Box width="600px" m="auto">
-              <AllUsersModal isOpened={isOpened} onClose={close} />
+              <SelectChatUserModal isOpened={isOpened} onClose={close} />
               <Stack
                 spacing={1.5}
                 flexDirection="column"

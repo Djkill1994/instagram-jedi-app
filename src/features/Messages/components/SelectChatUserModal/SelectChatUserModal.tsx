@@ -1,5 +1,5 @@
-import { useGetUsersQuery } from "../../../features/User/api/users.api";
-import { useAddActiveUserMutation } from "../../../features/Messages/api/activeChatUser.api";
+import { useGetUsersQuery } from "../../../User/api/users.api";
+import { useAddActiveUserMutation } from "../../api/activeChatUser.api";
 import {
   Alert,
   Box,
@@ -8,8 +8,8 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import styled from "./AllUsersModal.module.scss";
-import { UserItem } from "../UserItem";
+import styled from "./SelectChatUserModal.module.scss";
+import { UserItem } from "../../../../common/components/UserItem";
 import React, { VFC } from "react";
 
 interface IProps {
@@ -17,7 +17,7 @@ interface IProps {
   onClose: () => void;
 }
 
-export const AllUsersModal: VFC<IProps> = ({ isOpened, onClose }) => {
+export const SelectChatUserModal: VFC<IProps> = ({ isOpened, onClose }) => {
   const { data: users, error, isLoading } = useGetUsersQuery();
   const [addActiveUser] = useAddActiveUserMutation();
 

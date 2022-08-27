@@ -1,4 +1,4 @@
-import styled from "../../../features/Messages/component/ChatSection/InputBar/InputBar.module.scss";
+import styled from "../../../features/Messages/components/ChatSection/InputBar/InputBar.module.scss";
 import Picker from "emoji-picker-react";
 import { ReactComponent as Smile } from "../../../assets/svg/smile.svg";
 import React, { useState } from "react";

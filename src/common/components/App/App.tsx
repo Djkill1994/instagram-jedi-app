@@ -1,12 +1,12 @@
 import React from "react";
 import { Login } from "../../../features/Login/components";
 import { Registration } from "../../../features/Registration/components";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { ContentWrapper } from "../ContentWrapper";
 import { PostsContainer } from "../../../features/Post/components/PostsContainer";
 import { Stack } from "@mui/material";
 import { RequireAuth } from "../RequireAuth";
-import { Messages } from "../../../features/Messages/component";
+import { Messages } from "../../../features/Messages/components";
 
 export const ROUTE_PATHS = {
   Login: "/",
