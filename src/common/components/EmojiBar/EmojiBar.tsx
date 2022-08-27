@@ -1,0 +1,34 @@
+import styled from "../../../features/Messages/components/ChatSection/InputBar/InputBar.module.scss";
+import Picker from "emoji-picker-react";
+import { ReactComponent as Smile } from "../../../assets/svg/smile.svg";
+import React, { useState } from "react";
+
+interface IProps {
+  onEmojiSelected: (emoji: string) => void;
+}
+
+export const EmojiBar: React.FC<IProps> = ({ onEmojiSelected }) => {
+  const [showEmoji, setShowEmoji] = useState(false);
+
+  const onEmojiClick = (emoji: string): void => {
+    onEmojiSelected(emoji);
+    setShowEmoji(false);
+  };
+
+  return (
+    <>
+      <div className={styled.emojiPicker}>
+        {showEmoji && (
+          <Picker onEmojiClick={(_, { emoji }) => onEmojiClick(emoji)} />
+        )}
+      </div>
+      <button
+        type="button"
+        className={styled.btnEmoji}
+        onClick={() => setShowEmoji((prevState) => !prevState)}
+      >
+        <Smile />
+      </button>
+    </>
+  );
+};

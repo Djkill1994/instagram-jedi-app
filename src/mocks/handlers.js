@@ -3,7 +3,6 @@ import { postsResult } from "./data/posts";
 import { BACKEND_URL } from "../config";
 import { usersResult } from "./data/users";
 import { activeChatUsersResult } from "./data/selectedUsersChat";
-import { faker } from "@faker-js/faker";
 
 let authUserId;
 
@@ -41,7 +40,7 @@ export const handlers = [
         id: activeRegisteredUser.id,
         userName: activeRegisteredUser.userName,
         userAvatar: activeRegisteredUser.userAvatar,
-        roomId: faker.datatype.uuid(),
+        roomId: `${authUserId ^ activeRegisteredUser.id}`,
       });
     }
     return res(ctx.json(isActiveChatUserExist ? 500 : 200));

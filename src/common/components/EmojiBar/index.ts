@@ -1,0 +1,1 @@
+export { EmojiBar } from "./EmojiBar";

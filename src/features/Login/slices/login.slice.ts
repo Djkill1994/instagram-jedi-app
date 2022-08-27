@@ -16,7 +16,6 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     setAuthUser: (state, { payload }) => {
-      console.log(payload.userAvatar);
       state.isAuth = payload;
       state.authUser = payload;
     },

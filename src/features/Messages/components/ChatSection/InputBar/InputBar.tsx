@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { Box, IconButton, Stack } from "@mui/material";
-import styled from "./InputBar.module.scss";
-import Picker, { IEmojiData } from "emoji-picker-react";
-import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
+import styles from "./InputBar.module.scss";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
+import { EmojiBar } from "../../../../../common/components/EmojiBar";
 
 interface IProps {
   sendMessage: (inputStr: string) => void;
 }
 
 export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
-  const [showEmoji, setShowEmoji] = useState(false);
   const [inputStr, setInputStr] = useState("");
 
   const handleChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,38 +24,29 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
     }
   };
 
-  const onEmojiClick = (event: React.MouseEvent, emojiObject: IEmojiData) => {
-    setInputStr((prevInput) => prevInput + emojiObject.emoji);
-    setShowEmoji(false);
-  };
-
   return (
-    <Stack className={styled.inputBar}>
+    <Stack className={styles.inputBar}>
       <Box component="form" onSubmit={handleSendMessage}>
         <Stack
-          className={styled.inputWrapper}
+          className={styles.inputWrapper}
           justifyContent="space-between"
           alignItems="center"
           flexDirection="row"
         >
-          <div className={styled.emojiPicker}>
-            {showEmoji && <Picker onEmojiClick={onEmojiClick} />}
-          </div>
-          <button
-            className={styled.btnEmoji}
-            onClick={() => setShowEmoji((prevState) => !prevState)}
-          >
-            <Smile />
-          </button>
+          <EmojiBar
+            onEmojiSelected={(emoji) =>
+              setInputStr((prevState) => prevState + emoji)
+            }
+          />
           <input
             placeholder="Message..."
-            className={styled.inputText}
+            className={styles.inputText}
             value={inputStr}
             onChange={handleChangeText}
             type="text"
           />
           {inputStr ? (
-            <button type="submit" className={styled.sendBtn}>
+            <button type="submit" className={styles.sendBtn}>
               Send
             </button>
           ) : (
@@ -66,7 +55,7 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
                 accept="image/*"
                 id="icon-button-file"
                 type="file"
-                className={styled.upLoadImage}
+                className={styles.upLoadImage}
               />
               <IconButton
                 color="primary"

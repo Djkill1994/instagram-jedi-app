@@ -1,4 +1,4 @@
-import styled from "./UserItem.module.scss";
+import styles from "./UserItem.module.scss";
 import { Avatar, Stack, Typography } from "@mui/material";
 import React from "react";
 import clsx from "clsx";
@@ -30,7 +30,7 @@ export const UserItem = ({
     <Stack
       alignItems="center"
       flexDirection="row"
-      className={clsx(styled.userMessageItem, { [styled.active]: isSelected })}
+      className={clsx(styles.userMessageItem, { [styles.active]: isSelected })}
       onClick={onClick}
     >
       <Avatar
@@ -41,7 +41,7 @@ export const UserItem = ({
       <Typography
         fontWeight="600"
         fontSize={14}
-        className={styled.nameModalBox}
+        className={styles.nameModalBox}
         ml={1.5}
       >
         {userName}
