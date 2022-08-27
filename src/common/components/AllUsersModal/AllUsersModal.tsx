@@ -8,7 +8,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import styled from "./ModalWindow.module.scss";
+import styled from "./AllUsersModal.module.scss";
 import { UserItem } from "../UserItem";
 import React, { VFC } from "react";
 
@@ -17,7 +17,7 @@ interface IProps {
   onClose: () => void;
 }
 
-export const ModalWindow: VFC<IProps> = ({ isOpened, onClose }) => {
+export const AllUsersModal: VFC<IProps> = ({ isOpened, onClose }) => {
   const { data: users, error, isLoading } = useGetUsersQuery();
   const [addActiveUser] = useAddActiveUserMutation();
 

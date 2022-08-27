@@ -4,14 +4,14 @@ import { ReactComponent as Smile } from "../../../assets/svg/smile.svg";
 import React, { useState } from "react";
 
 interface IProps {
-  onEmojiSelected: (emoji: (prevState: string) => string) => void;
+  onEmojiSelected: (emoji: string) => void;
 }
 
 export const EmojiBar: React.FC<IProps> = ({ onEmojiSelected }) => {
   const [showEmoji, setShowEmoji] = useState(false);
 
   const onEmojiClick = (emoji: string): void => {
-    onEmojiSelected((prevState) => prevState + emoji);
+    onEmojiSelected(emoji);
     setShowEmoji(false);
   };
 

@@ -33,7 +33,11 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
           alignItems="center"
           flexDirection="row"
         >
-          <EmojiBar onEmojiSelected={setInputStr} />
+          <EmojiBar
+            onEmojiSelected={(emoji) =>
+              setInputStr((prevState) => prevState + emoji)
+            }
+          />
           <input
             placeholder="Message..."
             className={styles.inputText}
