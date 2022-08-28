@@ -1,7 +1,7 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import logo from "../../../assets/icon/1b47f9d0e595.png";
-import styled from "./Registration.module.scss";
+import styles from "./Registration.module.scss";
 import iconFb from "../../../assets/icon/facebook-icon.png";
 import { DecorationBorder } from "../../../common/components/DecorationBorder";
 import { Stack, Typography } from "@mui/material";
@@ -14,14 +14,14 @@ import { RegistrationCustomForm } from "./RegistrationCustomForm";
 
 export const Registration: React.FC = () => {
   return (
-    <Stack spacing={3} alignItems="center" className={styled.wrapperBox}>
+    <Stack spacing={3} alignItems="center" className={styles.wrapperBox}>
       <Stack
-        spacing={3}
+        spacing={2}
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
         direction="column"
-        className={styled.loginWindowForm}
+        className={styles.loginWindowForm}
       >
         <img alt={"Logo"} src={logo} />
         <Typography
@@ -32,12 +32,10 @@ export const Registration: React.FC = () => {
         >
           Sign up to see photos and videos from your friends.
         </Typography>
-        <div className={styled.buttonSignInFb}>
-          <Button href={"#"}>
-            <img alt={"iconFacebook"} src={iconFb} />
-            <Typography fontSize={14}>Log in with Facebook</Typography>
-          </Button>
-        </div>
+        <Button className={styles.buttonSignInFb} variant="contained">
+          <img alt={"iconFacebook"} src={iconFb} />
+          <Typography fontSize={14}>Log in with Facebook</Typography>
+        </Button>
         <DecorationBorder />
         <RegistrationCustomForm />
         <AgreementPolicy />
@@ -45,7 +43,7 @@ export const Registration: React.FC = () => {
       <Stack
         spacing={1}
         direction="row"
-        className={styled.signInWrapper}
+        className={styles.signInWrapper}
         justifyContent="center"
         alignItems="center"
       >

@@ -13,7 +13,7 @@ export const ChatBar: FC<IChatBarProps> = ({
   senderAvatar,
 }) => {
   return (
-    <Stack direction="column">
+    <Stack direction="column" className={styles.chatSection}>
       {senderAvatar && (
         <Stack
           direction="row"

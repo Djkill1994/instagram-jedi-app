@@ -1,3 +1,19 @@
+@import "./src/common/styleVariables/styleVariables.module";
+
 .text {
   opacity: 0.5;
+}
+
+.messagesWrapper {
+  width: 75vw;
+
+  .showModalBtn {
+    @extend %buttonStyles;
+  }
+}
+
+@media (max-width: 500px) {
+  .messagesWrapper {
+    width: 96vw;
+  }
 }

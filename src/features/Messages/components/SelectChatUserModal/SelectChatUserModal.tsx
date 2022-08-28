@@ -8,7 +8,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import styled from "./SelectChatUserModal.module.scss";
+import styles from "./SelectChatUserModal.module.scss";
 import { UserItem } from "../../../../common/components/UserItem";
 import React, { VFC } from "react";
 
@@ -27,14 +27,14 @@ export const SelectChatUserModal: VFC<IProps> = ({ isOpened, onClose }) => {
       onClose={onClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-      className={styled.modalWindow}
+      className={styles.modalWindow}
     >
-      <Box className={styled.modalBox}>
+      <Box className={styles.modalBox}>
         <Typography fontWeight="bold" align="center" m={1.5}>
           New Message
         </Typography>
-        <div className={styled.modalBoxLine}></div>
-        <Stack spacing={1.5} className={styled.itemModalBox}>
+        <div className={styles.modalBoxLine}></div>
+        <Stack spacing={1.5} className={styles.itemModalBox}>
           {isLoading && <CircularProgress />}
           {error && (
             <Alert severity="error">

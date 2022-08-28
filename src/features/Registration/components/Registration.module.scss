@@ -1,5 +1,18 @@
+@import "./src/common/styleVariables/styleVariables.module";
+
 .wrapperBox {
   margin: 35px auto 15px;
+
+  .buttonSignInFb {
+    @extend %buttonStyles;
+    width: 268px;
+    height: 33px;
+    gap: 9px;
+
+    img {
+      width: 10%;
+    }
+  }
 }
 
 .loginWindowForm {
@@ -10,30 +23,7 @@
   padding: 30px 0;
 
   img {
-    width: 48%;
-  }
-}
-
-.buttonSignInFb {
-  a {
-    background-color: #0095f6;
-    color: white;
-    text-transform: none;
-    width: 268px;
-    height: 33px;
-    gap: 6px;
-
-    &:hover {
-      background-color: rgba(0, 149, 246, 0.62);
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
-  }
-
-  img {
-    width: 10%;
+    width: 50%;
   }
 }
 

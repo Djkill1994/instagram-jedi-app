@@ -1,3 +1,5 @@
+@import "./src/common/styleVariables/styleVariables.module";
+
 .passwordWrapper {
   display: flex !important;
 }
@@ -19,16 +21,7 @@
   }
 
   .loadingButton {
+    @extend %buttonStyles;
     margin-top: 7px;
-    height: 30px;
-    background-color: #0095f6;
-    text-transform: none;
-    color: white;
-
-    &:disabled {
-      opacity: 0.3;
-      background-color: #0095f6;
-      color: white;
-    }
   }
 }

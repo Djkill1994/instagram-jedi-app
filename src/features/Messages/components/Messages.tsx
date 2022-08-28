@@ -20,6 +20,7 @@ export const Messages: VFC = () => {
       bgcolor="white"
       border="1px solid #dbdbdb"
       borderRadius="5px"
+      className={styles.messagesWrapper}
     >
       <Stack direction="row">
         <UserBarMessages />
@@ -37,7 +38,7 @@ export const Messages: VFC = () => {
           </ChatBar>
         ) : (
           <ChatBar>
-            <Box width="600px" m="auto">
+            <Box m="auto">
               <SelectChatUserModal isOpened={isOpened} onClose={close} />
               <Stack
                 spacing={1.5}
@@ -51,7 +52,11 @@ export const Messages: VFC = () => {
                 <Typography className={styles.text} fontSize={14}>
                   Send beautiful photos and messages to your friends.
                 </Typography>
-                <Button variant="contained" onClick={() => open()}>
+                <Button
+                  variant="contained"
+                  className={styles.showModalBtn}
+                  onClick={() => open()}
+                >
                   Send messages
                 </Button>
               </Stack>

@@ -3,3 +3,13 @@
   height: 60px;
   padding: 0 20px;
 }
+
+.chatSection {
+  width: 48vw;
+}
+
+@media (max-width: 500px) {
+  .chatSection {
+   margin: 0 auto;
+  }
+}
