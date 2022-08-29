@@ -19,7 +19,7 @@ export const Chat: VFC<IChatProps> = ({ messages }) => {
           key={messageId}
           className={clsx(
             styles.itemMessage,
-            currentUser ? styles.otherUser : styles.currentUser
+            currentUser ? styles.currentUser : styles.otherUser
           )}
         >
           {messageText}

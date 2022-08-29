@@ -2,10 +2,11 @@
   padding: 10px 20px 0 20px;
   overflow-y: auto;
   max-height: 360px;
+  word-break: break-word;
 }
 
 .itemMessage {
-  max-width: 220px;
+  max-width: 240px;
   border-radius: 50px;
   padding: 16px;
   font-size: 14px;
@@ -13,12 +14,12 @@
   margin: 5px 0;
 }
 
-.currentUser  {
-  background-color: white;
-  border: #efefef 1px solid;
-  margin-right: 38vw;
+.currentUser {
+  background-color: #efefef;
 }
 
 .otherUser {
-  background-color: #efefef;
+  background-color: white;
+  border: #efefef 1px solid;
+  align-self: flex-start;
 }
