@@ -1,5 +1,3 @@
-@import "./src/common/styleVariables/styleVariables.module";
-
 .formWrapper {
   input {
     font-size: 12px;
@@ -17,7 +15,6 @@
   }
 
   .signUpBtn {
-    @extend %buttonStyles;
     width: 266px;
     height: 33px;
   }

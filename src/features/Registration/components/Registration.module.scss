@@ -1,10 +1,7 @@
-@import "./src/common/styleVariables/styleVariables.module";
-
 .wrapperBox {
   margin: 35px auto 15px;
 
   .buttonSignInFb {
-    @extend %buttonStyles;
     width: 268px;
     height: 33px;
     gap: 9px;
