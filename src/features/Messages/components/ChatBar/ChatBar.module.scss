@@ -8,8 +8,26 @@
   width: 48vw;
 }
 
+@media (max-width: 900px) {
+  .chatSection {
+    width: 54vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .chatSection {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .chatSection {
+    width: 70vw;
+  }
+}
+
 @media (max-width: 500px) {
   .chatSection {
-   margin: 0 auto;
+    width: 100vw;
   }
 }

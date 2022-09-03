@@ -9,16 +9,4 @@
   justify-content: space-evenly;
   background-color: white;
   z-index: 2;
-
-  img {
-    height: 30px;
-    width: 103px;
-  }
-}
-
-
-@media (max-width: 1000px) {
-  img {
-    margin-left: 2px;
-  }
 }

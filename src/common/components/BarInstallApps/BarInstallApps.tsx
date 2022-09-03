@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./BarInstallApps.module.scss";
-import { Link, Stack } from "@mui/material";
+import { Link, Stack, Typography } from "@mui/material";
 
 export const BarInstallApps: React.FC = () => {
   return (
@@ -8,12 +8,18 @@ export const BarInstallApps: React.FC = () => {
       className={styles.installAppsWrapper}
       alignItems="center"
       flexDirection="column"
+      width="350px"
+      mt="15px"
     >
-      <span>Get the app.</span>
-      <Stack direction="row" spacing={1} className={styles.barInstallApps}>
+      <Typography fontSize="14px">Get the app.</Typography>
+      <Stack
+        direction="row"
+        spacing={1}
+        mt="15px"
+        className={styles.imgWrapper}
+      >
         <Link
           target="_blank"
-          className={styles.installAppStore}
           href={"https://apps.apple.com/app/instagram/id389801252?vt=lo"}
         >
           <img
@@ -24,7 +30,6 @@ export const BarInstallApps: React.FC = () => {
           />
         </Link>
         <Link
-          className={styles.installGooglePlay}
           target="_blank"
           href={
             "https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=6F8FE621-2D27-49E1-8F4A-68D804A778EE&utm_content=lo&utm_medium=badge"

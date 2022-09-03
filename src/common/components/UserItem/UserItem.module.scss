@@ -19,3 +19,9 @@
     border-radius: 15px;
   }
 }
+
+@media (max-width: 500px) {
+  .userMessageItem {
+    flex-wrap: wrap;
+  }
+}

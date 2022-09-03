@@ -10,15 +10,5 @@
   background-color: white;
   z-index: 2;
 }
-.header img {
-  height: 30px;
-  width: 103px;
-}
-
-@media (max-width: 1000px) {
-  img {
-    margin-left: 2px;
-  }
-}
 
 /*# sourceMappingURL=Header.module.css.map */

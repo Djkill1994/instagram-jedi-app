@@ -1,6 +1,6 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import logo from "../../../assets/icon/1b47f9d0e595.png";
+import { ReactComponent as Logo } from "../../../assets/svg/logoIG.svg";
 import styles from "./Registration.module.scss";
 import iconFb from "../../../assets/icon/facebook-icon.png";
 import { DecorationBorder } from "../../../common/components/DecorationBorder";
@@ -23,7 +23,7 @@ export const Registration: React.FC = () => {
         direction="column"
         className={styles.loginWindowForm}
       >
-        <img alt={"Logo"} src={logo} />
+        <Logo className={styles.logo} />
         <Typography
           textAlign="center"
           width={266}

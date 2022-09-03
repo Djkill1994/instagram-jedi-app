@@ -66,18 +66,17 @@ export const CustomForm: React.FC = () => {
       component="form"
       noValidate
       onSubmit={handleSubmit}
-      sx={{ mt: 3 }}
       className={styles.wrapperLoginForm}
     >
       <Grid container spacing={1.2}>
-        <Grid item sm={12}>
+        <Grid item sm={12} width="100%">
           <TextField
             className={styles.emailWrapper}
             onChange={handleChange("email")}
             size="small"
             autoComplete="email"
             name="email"
-            fullWidth
+            fullWidth={true}
             id="email"
             label="Mobile Number or Email"
             error={isError}
@@ -87,9 +86,10 @@ export const CustomForm: React.FC = () => {
           <FormControl
             variant="outlined"
             size="small"
+            fullWidth={true}
             className={styles.passwordWrapper}
           >
-            <InputLabel htmlFor="outlined-adornment-password">
+            <InputLabel htmlFor="outlined-adornment-password" error={isError}>
               Password
             </InputLabel>
             <OutlinedInput

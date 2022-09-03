@@ -3,6 +3,7 @@ import { Box, IconButton, Stack } from "@mui/material";
 import styles from "./InputBar.module.scss";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
 import { EmojiBar } from "../../../../../common/components/EmojiBar";
+import Button from "@mui/material/Button";
 
 interface IProps {
   sendMessage: (inputStr: string) => void;
@@ -25,13 +26,16 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
   };
 
   return (
-    <Stack className={styles.inputBar}>
+    <Stack padding="5px 20px">
       <Box component="form" onSubmit={handleSendMessage}>
         <Stack
-          className={styles.inputWrapper}
           justifyContent="space-between"
           alignItems="center"
           flexDirection="row"
+          padding="o 10px"
+          borderRadius="40px"
+          border="1px solid #dbdbdb"
+          height="35px"
         >
           <EmojiBar
             onEmojiSelected={(emoji) =>
@@ -46,9 +50,9 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
             type="text"
           />
           {inputStr ? (
-            <button type="submit" className={styles.sendBtn}>
+            <Button type="submit" variant="text" disableTouchRipple={true}>
               Send
-            </button>
+            </Button>
           ) : (
             <label htmlFor="icon-button-file">
               <input

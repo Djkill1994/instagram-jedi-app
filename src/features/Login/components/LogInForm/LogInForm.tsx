@@ -28,7 +28,6 @@ export const LogInForm: React.FC = () => {
           <Link to={ROUTE_PATHS.FbLogin}>Log in with facebook</Link>
           <img alt={"FB"} src={fbLogo} />
         </Stack>
-        <div className={styles.errorWindow}>Error</div>
         <Link to={ROUTE_PATHS.RecPassword} className={styles.forgotPasswordBtn}>
           Forgot password?
         </Link>

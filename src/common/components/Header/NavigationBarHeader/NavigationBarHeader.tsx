@@ -9,19 +9,29 @@ import { ROUTE_PATHS } from "../../App/App";
 import React from "react";
 import { useSelector } from "react-redux";
 import { loginSelector } from "../../../../features/Login/slices/login.slice";
+import styles from "./NavigationBarHeader.module.scss";
+import Button from "@mui/material/Button";
 
 export const NavigationBarHeader = () => {
   const navigate = useNavigate();
   const userData = useSelector(loginSelector);
 
   return (
-    <Stack direction="row" spacing={2}>
-      <button onClick={() => navigate("/content", { replace: true })}>
+    <Stack direction="row" spacing={2} className={styles.navBar}>
+      <Button
+        variant="text"
+        disableTouchRipple={true}
+        onClick={() => navigate("/content", { replace: true })}
+      >
         <HomeActive />
-      </button>
-      <button onClick={() => navigate("/messages", { replace: true })}>
+      </Button>
+      <Button
+        variant="text"
+        disableTouchRipple={true}
+        onClick={() => navigate("/messages", { replace: true })}
+      >
         <MessageActive />
-      </button>
+      </Button>
       <NewPost />
 
       <FindPeople />
