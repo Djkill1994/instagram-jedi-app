@@ -33,11 +33,8 @@ export const NavigationBarHeader = () => {
         <MessageActive />
       </Button>
       <NewPost />
-
       <FindPeople />
-
       <WatsNews />
-
       <Link to={ROUTE_PATHS.Login}>
         <Avatar
           sx={{ width: 26, height: 26 }}

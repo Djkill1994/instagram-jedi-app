@@ -1,7 +1,10 @@
 .wrapperLoginForm {
+  input, .outLined {
+    background-color: #FAFAFA;
+  }
+
   input {
     height: 15px;
-    background-color: #FAFAFA;
   }
 
   label, input {

@@ -93,6 +93,7 @@ export const CustomForm: React.FC = () => {
               Password
             </InputLabel>
             <OutlinedInput
+              className={styles.outLined}
               id="outlined-adornment-password"
               type={values.showPassword ? "text" : "password"}
               name="password"

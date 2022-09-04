@@ -46,6 +46,7 @@ export const Registration: React.FC = () => {
         className={styles.signInWrapper}
         justifyContent="center"
         alignItems="center"
+        padding="0 102px"
       >
         <Typography fontSize={14}>Have an account?</Typography>
         <Link to={ROUTE_PATHS.Login}>Log in</Link>

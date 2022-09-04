@@ -70,6 +70,7 @@ export const RegistrationCustomForm: React.FC = () => {
       onSubmit={handleSubmit}
       sx={{ mt: 3 }}
       className={styles.formWrapper}
+      width="100%"
     >
       <Grid
         container
@@ -78,7 +79,7 @@ export const RegistrationCustomForm: React.FC = () => {
         alignItems="center"
         flexDirection="column"
       >
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <TextField
             onChange={handleChange("email")}
             size="small"
@@ -86,9 +87,10 @@ export const RegistrationCustomForm: React.FC = () => {
             name="email"
             id="email"
             label="Mobile Number or Email"
+            fullWidth
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <TextField
             onChange={handleChange("fullName")}
             size="small"
@@ -96,9 +98,10 @@ export const RegistrationCustomForm: React.FC = () => {
             label="Full Name"
             name="fullName"
             autoComplete="fullName"
+            fullWidth
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <TextField
             onChange={handleChange("userName")}
             size="small"
@@ -106,10 +109,11 @@ export const RegistrationCustomForm: React.FC = () => {
             label="User Name"
             name="userName"
             autoComplete="userName"
+            fullWidth
           />
         </Grid>
-        <Grid item xs={12}>
-          <FormControl variant="outlined" size="small">
+        <Grid item xs={12} width="100%">
+          <FormControl variant="outlined" size="small" fullWidth>
             <InputLabel htmlFor="outlined-adornment-password">
               Password
             </InputLabel>
@@ -134,7 +138,7 @@ export const RegistrationCustomForm: React.FC = () => {
             />
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <Button
             disabled={
               !values.password ||
@@ -146,6 +150,7 @@ export const RegistrationCustomForm: React.FC = () => {
             variant="contained"
             sx={{ mt: 3 }}
             className={styles.signUpBtn}
+            fullWidth
           >
             Sign Up
           </Button>
