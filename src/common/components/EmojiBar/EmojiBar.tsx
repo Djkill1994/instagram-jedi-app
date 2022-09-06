@@ -2,7 +2,7 @@ import styled from "../../../features/Messages/components/ChatSection/InputBar/I
 import Picker from "emoji-picker-react";
 import { ReactComponent as Smile } from "../../../assets/svg/smile.svg";
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
+import { Button } from "@mui/material";
 
 interface IProps {
   onEmojiSelected: (emoji: string) => void;
@@ -25,7 +25,7 @@ export const EmojiBar: React.FC<IProps> = ({ onEmojiSelected }) => {
       </div>
       <Button
         variant="text"
-        disableTouchRipple={true}
+        disableTouchRipple
         type="button"
         onClick={() => setShowEmoji((prevState) => !prevState)}
       >

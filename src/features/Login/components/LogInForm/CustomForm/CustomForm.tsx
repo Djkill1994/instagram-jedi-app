@@ -76,7 +76,7 @@ export const CustomForm: React.FC = () => {
             size="small"
             autoComplete="email"
             name="email"
-            fullWidth={true}
+            fullWidth
             id="email"
             label="Mobile Number or Email"
             error={isError}
@@ -86,7 +86,7 @@ export const CustomForm: React.FC = () => {
           <FormControl
             variant="outlined"
             size="small"
-            fullWidth={true}
+            fullWidth
             className={styles.passwordWrapper}
           >
             <InputLabel htmlFor="outlined-adornment-password" error={isError}>

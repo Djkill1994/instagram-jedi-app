@@ -12,7 +12,6 @@ export const PostsContainer: React.FC = () => {
       flexWrap="wrap"
       justifyContent="center"
     >
-      {/*<Navbar />*/}
       <Stack flexDirection="column" justifyContent="space-around">
         {isLoading && <CircularProgress />}
         {error && (

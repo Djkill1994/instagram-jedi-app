@@ -1,10 +1,9 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
+import { Button, Stack, Typography } from "@mui/material";
 import { ReactComponent as Logo } from "../../../assets/svg/logoIG.svg";
 import styles from "./Registration.module.scss";
 import iconFb from "../../../assets/icon/facebook-icon.png";
 import { DecorationBorder } from "../../../common/components/DecorationBorder";
-import { Stack, Typography } from "@mui/material";
 import { BarInstallApps } from "../../../common/components/BarInstallApps";
 import { Footer } from "../../../common/components/Footer";
 import { Link } from "react-router-dom";
@@ -32,7 +31,7 @@ export const Registration: React.FC = () => {
         >
           Sign up to see photos and videos from your friends.
         </Typography>
-        <Button className={styles.buttonSignInFb} variant="contained">
+        <Button className={styles.buttonSignInFb} variant="contained" fullWidth>
           <img alt={"iconFacebook"} src={iconFb} />
           <Typography fontSize={14}>Log in with Facebook</Typography>
         </Button>

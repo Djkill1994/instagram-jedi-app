@@ -6,6 +6,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
+          padding: "0px",
         },
         contained: {
           height: "30px",

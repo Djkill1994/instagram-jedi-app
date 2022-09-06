@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Box, IconButton, Stack } from "@mui/material";
+import { Box, Button, IconButton, Stack } from "@mui/material";
 import styles from "./InputBar.module.scss";
 import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
 import { EmojiBar } from "../../../../../common/components/EmojiBar";
-import Button from "@mui/material/Button";
 
 interface IProps {
   sendMessage: (inputStr: string) => void;
@@ -32,7 +31,7 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
           justifyContent="space-between"
           alignItems="center"
           flexDirection="row"
-          padding="o 10px"
+          padding="0 10px"
           borderRadius="40px"
           border="1px solid #dbdbdb"
           height="35px"
@@ -50,7 +49,7 @@ export const InputBar: React.FC<IProps> = ({ sendMessage }) => {
             type="text"
           />
           {inputStr ? (
-            <Button type="submit" variant="text" disableTouchRipple={true}>
+            <Button type="submit" variant="text" disableTouchRipple>
               Send
             </Button>
           ) : (

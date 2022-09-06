@@ -15,7 +15,7 @@ export const WindowLoginForm: React.FC = () => {
         alignItems="center"
         className={styles.windowLogin}
       >
-        <header className={styles.headerLogin}>
+        <header>
           <Logo className={styles.logo} />
         </header>
         <LogInForm />

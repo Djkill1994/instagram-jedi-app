@@ -1,9 +1,8 @@
 import styles from "./CommentsPost.module.scss";
 import React, { useState } from "react";
 import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
-import { Stack } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import Picker, { IEmojiData } from "emoji-picker-react";
-import Button from "@mui/material/Button";
 
 export const CommentsPost: React.FC = () => {
   const [showEmoji, setShowEmoji] = useState(false);
@@ -32,7 +31,7 @@ export const CommentsPost: React.FC = () => {
         <Smile />
       </button>
       <input className={styles.inputComment} placeholder="Add to comment" />
-      <Button disableTouchRipple={true} variant="text">
+      <Button disableTouchRipple variant="text">
         Post
       </Button>
     </Stack>

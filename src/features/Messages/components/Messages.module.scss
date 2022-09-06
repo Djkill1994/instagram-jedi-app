@@ -2,31 +2,18 @@
   opacity: 0.5;
 }
 
+.showModalBtn {
+  padding: 0 20px;
+}
+
 .messagesWrapper {
   width: 75vw;
-}
-
-@media (max-width: 900px) {
-  .messagesWrapper {
-    width: 80vw;
-  }
-}
-
-@media (max-width: 700px) {
-  .messagesWrapper {
-    width: 85vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .messagesWrapper {
-    width: 90vw;
-  }
+  min-width: 380px;
+  max-width: 800px;
 }
 
 @media (max-width: 500px) {
   .messagesWrapper {
     width: 100vw;
-    height: 100%;
   }
 }

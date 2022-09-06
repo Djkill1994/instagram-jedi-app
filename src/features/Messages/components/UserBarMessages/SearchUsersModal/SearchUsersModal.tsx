@@ -13,7 +13,7 @@ export const SearchUsersModal: VFC = () => {
       <Button
         type="button"
         variant="text"
-        disableTouchRipple={true}
+        disableTouchRipple
         onClick={() => open()}
       >
         <NewMessage />

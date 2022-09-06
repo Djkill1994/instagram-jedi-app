@@ -3,31 +3,29 @@ import { ReactComponent as MessageActive } from "../../../../assets/svg/messageA
 import { ReactComponent as NewPost } from "../../../../assets/svg/newPost.svg";
 import { ReactComponent as FindPeople } from "../../../../assets/svg/findPeople.svg";
 import { ReactComponent as WatsNews } from "../../../../assets/svg/watsNews.svg";
-import { Avatar, Stack } from "@mui/material";
+import { Avatar, Button, Stack } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../App/App";
 import React from "react";
 import { useSelector } from "react-redux";
 import { loginSelector } from "../../../../features/Login/slices/login.slice";
-import styles from "./NavigationBarHeader.module.scss";
-import Button from "@mui/material/Button";
 
 export const NavigationBarHeader = () => {
   const navigate = useNavigate();
   const userData = useSelector(loginSelector);
 
   return (
-    <Stack direction="row" spacing={2} className={styles.navBar}>
+    <Stack direction="row" spacing={2}>
       <Button
         variant="text"
-        disableTouchRipple={true}
+        disableTouchRipple
         onClick={() => navigate("/content", { replace: true })}
       >
         <HomeActive />
       </Button>
       <Button
         variant="text"
-        disableTouchRipple={true}
+        disableTouchRipple
         onClick={() => navigate("/messages", { replace: true })}
       >
         <MessageActive />
