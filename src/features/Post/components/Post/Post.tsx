@@ -5,7 +5,7 @@ import { HeaderPost } from "./HeaderPost";
 import { ContentPost } from "./ContentPost";
 import { SocialSectionPost } from "./SocialSectionPost";
 import { CommentsPost } from "./CommentsPost";
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 export interface PostItemProps {
   post: IPost;
@@ -16,13 +16,15 @@ export const Post: React.FC<PostItemProps> = ({ post }) => {
     <Stack flexDirection="column" className={styles.wrapperContain}>
       <HeaderPost userName={post.userName} userAvatar={post.userAvatar} />
       <ContentPost images={post.images} />
-      <SocialSectionPost
-        userName={post.userName}
-        views={post.views}
-        datePublication={post.datePublication}
-        description={post.description}
-      />
-      <CommentsPost />
+      <Box border="1px solid #dbdbdb">
+        <SocialSectionPost
+          userName={post.userName}
+          views={post.views}
+          datePublication={post.datePublication}
+          description={post.description}
+        />
+        <CommentsPost />
+      </Box>
     </Stack>
   );
 };

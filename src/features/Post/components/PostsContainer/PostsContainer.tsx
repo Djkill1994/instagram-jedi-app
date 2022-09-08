@@ -12,7 +12,11 @@ export const PostsContainer: React.FC = () => {
       flexWrap="wrap"
       justifyContent="center"
     >
-      <Stack flexDirection="column" justifyContent="space-around">
+      <Stack
+        flexDirection="column"
+        justifyContent="space-around"
+        maxWidth="500px"
+      >
         {isLoading && <CircularProgress />}
         {error && (
           <Alert severity="error">This is an error alert — check it out!</Alert>
