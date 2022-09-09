@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
 import styles from "./RegistrationCustomForm.module.scss";
 import {
+  Box,
   Button,
   FormControl,
+  Grid,
   IconButton,
   InputAdornment,
   InputLabel,
   OutlinedInput,
+  TextField,
 } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useRegistrationMutation } from "../../api/registration.api";
 import { useNavigate } from "react-router-dom";

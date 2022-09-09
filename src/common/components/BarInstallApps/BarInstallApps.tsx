@@ -2,20 +2,20 @@ import React from "react";
 import styles from "./BarInstallApps.module.scss";
 import { Link, Stack, Typography } from "@mui/material";
 
-export const BarInstallApps: React.FC = () => {
-  const APPS = [
-    {
-      href: "https://apps.apple.com/app/instagram/id389801252?vt=lo",
-      alt: "AppStore",
-      src: "https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png",
-    },
-    {
-      href: "https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=6F8FE621-2D27-49E1-8F4A-68D804A778EE&utm_content=lo&utm_medium=badge",
-      alt: "GooglePlay",
-      src: "https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png",
-    },
-  ];
+const APPS = [
+  {
+    href: "https://apps.apple.com/app/instagram/id389801252?vt=lo",
+    alt: "AppStore",
+    src: "https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png",
+  },
+  {
+    href: "https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb&utm_campaign=loginPage&ig_mid=6F8FE621-2D27-49E1-8F4A-68D804A778EE&utm_content=lo&utm_medium=badge",
+    alt: "GooglePlay",
+    src: "https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png",
+  },
+];
 
+export const BarInstallApps: React.FC = () => {
   return (
     <Stack
       className={styles.installAppsWrapper}
