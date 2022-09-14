@@ -16,6 +16,7 @@ export const PostsContainer: React.FC = () => {
         flexDirection="column"
         justifyContent="space-around"
         maxWidth="500px"
+        width="100%"
       >
         {isLoading && <CircularProgress />}
         {error && (
