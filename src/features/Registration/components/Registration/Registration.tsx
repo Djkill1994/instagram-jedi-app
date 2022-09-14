@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Button, Stack, Typography } from "@mui/material";
-import { ReactComponent as Logo } from "../../../assets/svg/logoIG.svg";
+import { ReactComponent as Logo } from "../../../../assets/svg/logoIG.svg";
 import styles from "./Registration.module.scss";
-import iconFb from "../../../assets/icon/facebook-icon.png";
-import { DecorationBorder } from "../../../common/components/DecorationBorder";
-import { BarInstallApps } from "../../../common/components/BarInstallApps";
-import { Footer } from "../../../common/components/Footer";
+import iconFb from "../../../../assets/icon/facebook-icon.png";
+import { DecorationBorder } from "../../../../common/components/DecorationBorder";
+import { BarInstallApps } from "../../../../common/components/BarInstallApps";
+import { Footer } from "../../../../common/components/Footer";
 import { Link } from "react-router-dom";
-import { AgreementPolicy } from "./AgreementPolicy";
-import { ROUTE_PATHS } from "../../../common/components/App/App";
-import { RegistrationCustomForm } from "./RegistrationCustomForm";
+import { AgreementPolicy } from "../AgreementPolicy";
+import { ROUTE_PATHS } from "../../../../common/components/App/App";
+import { RegistrationCustomForm } from "../RegistrationCustomForm";
 
 export const Registration: React.FC = () => {
   return (
