@@ -1,5 +1,6 @@
 .loginFormWrapper {
   width: 348px;
+  margin: auto;
 }
 
 .registrationBarWrapper, .windowLogin {
@@ -9,11 +10,6 @@
 .windowLogin {
   padding: 0 40px;
   background-color: white;
-}
-
-.logoWrapper {
-  margin: 40px auto 30px;
-  width: 175px;
 }
 
 .registrationBarWrapper {
@@ -34,4 +30,8 @@
       opacity: 0.3;
     }
   }
+}
+
+.logo{
+  margin: 40px;
 }

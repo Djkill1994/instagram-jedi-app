@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./WindowLoginForm.module.scss";
-import logo from "../../../../assets/icon/1b47f9d0e595.png";
+import { ReactComponent as Logo } from "../../../../assets/svg/logoIG.svg";
 import { BarInstallApps } from "../../../../common/components/BarInstallApps";
 import { Link } from "react-router-dom";
 import { LogInForm } from "../LogInForm";
@@ -15,8 +15,8 @@ export const WindowLoginForm: React.FC = () => {
         alignItems="center"
         className={styles.windowLogin}
       >
-        <header className={styles.headerLogin}>
-          <img alt={"Logo"} src={logo} className={styles.logoWrapper} />
+        <header>
+          <Logo className={styles.logo} />
         </header>
         <LogInForm />
       </Stack>

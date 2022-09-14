@@ -3,19 +3,25 @@
   cursor: pointer;
 
   &:active {
-    background-color: #dbdbdb;
+    background-color: #efefef;
   }
 }
 
 .active {
-  background-color: #dbdbdb;
+  background-color: #efefef;
 }
 
 .itemUser {
   cursor: pointer;
 
   &:active {
-    background-color: #dbdbdb;
+    background-color: #efefef;
     border-radius: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .userMessageItem {
+    flex-wrap: wrap;
   }
 }

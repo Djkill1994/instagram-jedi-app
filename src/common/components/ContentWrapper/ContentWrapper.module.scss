@@ -1,10 +1,11 @@
 .appWrapperContent {
   margin: 15px 0;
+  max-width: 800px;
+  width: 100%;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 500px) {
   .appWrapperContent {
-    width: 100%;
-    margin: 10px 0;
+    width: 100vw;
   }
 }

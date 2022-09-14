@@ -13,13 +13,13 @@ export const Chat: VFC<IChatProps> = ({ messages }) => {
   const ref = useChatScroll(messages);
 
   return (
-    <Stack className={styles.chat} spacing={1} alignItems="baseline" ref={ref}>
+    <Stack className={styles.chat} alignItems="flex-end" ref={ref}>
       {messages?.map(({ messageText, messageId, currentUser }) => (
         <Box
           key={messageId}
           className={clsx(
             styles.itemMessage,
-            currentUser ? styles.otherUser : styles.currentUser
+            currentUser ? styles.currentUser : styles.otherUser
           )}
         >
           {messageText}

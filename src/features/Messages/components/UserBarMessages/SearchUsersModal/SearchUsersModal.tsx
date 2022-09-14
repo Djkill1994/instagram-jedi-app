@@ -10,7 +10,12 @@ export const SearchUsersModal: VFC = () => {
   return (
     <>
       <SelectChatUserModal isOpened={isOpened} onClose={close} />
-      <Button onClick={() => open()}>
+      <Button
+        type="button"
+        variant="text"
+        disableTouchRipple
+        onClick={() => open()}
+      >
         <NewMessage />
       </Button>
     </>

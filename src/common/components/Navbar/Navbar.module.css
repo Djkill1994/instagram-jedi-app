@@ -7,10 +7,4 @@
   margin-left: 40px;
 }
 
-@media (max-width: 1000px) {
-  .nav {
-    display: none;
-  }
-}
-
 /*# sourceMappingURL=Navbar.module.css.map */

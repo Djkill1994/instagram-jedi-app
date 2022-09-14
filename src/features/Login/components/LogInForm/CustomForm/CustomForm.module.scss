@@ -1,17 +1,10 @@
-.passwordWrapper {
-  display: flex !important;
-}
-
-.emailWrapper {
-  width: 266px !important;
-}
-
 .wrapperLoginForm {
-  margin-top: 0 !important;
+  input, .outLined {
+    background-color: #FAFAFA;
+  }
 
   input {
     height: 15px;
-    background-color: #FAFAFA;
   }
 
   label, input {
@@ -20,15 +13,5 @@
 
   .loadingButton {
     margin-top: 7px;
-    height: 30px;
-    background-color: #0095f6;
-    text-transform: none;
-    color: white;
-
-    &:disabled {
-      opacity: 0.3;
-      background-color: #0095f6;
-      color: white;
-    }
   }
 }

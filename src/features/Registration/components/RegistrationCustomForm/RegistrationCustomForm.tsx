@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import styled from "./RegistrationCustomForm.module.scss";
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
+import styles from "./RegistrationCustomForm.module.scss";
 import {
+  Box,
+  Button,
   FormControl,
+  Grid,
   IconButton,
   InputAdornment,
   InputLabel,
   OutlinedInput,
+  TextField,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useRegistrationMutation } from "../../api/registration.api";
@@ -69,7 +69,8 @@ export const RegistrationCustomForm: React.FC = () => {
       noValidate
       onSubmit={handleSubmit}
       sx={{ mt: 3 }}
-      className={styled.formWrapper}
+      className={styles.formWrapper}
+      width="100%"
     >
       <Grid
         container
@@ -78,7 +79,7 @@ export const RegistrationCustomForm: React.FC = () => {
         alignItems="center"
         flexDirection="column"
       >
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <TextField
             onChange={handleChange("email")}
             size="small"
@@ -86,9 +87,10 @@ export const RegistrationCustomForm: React.FC = () => {
             name="email"
             id="email"
             label="Mobile Number or Email"
+            fullWidth
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <TextField
             onChange={handleChange("fullName")}
             size="small"
@@ -96,9 +98,10 @@ export const RegistrationCustomForm: React.FC = () => {
             label="Full Name"
             name="fullName"
             autoComplete="fullName"
+            fullWidth
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <TextField
             onChange={handleChange("userName")}
             size="small"
@@ -106,15 +109,16 @@ export const RegistrationCustomForm: React.FC = () => {
             label="User Name"
             name="userName"
             autoComplete="userName"
+            fullWidth
           />
         </Grid>
-        <Grid item xs={12}>
-          <FormControl variant="outlined" size="small">
+        <Grid item xs={12} width="100%">
+          <FormControl variant="outlined" size="small" fullWidth>
             <InputLabel htmlFor="outlined-adornment-password">
               Password
             </InputLabel>
             <OutlinedInput
-              className={styled.passwordWrapper}
+              className={styles.passwordWrapper}
               id="outlined-adornment-password"
               type={values.showPassword ? "text" : "password"}
               name="password"
@@ -134,7 +138,7 @@ export const RegistrationCustomForm: React.FC = () => {
             />
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} width="100%">
           <Button
             disabled={
               !values.password ||
@@ -145,7 +149,8 @@ export const RegistrationCustomForm: React.FC = () => {
             type="submit"
             variant="contained"
             sx={{ mt: 3 }}
-            className={styled.signUpBtn}
+            className={styles.signUpBtn}
+            fullWidth
           >
             Sign Up
           </Button>

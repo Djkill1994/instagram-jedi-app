@@ -6,7 +6,12 @@ import { ComponentLink } from "./ComponentLink";
 export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <Stack spacing={0.5} justifyContent="center" alignItems="center">
+      <Stack
+        spacing={0.5}
+        justifyContent="center"
+        alignItems="center"
+        className={styles.footerWrapper}
+      >
         <Stack direction="row" spacing={2} display="block">
           <ComponentLink
             url={"https://about.facebook.com/meta"}

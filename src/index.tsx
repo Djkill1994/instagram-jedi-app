@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { App } from "./common/components/App";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "./common/stylesTheme/theme";
 
 const prepare = async (): Promise<void> => {
   const { worker } = await import("./mocks/browser");
@@ -16,7 +18,9 @@ prepare().then(() => {
     <React.StrictMode>
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
         </BrowserRouter>
       </Provider>
     </React.StrictMode>,
