@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Login.module.scss";
 import { WindowAnimatedPhone } from "../WindowAnimatedPhone";
 import { WindowLoginForm } from "../WindowLoginForm";
-import { Footer } from "../../../../common/components/Footer";
+import { Footer } from "common/components/Footer";
 import { Stack } from "@mui/material";
 
 export const Login: React.FC = () => {
