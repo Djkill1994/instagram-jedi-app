@@ -5,9 +5,9 @@ import { ChatBar } from "../ChatBar";
 import { useSelector } from "react-redux";
 import { activeChatUserSelector } from "../../slices/message.slice";
 import { ChatSection } from "../ChatSection";
-import { ReactComponent as IconMessages } from "../../../../assets/svg/iconMessages.svg";
+import { ReactComponent as IconMessages } from "assets/svg/iconMessages.svg";
 import { SelectChatUserModal } from "../SelectChatUserModal";
-import { useModal } from "../../../../common/hooks/useModal";
+import { useModal } from "common/hooks/useModal";
 import styles from "./Messages.module.scss";
 
 export const Messages: VFC = () => {

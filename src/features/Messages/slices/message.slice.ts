@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../../store";
-import { IActiveChatUsers } from "../../../mocks/data/selectedUsersChat";
+import { RootState } from "store";
+import { IActiveChatUsers } from "mocks/data/selectedUsersChat";
 
 interface MessageState {
   activeChatUser?: IActiveChatUsers;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box, Button, IconButton, Stack } from "@mui/material";
 import styles from "./InputBar.module.scss";
-import { ReactComponent as UploadImages } from "../../../../../assets/svg/uploadImages.svg";
-import { EmojiBar } from "../../../../../common/components/EmojiBar";
+import { ReactComponent as UploadImages } from "assets/svg/uploadImages.svg";
+import { EmojiBar } from "common/components/EmojiBar";
 
 interface IProps {
   sendMessage: (inputStr: string) => void;

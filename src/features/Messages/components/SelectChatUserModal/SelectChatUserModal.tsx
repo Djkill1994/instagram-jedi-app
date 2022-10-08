@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import styles from "./SelectChatUserModal.module.scss";
-import { UserItem } from "../../../../common/components/UserItem";
+import { UserItem } from "common/components/UserItem";
 import React, { VFC } from "react";
 
 interface IProps {

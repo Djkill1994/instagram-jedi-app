@@ -1,6 +1,6 @@
 import styles from "./CommentsPost.module.scss";
 import React, { useState } from "react";
-import { ReactComponent as Smile } from "../../../../../assets/svg/smile.svg";
+import { ReactComponent as Smile } from "assets/svg/smile.svg";
 import { Button, Stack } from "@mui/material";
 import Picker, { IEmojiData } from "emoji-picker-react";
 

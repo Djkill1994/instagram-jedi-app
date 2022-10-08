@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Post.module.scss";
-import { IPost } from "../../../../mocks/data/posts";
+import { IPost } from "mocks/data/posts";
 import { HeaderPost } from "./HeaderPost";
 import { ContentPost } from "./ContentPost";
 import { SocialSectionPost } from "./SocialSectionPost";

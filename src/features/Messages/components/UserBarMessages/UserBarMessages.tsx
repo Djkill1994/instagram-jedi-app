@@ -9,8 +9,8 @@ import {
 } from "../../slices/message.slice";
 import { useGetActiveChatUserQuery } from "../../api/activeChatUser.api";
 import { loginSelector } from "../../../Login/slices/login.slice";
-import { IActiveChatUsers } from "../../../../mocks/data/selectedUsersChat";
-import { UserItem } from "../../../../common/components/UserItem";
+import { IActiveChatUsers } from "mocks/data/selectedUsersChat";
+import { UserItem } from "common/components/UserItem";
 import { SearchUsersModal } from "./SearchUsersModal";
 
 export const UserBarMessages: VFC = () => {
