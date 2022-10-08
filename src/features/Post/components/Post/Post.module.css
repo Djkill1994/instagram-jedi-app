@@ -1,14 +1,7 @@
 .wrapperContain {
-  border: 1px solid #dbdbdb;
-  width: 50vw;
   background-color: white;
   margin-bottom: 15px;
-}
-
-@media (max-width: 500px) {
-  .wrapperContain {
-    width: 100vw;
-  }
+  width: 100%;
 }
 
 /*# sourceMappingURL=Post.module.css.map */

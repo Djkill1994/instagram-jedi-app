@@ -1,7 +1,7 @@
 import styles from "./HeaderPost.module.scss";
 import React from "react";
 import { Avatar, Stack } from "@mui/material";
-import { ReactComponent as Additionally } from "../../../../../assets/svg/additionally.svg";
+import { ReactComponent as Additionally } from "assets/svg/additionally.svg";
 
 interface HeaderPostProps {
   userAvatar: string;

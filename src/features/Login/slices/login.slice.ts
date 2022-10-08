@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../../store";
-import { IUser } from "../../../mocks/data/users";
+import { RootState } from "store";
+import { IUser } from "mocks/data/users";
 
 interface LoginState {
   isAuth: boolean;

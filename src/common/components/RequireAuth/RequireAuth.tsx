@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { loginSelector } from "../../../features/Login/slices/login.slice";
+import { loginSelector } from "features/Login/slices/login.slice";
 
 export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const { isAuth } = useSelector(loginSelector);

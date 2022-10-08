@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./LogInForm.module.scss";
-import { DecorationBorder } from "../../../../common/components/DecorationBorder";
+import { DecorationBorder } from "common/components/DecorationBorder";
 import { Link } from "react-router-dom";
 import { CustomForm } from "./CustomForm";
 import { Stack } from "@mui/material";
-import { ROUTE_PATHS } from "../../../../common/components/App/App";
-import fbLogo from "../../../../assets/icon/FB logo blue.png";
+import { ROUTE_PATHS } from "common/components/App/App";
+import fbLogo from "assets/icon/FB logo blue.png";
 
 export const LogInForm: React.FC = () => {
   return (

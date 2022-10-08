@@ -1,5 +1,5 @@
 import styles from "./SearchHeader.module.scss";
-import { ReactComponent as Search } from "../../../.././assets/svg/searching.svg";
+import { ReactComponent as Search } from "assets/svg/searching.svg";
 
 export const SearchHeader = () => {
   return (

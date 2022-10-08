@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { BACKEND_URL } from "../../../config";
-import { IUsersApi } from "../../../mocks/data/users";
+import { BACKEND_URL } from "config";
+import { IUsersApi } from "mocks/data/users";
 
 export const usersApi = createApi({
   reducerPath: "usersApi",

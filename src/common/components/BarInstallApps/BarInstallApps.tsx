@@ -27,7 +27,7 @@ export const BarInstallApps: React.FC = () => {
       <Typography fontSize="14px">Get the app.</Typography>
       <Stack direction="row" spacing={1} mt="15px">
         {APPS.map(({ href, alt, src }) => (
-          <Link target="_blank" href={href}>
+          <Link target="_blank" href={href} key={alt}>
             <img alt={alt} src={src} className={styles.img} />
           </Link>
         ))}
