@@ -1,5 +1,6 @@
 {
   "name": "instagram-jedi-app",
+  "homepage": "http://Djkill1994.github.io/instagram-jedi-app",
   "version": "0.1.0",
   "private": true,
   "main": "index.tsx",
@@ -33,6 +34,8 @@
     "typescript": "^4.6.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
@@ -60,6 +63,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.0",
+    "gh-pages": "^4.0.0",
     "sass": "^1.54.9",
     "vite": "^3.1.0",
     "vite-plugin-svgr": "^2.2.1",

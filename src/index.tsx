@@ -9,7 +9,7 @@ import { theme } from "./theme";
 import { App } from "./common/components/App";
 
 const prepare = async (): Promise<void> => {
-  const { worker } = await import("./mocks/browser");
+  const { worker } = await import("mocks/browser.js");
   await worker.start({ onUnhandledRequest: "bypass" });
 };
 
